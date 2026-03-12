@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>历史简报 - Fashion & Luxury News</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+      min-height: 100vh;
+      padding: 40px;
+      color: #fff;
+    }
+    .container { max-width: 900px; margin: 0 auto; }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+      padding: 20px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 16px;
+      backdrop-filter: blur(10px);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .header-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .back-btn {
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      background: rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .back-btn:hover {
+      background: rgba(233,69,96,0.2);
+      border-color: #e94560;
+      color: #e94560;
+    }
+    .header h1 {
+      font-size: 24px;
+      background: linear-gradient(90deg, #e94560, #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .lang-toggle { display: flex; gap: 8px; }
+    .lang-btn {
+      padding: 8px 16px;
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 20px;
+      background: transparent;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      font-size: 14px;
+    }
+    .lang-btn.active {
+      background: rgba(233,69,96,0.2);
+      color: #e94560;
+      border-color: #e94560;
+    }
+    
+    .search-box {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .search-box h2 {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 12px;
+    }
+    .search-inputs {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .search-inputs input {
+      flex: 1;
+      min-width: 200px;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .search-inputs input:focus {
+      outline: none;
+      border-color: #e94560;
+    }
+    .search-inputs button {
+      padding: 12px 24px;
+      background: linear-gradient(90deg, #e94560, #ff6b6b);
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    .search-inputs button:hover {
+      opacity: 0.9;
+    }
+    
+    .date-group {
+      background: rgba(255,255,255,0.95);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .date-header {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e94560;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .news-category { margin-bottom: 20px; }
+    .news-category:last-child { margin-bottom: 0; }
+    .news-category-title {
+      font-size: 13px;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .news-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item .title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #1a1a2e;
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .news-item .meta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      flex-wrap: wrap;
+    }
+    .news-item .source { color: #e94560; font-weight: 500; }
+    .news-item .date-tag { background: #fce4ec; color: #c2185b; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
+    .news-item .link { color: #666; text-decoration: none; }
+    .news-item .link:hover { text-decoration: underline; }
+    
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: rgba(255,255,255,0.6);
+      font-size: 16px;
+    }
+    
+    .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 40px; }
+    
+    .zh { display: block; }
+    .en { display: none; }
+    body.show-en .zh { display: none; }
+    body.show-en .en { display: block; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="header-left">
+        <a href="index.html" class="back-btn">← 返回今日</a>
+        <h1>📜 历史简报</h1>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="toggleLang(false)">中文</button>
+        <button class="lang-btn" onclick="toggleLang(true)">En</button>
+      </div>
+    </div>
+    
+    <div class="search-box">
+      <h2 class="zh">🔍 搜索历史新闻</h2>
+      <h2 class="en">🔍 Search Historical News</h2>
+      <div class="search-inputs">
+        <input type="text" id="keywordInput" placeholder="输入关键词搜索..." class="zh">
+        <input type="text" id="keywordInputEn" placeholder="Search by keyword..." class="en">
+        <input type="date" id="dateInput">
+        <button onclick="searchNews()" class="zh">搜索</button>
+        <button onclick="searchNews()" class="en">Search</button>
+        <button onclick="clearSearch()" class="zh">清除</button>
+        <button onclick="clearSearch()" class="en">Clear</button>
+      </div>
+    </div>
+    
+    <div id="results"></div>
+    
+    <div class="footer">
+      由OpenClaw Fashion & Luxury News Digest生成
+    </div>
+  </div>
+
+  <script>
+    let archiveData = [];
+    
+    async function loadArchive() {
+      try {
+        const response = await fetch('archive/archive.json');
+        const data = await response.json();
+        archiveData = data;
+        displayResults(archiveData);
+      } catch (e) {
+        document.getElementById('results').innerHTML = '<div class="no-results">暂无历史记录</div>';
+      }
+    }
+    
+    function toggleLang(en) {
+      if (en) {
+        document.body.classList.add('show-en');
+        document.querySelectorAll('.lang-btn')[0].classList.remove('active');
+        document.querySelectorAll('.lang-btn')[1].classList.add('active');
+      } else {
+        document.body.classList.remove('show-en');
+        document.querySelectorAll('.lang-btn')[0].classList.add('active');
+        document.querySelectorAll('.lang-btn')[1].classList.remove('active');
+      }
+    }
+    
+    function searchNews() {
+      const isEn = document.body.classList.contains('show-en');
+      const keyword = (isEn ? document.getElementById('keywordInputEn') : document.getElementById('keywordInput')).value.toLowerCase();
+      const date = document.getElementById('dateInput').value;
+      
+      let results = archiveData;
+      
+      if (keyword) {
+        results = results.filter(item => {
+          const title = isEn ? item.title_en : item.title_zh;
+          return title.toLowerCase().includes(keyword);
+        });
+      }
+      
+      if (date) {
+        results = results.filter(item => item.date === date);
+      }
+      
+      displayResults(results);
+    }
+    
+    function clearSearch() {
+      document.getElementById('keywordInput').value = '';
+      document.getElementById('keywordInputEn').value = '';
+      document.getElementById('dateInput').value = '';
+      displayResults(archiveData);
+    }
+    
+    function displayResults(data) {
+      if (!data || data.length === 0) {
+        document.getElementById('results').innerHTML = '<div class="no-results">未找到匹配结果</div>';
+        return;
+      }
+      
+      const grouped = {};
+      data.forEach(item => {
+        if (!grouped[item.date]) grouped[item.date] = [];
+        grouped[item.date].push(item);
+      });
+      
+      const sortedDates = Object.keys(grouped).sort((a, b) => new Date(b) - new Date(a));
+      const isZh = !document.body.classList.contains('show-en');
+      
+      let html = '';
+      sortedDates.forEach(date => {
+        const items = grouped[date];
+        const intl = items.filter(i => i.category === 'international');
+        const cn = items.filter(i => i.category === 'china');
+        
+        const dateObj = new Date(date);
+        const dateStr = isZh ? 
+          `${dateObj.getFullYear()}年${dateObj.getMonth()+1}月${dateObj.getDate()}日` : 
+          dateObj.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+        
+        html += `<div class="date-group">
+          <div class="date-header">📅 ${dateStr}</div>`;
+        
+        if (intl.length > 0) {
+          html += `<div class="news-category">
+            <div class="news-category-title">${isZh ? '🌍 国际动态' : '🌍 International'}</div>`;
+          intl.forEach(item => {
+            const title = isZh ? item.title_zh : item.title_en;
+            const linkText = isZh ? '原文链接' : 'Link';
+            html += `<div class="news-item">
+              <div class="title">${title}</div>
+              <div class="meta">
+                <span class="source">${item.source}</span>
+                <a class="link" href="${item.url}" target="_blank">${linkText}</a>
+              </div>
+            </div>`;
+          });
+          html += `</div>`;
+        }
+        
+        if (cn.length > 0) {
+          html += `<div class="news-category">
+            <div class="news-category-title">${isZh ? '🇨🇳 国内动态' : '🇨🇳 China'}</div>`;
+          cn.forEach(item => {
+            const title = isZh ? item.title_zh : item.title_en;
+            const linkText = isZh ? '原文链接' : 'Link';
+            html += `<div class="news-item">
+              <div class="title">${title}</div>
+              <div class="meta">
+                <span class="source">${item.source}</span>
+                <a class="link" href="${item.url}" target="_blank">${linkText}</a>
+              </div>
+            </div>`;
+          });
+          html += `</div>`;
+        }
+        
+        html += `</div>`;
+      });
+      
+      document.getElementById('results').innerHTML = html;
+    }
+    
+    loadArchive();
+  </script>
+</body>
+</html>
