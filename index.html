@@ -70,6 +70,17 @@
       border-color: #e94560;
     }
     .date { color: #e94560; font-size: 16px; text-align: center; margin-top: 8px; }
+
+    .digest-header {
+      background: rgba(233,69,96,0.15);
+      border: 1px solid rgba(233,69,96,0.3);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .digest-header h1 { font-size: 24px; margin-bottom: 8px; }
+    .digest-header .date { font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 12px; }
+    .digest-header .summary { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.6; }
     
     .section {
       background: rgba(255,255,255,0.95);
@@ -89,22 +100,33 @@
       border-bottom: 2px solid #eee;
     }
     .section-title.thoughts { color: #9c27b0; }
-    .section-title.try { color: #4caf50; }
     .section-title.news { color: #e94560; }
+    .section-title.insight { color: #ff9800; }
     
     .thought-item {
       padding: 16px;
-      background: linear-gradient(135deg, #fce4ec 0%, #f3e5f5 100%);
+      background: linear-gradient(135deg, #fce4ec 0%, #fff3e0 100%);
       border-radius: 12px;
-      border-left: 4px solid #e94560;
+      border-left: 4px solid #ff9800;
     }
-    .thought-item .question { font-size: 16px; color: #333; line-height: 1.6; font-style: italic; }
+    .thought-item .question { font-size: 15px; color: #333; line-height: 1.6; font-style: italic; }
     
     .news-category { margin-bottom: 24px; }
     .news-category-title { font-size: 14px; font-weight: 600; color: #666; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 1px; }
     .news-item { padding: 16px; border-bottom: 1px solid #eee; }
     .news-item:last-child { border-bottom: none; }
-    .news-item .title { font-size: 15px; font-weight: 600; color: #1a1a2e; line-height: 1.4; margin-bottom: 8px; }
+    .news-item .priority-tag {
+      display: inline-block;
+      font-size: 10px;
+      padding: 1px 6px;
+      border-radius: 4px;
+      margin-right: 6px;
+      font-weight: 600;
+    }
+    .priority-tag.p1 { background: #ffebee; color: #c62828; }
+    .priority-tag.p2 { background: #e3f2fd; color: #1565c0; }
+    .priority-tag.p3 { background: #f3e5f5; color: #7b1fa2; }
+    .news-item .title { font-size: 15px; font-weight: 600; color: #1a1a2e; line-height: 1.4; margin-bottom: 8px; margin-top: 4px; }
     .news-item .meta { display: flex; align-items: center; gap: 8px; font-size: 12px; flex-wrap: wrap; }
     .news-item .source { color: #e94560; font-weight: 500; }
     .news-item .date-tag { background: #fce4ec; color: #c2185b; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
@@ -139,7 +161,7 @@
         <a href="history.html" class="history-btn">📜 查看历史简报</a>
         <div>
           <h1>✨ Fashion & Luxury News</h1>
-          <div class="date">2026年3月18日 / March 18, 2026</div>
+          <div class="date">2026年3月19日 / Thursday</div>
         </div>
       </div>
       <div class="lang-toggle">
@@ -147,436 +169,138 @@
         <button class="lang-btn" onclick="toggleLang(true)">En</button>
       </div>
     </div>
-    
+
     <div class="section">
-      <div class="section-title thoughts">
-        <span class="zh">💭 今日思考</span>
-        <span class="en">💭 Thoughts and Takeaways</span>
+      <div class="section-title insight">
+        <span class="zh">📊 今日洞察</span>
+        <span class="en">📊 Today's Insight</span>
       </div>
       <div class="thought-item">
-        <div class="question zh">本周奢侈品行业阴云笼罩：Lululemon收入利润双低于预期、Adidas发起反泄密诉讼、Lycra申请破产保护。与此同时，John Galliano为Zara设计系列延续快时尚"向上走"战略，而Miu Miu持续狂奔——2026秋冬巴黎时装周精彩纷呈，中国面孔刘亦菲、王一博闪耀秀场。</div>
-        <div class="question en">Dark clouds over luxury this week: Lululemon misses revenue and profit estimates, Adidas sues leakers, Lycra files for bankruptcy protection. Meanwhile, John Galliano designs for Zara extending fast fashion's upward push — while Miu Miu keeps sprinting. Paris Fashion Week Fall 2026 delivers star moments with Liu Yifei and Wang Yibo stealing the spotlight.</div>
+        <div class="question zh">
+          地缘政治风险正在重塑奢侈品腕表市场格局：Swatch集团因中东局势发出销售预警，而开云集团选择此时加码珠宝业务，折射出不同品牌对风险偏好的分化。
+        </div>
+        <div class="question en">
+          Geopolitical risks are reshaping the luxury watch market: as Swatch Group issues a sales warning due to Middle East tensions, Kering chooses to expand its jewelry business — reflecting divergent risk appetites among brands.
+        </div>
       </div>
     </div>
     
     <div class="section">
       <div class="section-title news">
-        <span class="zh">📰 今日新闻（7天内：3月11日-18日）</span>
-        <span class="en">📰 Today's News (Within 7 Days: Mar 11-18, 2026)</span>
+        <span class="zh">🌍 国际动态（4则 | 4个信源）</span>
+        <span class="en">🌍 International (4 articles | 4 sources)</span>
       </div>
       
-      <div class="news-category">
-        <div class="news-category-title">
-          <span class="zh">🌍 国际动态 International</span>
-          <span class="en">🌍 International</span>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Lululemon年度收入利润双低于预期，CEO已离职</div>
-          <div class="title en">Lululemon Annual Revenue & Profit Below Estimates, CEO Already Exited</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Puig集团任命新CEO，首次由非家族成员出任</div>
-          <div class="title en">Puig Announces New CEO — First Non-Family Leader in 20+ Years</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Adidas起诉泄密者，球鞋行业罕见诉讼</div>
-          <div class="title en">Adidas Files Unusual Lawsuit Against Sneaker Leakers</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">中东局势拖累亚洲服装出口商</div>
-          <div class="title en">Middle East War Adds to Strain on Asia's Apparel Exporters</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Lycra（莱卡）面料制造商申请破产保护</div>
-          <div class="title en">Lycra Spandex Maker Files for Bankruptcy Protection</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">印度时装周面临十字路口，独立办秀成新趋势</div>
-          <div class="title en">India's Fashion Week Reaches a Crossroads</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Glossier新战略：关店、减产品线</div>
-          <div class="title en">Glossier's New Strategy: Fewer Stores, Fewer Products</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Zara宣布John Galliano加盟，操刀季节性系列设计</div>
-          <div class="title en">Zara Taps John Galliano to Design Seasonal Collections</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Acne Studios成立30周年，2026秋季系列致敬经典</div>
-          <div class="title en">Acne Studios Turns 30, Fall 2026 "Royal Affair"</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Tom Ford 2026秋季系列：Haider Ackermann首秀回归</div>
-          <div class="title en">Tom Ford Fall 2026: Haider Ackermann's Sobering Debut</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Chloé 2026秋季系列：民间故事主题</div>
-          <div class="title en">Chloé Fall 2026: A Folk Tale</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Reverie by Caroline Hu 2026秋季系列：与Crocs共舞</div>
-          <div class="title en">Reverie by Caroline Hu Fall 2026: Dance With Me</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Kobi Halperin 2026秋季系列：诺亚方舟主题</div>
-          <div class="title en">Kobi Halperin Fall 2026: The Animals Went in Two by Two</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Maison Alaïa 2026系列：Pieter Mulier完美告别之作</div>
-          <div class="title en">Maison Alaïa Summer-Fall 2026: A Pitch-perfect Swan Song</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Ganni 2026秋季系列：新浪漫主义</div>
-          <div class="title en">Ganni Fall 2026: The New Romantic</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">墨西哥独立女性设计师重新定义成长之路</div>
-          <div class="title en">Mexico's Independent Women Designers Rethink Growth</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">阿根廷纺织业裁员16%，时尚产业背后经济困境显现</div>
-          <div class="title en">Argentina's Textile Backbone Buckles, 16% Workforce Cut</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">墨西哥独立女性设计师重新定义成长之路</div>
-          <div class="title en">Mexico's Independent Women Designers Rethink Growth</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">Business of Fashion</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Scotch & Soda与Basquiat联名系列上市</div>
-          <div class="title en">Scotch & Soda's Basquiat Capsule Hits Retail</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Rabanne 2026秋季系列：叛逆朋克风</div>
-          <div class="title en">Rabanne Fall 2026: Rebel, Rebel</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Carven 2026秋季系列：全新出发</div>
-          <div class="title en">Carven Fall 2026: Moving Out</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Cecilie Bahnsen 2026秋季系列：浪漫律动</div>
-          <div class="title en">Cecilie Bahnsen Fall 2026: Romance in Motion</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Victoria's Secret Q4销售增长8%</div>
-          <div class="title en">Victoria's Secret Sales Grow 8% in Q4</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Barbie推出英格兰球星Chloe Kelly特别款</div>
-          <div class="title en">New Barbie Celebrates England Star Chloe Kelly</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Eddie Bauer门店无人竞标，将继续关闭</div>
-          <div class="title en">Eddie Bauer Stores Closures Continue After Failed Auction</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">2026秋季巴黎时装周街头风格精选</div>
-          <div class="title en">Best Street Style at Paris Fashion Week Fall 2026</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">WWD</span>
-          </div>
+      <div class="news-item">
+        <span class="priority-tag p1">P1 趋势</span>
+        <div class="title zh">Swatch CEO警告：伊朗战争正在冲击腕表销售</div>
+        <div class="title en">Swatch CEO Warns Iran War Is Weighing on Watchmaker's Sales</div>
+        <div class="meta">
+          <span class="date-tag">3月18日</span>
+          <span class="source">Business of Fashion</span>
+          <a class="link" href="https://www.businessoffashion.com/news/luxury/swatch-ceo-warns-iran-war-is-weighing-on-watchmakers-sales/" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
       </div>
       
-      <div class="news-category">
-        <div class="news-category-title">
-          <span class="zh">🇨🇳 国内动态 China</span>
-          <span class="en">🇨🇳 China</span>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Matthieu Blazy的Chanel首秀系列全球卖断货</div>
-          <div class="title en">Matthieu Blazy's Chanel Debut Collection Sells Out Globally</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">深度 | 谁能接手Lululemon？</div>
-          <div class="title en">In-depth: Who Can Turn Around Lululemon?</div>
-          <div class="meta">
-            <span class="date-tag">3月17日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">连续五年双位数增长，New Balance收入逼近100亿美元</div>
-          <div class="title en">New Balance Revenue Nears $10B After 5th Year of Double-Digit Growth</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">Zara母公司Inditex去年利润破62亿欧元</div>
-          <div class="title en">Inditex Profit Exceeds 6.2 Billion Euros Last Year</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">突发 | 雅诗兰黛起诉祖玛珑创始人与Zara</div>
-          <div class="title en">Estée Lauder Sues Jo Malone Founder and Zara</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">泰格豪雅任命品牌首位女性CEO</div>
-          <div class="title en">TAG Heuer Appoints First Female CEO</div>
-          <div class="meta">
-            <span class="date-tag">3月16日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">深度 | LV如何强化时装竞争力？</div>
-          <div class="title en">In-depth: How LV Strengthens Fashion Competitiveness</div>
-          <div class="meta">
-            <span class="date-tag">3月13日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">去年太古旗下内地全部商场销售额获得增长</div>
-          <div class="title en">Swire Properties All Mainland Malls Achieve Sales Growth</div>
-          <div class="meta">
-            <span class="date-tag">3月13日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">维密关闭中国首家最大旗舰店</div>
-          <div class="title en">Victoria's Secret Closes Largest China Flagship</div>
-          <div class="meta">
-            <span class="date-tag">3月12日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">老铺黄金去年净赚50亿</div>
-          <div class="title en">Laopu Gold Earns 5 Billion RMB Last Year</div>
-          <div class="meta">
-            <span class="date-tag">3月12日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">The North Face全球品牌总裁离任</div>
-          <div class="title en">The North Face Global Brand President Departs</div>
-          <div class="meta">
-            <span class="date-tag">3月11日</span>
-            <span class="source">时尚头条网</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">深度 | Chanel的新增长故事</div>
-          <div class="title en">In-depth: Chanel's New Growth Story</div>
-          <div class="meta">
-            <span class="date-tag">3月11日</span>
-            <span class="source">时尚头条网</span>
-          </div>
+      <div class="news-item">
+        <span class="priority-tag p2">P2 战略</span>
+        <div class="title zh">TAG Heuer新任CEO Béatrice Goasglas的首要任务清单</div>
+        <div class="title en">TAG Heuer New CEO's Tall To-Do List: Richemont's Survival Recipe</div>
+        <div class="meta">
+          <span class="date-tag">3月18日</span>
+          <span class="source">Business of Fashion</span>
+          <a class="link" href="https://www.businessoffashion.com/briefings/luxury/a-tall-to-do-list-for-new-tag-heuer-ceo-richemonts-survival-recipe/" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
       </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p1">P1 趋势</span>
+        <div class="title zh">金价飙升，Demi-Fine珠宝设计师如何应对？</div>
+        <div class="title en">How Demi-Fine Jewelry Designers Are Handling Spiking Gold Prices</div>
+        <div class="meta">
+          <span class="date-tag">3月18日</span>
+          <span class="source">Vogue Business</span>
+          <a class="link" href="https://www.vogue.com/article/how-demi-fine-jewelry-designers-are-handling-spiking-gold-prices" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
+        </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p1">P1 趋势</span>
+        <div class="title zh">美妆巨头能否将AI热潮转化为实际销售？</div>
+        <div class="title en">Can Beauty Giants Turn AI Hype Into Sales?</div>
+        <div class="meta">
+          <span class="date-tag">3月18日</span>
+          <span class="source">Business of Fashion</span>
+          <a class="link" href="https://www.businessoffashion.com/articles/beauty/beauty-ai-loreal-nvidia-estee-lauder-microsoft-google-unilever/" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
+        </div>
+      </div>
+    </div>
 
-      <div class="news-category">
-        <div class="news-category-title">
-          <span class="zh">🎙️ 微信公众号 WeChat</span>
-          <span class="en">🎙️ WeChat Articles</span>
+    <div class="section">
+      <div class="section-title news">
+        <span class="zh">🇨🇳 国内动态（5则 | 4个信源）</span>
+        <span class="en">🇨🇳 China (5 articles | 4 sources)</span>
+      </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p1">P1 趋势</span>
+        <div class="title zh">开云集团重组业务：成立独立珠宝业务部门</div>
+        <div class="title en">Kering Restructures: Establishes Independent Jewelry Division</div>
+        <div class="meta">
+          <span class="date-tag">3月18日</span>
+          <span class="source">时尚头条网</span>
+          <a class="link" href="http://news.ladymax.cn/202603/18-39471.html" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
-        
-        <div class="news-item">
-          <div class="title zh">2026巴黎时装周——香奈儿：优雅能穿</div>
-          <div class="title en">Paris Fashion Week: Chanel — Elegantly Wearable</div>
-          <div class="meta">
-            <span class="date-tag">3月11日</span>
-            <span class="source">珠珠的美好奇妙旅程</span>
-          </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p2">P2 战略</span>
+        <div class="title zh">深度 | 前香奈儿日本掌门人加入，看Tasaki的野心</div>
+        <div class="title en">Analysis: Former Chanel Japan CEO Joins Tasaki — What's the Strategy?</div>
+        <div class="meta">
+          <span class="date-tag">3月18日</span>
+          <span class="source">时尚头条网</span>
+          <a class="link" href="http://news.ladymax.cn/202603/18-39470.html" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
-        
-        <div class="news-item">
-          <div class="title zh">2026年巴黎时装周，中国面孔的时尚表达力好绝！</div>
-          <div class="title en">China's Faces Shine at Paris Fashion Week 2026</div>
-          <div class="meta">
-            <span class="date-tag">3月11日</span>
-            <span class="source">新女报</span>
-          </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p1">P1 趋势</span>
+        <div class="title zh">连续五年双位数增长，New Balance收入逼近100亿美元</div>
+        <div class="title en">New Balance: Fifth Consecutive Year of Double-Digit Growth, Revenue Nearing $10B</div>
+        <div class="meta">
+          <span class="date-tag">3月16日</span>
+          <span class="source">时尚头条网</span>
+          <a class="link" href="http://news.ladymax.cn/202603/16-39467.html" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
-        
-        <div class="news-item">
-          <div class="title zh">2026秋冬巴黎时装周|穿最美的衣服，做最帅的女人</div>
-          <div class="title en">Paris Fashion Week FW26: Dress to Impress</div>
-          <div class="meta">
-            <span class="date-tag">3月11日</span>
-            <span class="source">时尚临风</span>
-          </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p2">P2 战略</span>
+        <div class="title zh">Zara母公司Inditex去年利润突破62亿欧元</div>
+        <div class="title en">Inditex Annual Profit Exceeds 6.2 Billion Euros</div>
+        <div class="meta">
+          <span class="date-tag">3月16日</span>
+          <span class="source">时尚头条网</span>
+          <a class="link" href="http://news.ladymax.cn/202603/16-39466.html" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
-        
-        <div class="news-item">
-          <div class="title zh">2026 秋冬巴黎时装周的"精致"新解法</div>
-          <div class="title en">A New Definition of "Refinement" at Paris Fashion Week FW26</div>
-          <div class="meta">
-            <span class="date-tag">3月9日</span>
-            <span class="source">NOWHER</span>
-          </div>
-        </div>
-        
-        <div class="news-item">
-          <div class="title zh">王一博2026巴黎时装周——四天三奢，加冕东方时尚传奇</div>
-          <div class="title en">Wang Yibo at Paris Fashion Week: Four Days, Three Luxury Brands</div>
-          <div class="meta">
-            <span class="date-tag">3月14日</span>
-            <span class="source">YIBO猫头小区</span>
-          </div>
+      </div>
+      
+      <div class="news-item">
+        <span class="priority-tag p2">P2 战略</span>
+        <div class="title zh">Matthieu Blazy的Chanel首秀系列全球卖断货</div>
+        <div class="title en">Matthieu Blazy's Chanel Debut Collection Sells Out Globally</div>
+        <div class="meta">
+          <span class="date-tag">3月17日</span>
+          <span class="source">时尚头条网</span>
+          <a class="link" href="http://news.ladymax.cn/202603/17-39469.html" target="_blank"><span class="zh">原文链接</span><span class="en">Link</span></a>
         </div>
       </div>
     </div>
     
     <div class="footer">
       每天早上9点自动生成 | 由OpenClaw Fashion & Luxury News Digest生成<br>
-      <span style="font-size:12px;opacity:0.7;">*仅展示7天内新闻，微信公众号来源文章注明出处</span>
+      <span style="font-size:12px;opacity:0.7;">*P1=行业趋势 P2=品牌战略 P3=市场动态 | 48小时内新闻</span>
     </div>
   </div>
 </body>
