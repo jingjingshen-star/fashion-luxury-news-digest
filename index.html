@@ -56,7 +56,7 @@
       cursor: pointer;
       font-size: 14px;
     }
-    .lang-btn.active { background: rgba(233,69,96,0.2); color: #e94560; border-color: #e94560; }
+    .lang-btn.active-lang { background: rgba(233,69,96,0.2); color: #e94560; border-color: #e94560; }
     .date { color: #e94560; font-size: 16px; text-align: center; margin-top: 8px; }
 
     .section {
@@ -114,19 +114,21 @@
     
     .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 20px; }
     
-    /* Language visibility: default Chinese */
+    /* Language toggle — default CN */
     .lang-en { display: none; }
     body.show-en .lang-cn { display: none; }
     body.show-en .lang-en { display: block; }
-    body.show-en .lang-toggle .btn-cn { opacity: 0.5; }
-    body.show-en .lang-toggle .btn-en { opacity: 1; border-color: #e94560; color: #e94560; }
   </style>
   <script>
     function toggleLang(en) {
       if (en) {
         document.body.classList.add('show-en');
+        document.querySelectorAll('.lang-btn')[0].classList.remove('active-lang');
+        document.querySelectorAll('.lang-btn')[1].classList.add('active-lang');
       } else {
         document.body.classList.remove('show-en');
+        document.querySelectorAll('.lang-btn')[0].classList.add('active-lang');
+        document.querySelectorAll('.lang-btn')[1].classList.remove('active-lang');
       }
     }
   </script>
@@ -139,18 +141,22 @@
         <a href="history.html" class="history-btn lang-en">📜 View Archive</a>
         <div>
           <h1>✨ Fashion & Luxury News</h1>
-          <div class="date">2026年3月20日 / Friday</div>
+          <div class="date lang-cn">2026年3月20日 / Friday</div>
+          <div class="date lang-en">March 20, 2026 / Friday</div>
         </div>
       </div>
       <div class="lang-toggle">
-        <button class="lang-btn btn-cn active" onclick="toggleLang(false)">中文</button>
-        <button class="lang-btn btn-en" onclick="toggleLang(true)">En</button>
+        <button class="lang-btn active-lang" onclick="toggleLang(false)">中文</button>
+        <button class="lang-btn" onclick="toggleLang(true)">En</button>
       </div>
     </div>
 
     <!-- 今日洞察 -->
     <div class="section">
-      <div class="section-title insight">📊 今日洞察</div>
+      <div class="section-title insight">
+        <span class="lang-cn">📊 今日洞察</span>
+        <span class="lang-en">📊 Today's Insight</span>
+      </div>
       <div class="thought-item">
         <div class="question lang-cn">
           奢侈品行业正在经历结构性重组：品牌孵化器被出售、关税纠纷扰动定价权、可持续战略从口号走向利润中心——三条主线折射出一个正在深度整合的市场。
@@ -187,7 +193,7 @@
         <p class="summary lang-cn"><strong>要点：</strong>伦敦品牌孵化器Tomorrow Ltd.（旗下拥有Coperni、Martine Rose）被意大利企业家Andrea Ciccoli收购，现金短缺的分销商寻求新东家以维持运营。</p>
         <p class="summary lang-en"><strong>Key Points:</strong> London-based brand incubator Tomorrow Ltd. (owner of Coperni and Martine Rose) is being acquired by Italian entrepreneur Andrea Ciccoli's Progetto 11, as the cash-strapped distributor seeks new ownership to survive.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>这不仅是单一公司的出售，更是奢侈品分销端整合趋势的缩影——独立品牌孵化器在资本压力下愈发难以独立生存。Tomorrow Ltd.曾被视为欧洲最重要的品牌孵化平台之一，此次出售预示着行业分销格局正在加速洗牌。</p>
-        <p class="insight lang-en"><strong>Insight:</strong> The sale is not merely a single company's fate — it reflects a structural trend in luxury distribution. Independent brand incubators are increasingly unable to survive as standalone entities amid capital pressures and market consolidation.</p>
+        <p class="insight lang-en"><strong>Insight:</strong> The sale is not merely a single company's fate — it reflects a structural trend in luxury distribution. Independent brand incubators are increasingly unable to survive as standalone entities amid capital pressures and market consolidation. This mirrors the same forces driving M&A across the sector.</p>
       </div>
 
       <!-- 国际2 -->
@@ -231,7 +237,7 @@
         <p class="summary lang-cn"><strong>要点：</strong>Tapestry（Coach、Kate Spade母公司）正将可持续发展承诺转化为可衡量的财务回报，ESG举措对品牌溢价能力和吸引注重伦理消费的Z世代消费者产生直接贡献。</p>
         <p class="summary lang-en"><strong>Key Points:</strong> Tapestry (owner of Coach, Kate Spade) is transforming its sustainability commitments into measurable financial returns, with ESG initiatives contributing to brand premium pricing and attracting Gen Z consumers who prioritize ethical consumption.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>可持续发展已从营销成本中心演变为竞争差异化工具。已将该战略嵌入价值链的品牌正在建立持久的护城河——而那些仅将其视为公关工具的品牌则面临消费者抵制和监管风险的双重压力。2026年这一差距将持续扩大。</p>
-        <p class="insight lang-en"><strong>Insight:</strong> Sustainability has evolved from a marketing cost center to a competitive differentiator. Brands that have already embedded sustainability into their value chain are building durable moats — those treating it as PR are exposed to both consumer backlash and regulatory risk. The divide will widen in 2026.</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Sustainability has evolved from a marketing cost center to a competitive differentiator. Brands that have embedded sustainability into their value chain are building durable moats — those treating it as PR are exposed to both consumer backlash and regulatory risk. The divide will widen in 2026.</p>
       </div>
       
       <!-- 国际4 -->
@@ -261,7 +267,7 @@
     <div class="section">
       <div class="section-title news">
         <span class="lang-cn">🇨🇳 国内动态（5则 | 4个信源）</span>
-        <span class="lang-en">🇨🇳 Domestic / China (5 articles | 4 sources)</span>
+        <span class="lang-en">🇨🇳 China (5 articles | 4 sources)</span>
       </div>
       
       <!-- 国内1 -->
@@ -281,9 +287,9 @@
           </a>
         </h3>
         <p class="summary lang-cn"><strong>要点：</strong>Zara与设计师John Galliano签署为期两年的独家创意合作协议，Galliano将为Zara设计胶囊系列，这是快时尚品牌与顶级时装设计师最大规模的合作之一。</p>
-        <p class="summary lang-en"><strong>要点：</strong>Zara与设计师John Galliano签署为期两年的独家创意合作协议，Galliano将为Zara设计胶囊系列，这是快时尚品牌与顶级时装设计师最大规模的合作之一。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Zara has signed an exclusive two-year creative collaboration agreement with designer John Galliano, who will design a capsule collection for Zara — one of the most significant partnerships between a fast-fashion brand and a top-tier couture designer to date.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>这一合作揭示了时尚权力结构的深层变化——设计师品牌需要大众渠道实现流量变现，而快时尚需要设计师光环提升品牌势能。对于Zara CEO Carlos Crespo而言，这是"提升品牌势能"战略的关键一步；对于Galliano而言，是其重返商业主流的背书。高级时装民主化走到今天，快时尚与奢侈时尚的边界已经高度模糊。</p>
-        <p class="insight lang-en"><strong>洞察：</strong>这一合作揭示了时尚权力结构的深层变化——设计师品牌需要大众渠道实现流量变现，而快时尚需要设计师光环提升品牌势能。对于Zara CEO Carlos Crespo而言，这是"提升品牌势能"战略的关键一步；对于Galliano而言，是其重返商业主流的背书。高级时装民主化走到今天，快时尚与奢侈时尚的边界已经高度模糊。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> This collaboration reveals a structural shift in fashion power dynamics — designer brands need mass-market reach to monetize their appeal, while fast fashion needs designer prestige to elevate its brand positioning. For Zara CEO Carlos Crespo, this is a strategic move to boost brand prestige; for Galliano, it's an endorsement of his return to commercial relevance. Fashion democratization has blurred the line between fast fashion and luxury.</p>
       </div>
       
       <!-- 国内2 -->
@@ -303,9 +309,9 @@
           </a>
         </h3>
         <p class="summary lang-cn"><strong>要点：</strong>Tasaki任命前Chanel Japan CEO Richard Collasse为全球CEO，前Ferragamo Japan CEO Kentaro Odagiri为日本区CEO，前Qeelin总经理Matthew Bai领导亚太（中日以外）业务——三人均拥有顶级奢侈品牌亚太区经验。</p>
-        <p class="summary lang-en"><strong>要点：</strong>Tasaki任命前Chanel Japan CEO Richard Collasse为全球CEO，前Ferragamo Japan CEO Kentaro Odagiri为日本区CEO，前Qeelin总经理Matthew Bai领导亚太（中日以外）业务——三人均拥有顶级奢侈品牌亚太区经验。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Tasaki has appointed former Chanel Japan CEO Richard Collasse as Global CEO, former Ferragamo Japan CEO Kentaro Odagiri as Japan Operations CEO, and former Qeelin GM Matthew Bai to lead Asia Pacific (excluding China and Japan) — all three bringing deep experience at top-tier luxury brands in the region.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>Tasaki正从日本珍珠品牌转型为全球奢侈品珠宝品牌。三位拥有Chanel、Ferragamo背景的高管加盟，折射出品牌的核心策略：借助具备顶奢经验的管理团队，打入更高端的全球消费者群体。这是对抗Cartier、Bulgari等历峰/LVMH系珠宝品牌的战略布局。</p>
-        <p class="insight lang-en"><strong>洞察：</strong>Tasaki正从日本珍珠品牌转型为全球奢侈品珠宝品牌。三位拥有Chanel、Ferragamo背景的高管加盟，折射出品牌的核心策略：借助具备顶奢经验的管理团队，打入更高端的全球消费者群体。这是对抗Cartier、Bulgari等历峰/LVMH系珠宝品牌的战略布局。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Tasaki is pivoting from a Japanese pearl brand to a global luxury jewelry player. The hiring of three executives with Chanel and Ferragamo backgrounds signals a clear strategy: leverage top-tier luxury management expertise to reach higher-value global consumers. This is a strategic positioning against Cartier and Bulgari — the Richemont and LVMH jewelry portfolios that dominate the sector.</p>
       </div>
       
       <!-- 国内3 -->
@@ -318,16 +324,16 @@
         </div>
         <h3 class="title">
           <a href="http://news.ladymax.cn/202603/18-39471.html" target="_blank" rel="noopener noreferrer" class="lang-cn">
-            开云集团成立独立珠宝业务部门，整合Boucheron、Pomellato等四大品牌剑指老铺黄金
+            开云集团成立独立珠宝业务部门，整合四大品牌剑指老铺黄金
           </a>
           <a href="http://news.ladymax.cn/202603/18-39471.html" target="_blank" rel="noopener noreferrer" class="lang-en">
             Kering Establishes Independent Jewelry Division, Targeting Laopu Gold's Customer Base
           </a>
         </h3>
         <p class="summary lang-cn"><strong>要点：</strong>开云集团宣布成立独立珠宝业务部门，整合Boucheron、Pomellato等四大珠宝品牌，任命COO Jean-Marc Duplaix兼任CEO，并收购意大利珠宝制造商Raselli Franco。珠宝板块2025年Q4同比增长10%，全年营收9.35亿欧元，而Gucci时装皮具下滑16%。</p>
-        <p class="summary lang-en"><strong>要点：</strong>开云集团宣布成立独立珠宝业务部门，整合Boucheron、Pomellato等四大珠宝品牌，任命COO Jean-Marc Duplaix兼任CEO，并收购意大利珠宝制造商Raselli Franco。珠宝板块2025年Q4同比增长10%，全年营收9.35亿欧元，而Gucci时装皮具下滑16%。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Kering has established an independent jewelry division, integrating four brands including Boucheron and Pomellato, appointing COO Jean-Marc Duplaix as CEO and acquiring Italian manufacturer Raselli Franco. Jewelry delivered 10% YoY growth in Q4 2025 with €935M annual revenue, while Gucci's fashion and leather goods division declined 16%.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>开云此举直接剑指老铺黄金——研究显示老铺黄金消费者与LV、爱马仕、卡地亚重合率高达77.3%。Gucci连续三年下滑后，开云正将珠宝业务打造为新的增长引擎。这场高端珠宝大战，本质是对高净值中国消费者的精准争夺。</p>
-        <p class="insight lang-en"><strong>洞察：</strong>开云此举直接剑指老铺黄金——研究显示老铺黄金消费者与LV、爱马仕、卡地亚重合率高达77.3%。Gucci连续三年下滑后，开云正将珠宝业务打造为新的增长引擎。这场高端珠宝大战，本质是对高净值中国消费者的精准争夺。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Kering's move directly targets Laopu Gold — research shows that 77.3% of Laopu Gold's consumers overlap with LV, Hermès, and Cartier. With Gucci declining for three consecutive years, Kering is betting on jewelry as its new growth engine. This high-end jewelry battle is fundamentally a competition for China's wealthiest consumers.</p>
       </div>
       
       <!-- 国内4 -->
@@ -347,9 +353,9 @@
           </a>
         </h3>
         <p class="summary lang-cn"><strong>要点：</strong>德国奢侈皮具品牌AIGNER与美最时中国达成战略合作，后者将主导AIGNER在中国大陆的零售运营、品牌管理和数字化传播，天猫奢品旗舰店于2026年3月20日开业。</p>
-        <p class="summary lang-en"><strong>要点：</strong>德国奢侈皮具品牌AIGNER与美最时中国达成战略合作，后者将主导AIGNER在中国大陆的零售运营、品牌管理和数字化传播，天猫奢品旗舰店于2026年3月20日开业。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> German luxury leather goods brand AIGNER has formed a strategic partnership with Menzies China, which will oversee AIGNER's retail operations, brand management, and digital communications in mainland China, with a Tmall flagship opening on March 20, 2026.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>欧洲二线奢侈品牌正加速布局中国——它们选择与拥有本土网络的服务商合作而非自建团队，反映出品牌本土化策略的务实转向。美最时1866年进入中国，其对中国市场的深度理解是AIGNER选择它的核心原因。这一模式将成为更多中高端品牌进入中国的范本。</p>
-        <p class="insight lang-en"><strong>洞察：</strong>欧洲二线奢侈品牌正加速布局中国——它们选择与拥有本土网络的服务商合作而非自建团队，反映出品牌本土化策略的务实转向。美最时1866年进入中国，其对中国市场的深度理解是AIGNER选择它的核心原因。这一模式将成为更多中高端品牌进入中国的范本。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> European tier-two luxury brands are accelerating their China entry — choosing local partners over building in-house teams, reflecting a pragmatic shift in localization strategy. Menzies has operated in China since 1866, and its deep market understanding is why AIGNER chose it as a partner. This model will likely become a template for more mid-to-high-end brands entering China.</p>
       </div>
       
       <!-- 国内5 -->
@@ -368,10 +374,10 @@
             Marimekko SS 2026: Redefining Nordic Design Through Print Artistry
           </a>
         </h3>
-        <p class="summary lang-cn"><strong>要点：</strong>Marimekko 2026春夏系列以"印花图案艺术"为主题，延续标志性的大胆色彩与几何图案，将60年代经典Marimini连衣裙廓形以现代方式重新演绎，本季色彩从牡丹粉、樱花粉延伸到绣球蓝、螺旋藻绿。</p>
-        <p class="summary lang-en"><strong>要点：</strong>Marimekko 2026春夏系列以"印花图案艺术"为主题，延续标志性的大胆色彩与几何图案，将60年代经典Marimini连衣裙廓形以现代方式重新演绎，本季色彩从牡丹粉、樱花粉延伸到绣球蓝、螺旋藻绿。</p>
+        <p class="summary lang-cn"><strong>要点：</strong>Marimekko 2026春夏系列以"印花图案艺术"为主题，延续标志性的大胆色彩与几何图案，将60年代经典Marimini连衣裙廓形以现代方式重新演绎，色彩从牡丹粉、樱花粉延伸到绣球蓝、螺旋藻绿。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Marimekko's SS 2026 collection centers on "Print Artistry," continuing its signature bold colors and geometric patterns, with the 1960s Marimini silhouette reinterpreted through a contemporary lens, spanning palettes from peony pink and cherry blossom to hydrangea blue and spirulina green.</p>
         <p class="insight lang-cn"><strong>洞察：</strong>Marimekko从北欧小众品牌成长为全球设计符号，其成功印证了"设计辨识度"比"奢侈定位"更具穿透力。在奢侈品市场增长放缓的背景下，具备强烈设计DNA的品牌反而更容易建立差异化护城河，吸引追求个性而非logo的新一代消费者。</p>
-        <p class="insight lang-en"><strong>洞察：</strong>Marimekko从北欧小众品牌成长为全球设计符号，其成功印证了"设计辨识度"比"奢侈定位"更具穿透力。在奢侈品市场增长放缓的背景下，具备强烈设计DNA的品牌反而更容易建立差异化护城河，吸引追求个性而非logo的新一代消费者。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Marimekko has grown from a Nordic niche brand into a global design icon — proof that design identity can be more penetrating than luxury positioning. As the luxury market slows, brands with strong design DNA are better positioned to build differentiated moats, attracting consumers who value individuality over logos.</p>
       </div>
     </div>
     
