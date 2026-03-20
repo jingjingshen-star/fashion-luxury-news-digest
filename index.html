@@ -109,26 +109,24 @@
     .news-item .source { color: #e94560; font-weight: 500; }
     .news-item .date-tag { background: #fce4ec; color: #c2185b; padding: 2px 8px; border-radius: 10px; font-size: 11px; }
     .news-item .verify-tag { color: #4caf50; font-weight: 700; }
-    .news-item .summary { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 6px; }
+    .news-item .summary { font-size: 13px; color: #555; line-height: 1.5; margin-bottom: 6px; font-weight: 600; }
     .news-item .insight { font-size: 13px; color: #333; line-height: 1.6; background: #f8f8f8; padding: 10px; border-radius: 8px; border-left: 3px solid #e94560; }
     
     .footer { text-align: center; color: rgba(255,255,255,0.6); font-size: 14px; margin-top: 20px; }
     
-    .zh { display: block; }
-    .en { display: none; }
-    body.show-en .zh { display: none; }
-    body.show-en .en { display: block; }
+    /* Language visibility: default Chinese */
+    .lang-en { display: none; }
+    body.show-en .lang-cn { display: none; }
+    body.show-en .lang-en { display: block; }
+    body.show-en .lang-toggle .btn-cn { opacity: 0.5; }
+    body.show-en .lang-toggle .btn-en { opacity: 1; border-color: #e94560; color: #e94560; }
   </style>
   <script>
     function toggleLang(en) {
       if (en) {
         document.body.classList.add('show-en');
-        document.querySelectorAll('.lang-btn')[0].classList.remove('active');
-        document.querySelectorAll('.lang-btn')[1].classList.add('active');
       } else {
         document.body.classList.remove('show-en');
-        document.querySelectorAll('.lang-btn')[0].classList.add('active');
-        document.querySelectorAll('.lang-btn')[1].classList.remove('active');
       }
     }
   </script>
@@ -137,112 +135,136 @@
   <div class="container">
     <div class="header">
       <div class="header-left">
-        <a href="history.html" class="history-btn">📜 View Archive</a>
+        <a href="history.html" class="history-btn lang-cn">📜 查看历史简报</a>
+        <a href="history.html" class="history-btn lang-en">📜 View Archive</a>
         <div>
           <h1>✨ Fashion & Luxury News</h1>
           <div class="date">2026年3月20日 / Friday</div>
         </div>
       </div>
       <div class="lang-toggle">
-        <button class="lang-btn active" onclick="toggleLang(false)">中文</button>
-        <button class="lang-btn" onclick="toggleLang(true)">En</button>
+        <button class="lang-btn btn-cn active" onclick="toggleLang(false)">中文</button>
+        <button class="lang-btn btn-en" onclick="toggleLang(true)">En</button>
       </div>
     </div>
 
+    <!-- 今日洞察 -->
     <div class="section">
-      <div class="section-title insight">
-        <span class="zh">📊 今日洞察</span>
-        <span class="en">📊 Today's Insight</span>
-      </div>
+      <div class="section-title insight">📊 今日洞察</div>
       <div class="thought-item">
-        <div class="question zh">
+        <div class="question lang-cn">
           奢侈品行业正在经历结构性重组：品牌孵化器被出售、关税纠纷扰动定价权、可持续战略从口号走向利润中心——三条主线折射出一个正在深度整合的市场。
         </div>
-        <div class="question en">
+        <div class="question lang-en">
           The luxury industry is undergoing structural reorganization: brand incubators being sold, tariff disputes disturbing pricing power, sustainability moving from rhetoric to profit center — three threads revealing a market in deep consolidation.
         </div>
       </div>
     </div>
     
-    <!-- ==================== INTERNATIONAL SECTION ==================== -->
+    <!-- ==================== 国际动态 ==================== -->
     <div class="section">
       <div class="section-title news">
-        <span class="zh">🌍 国际动态（4则 | 4个信源 | 全英文）</span>
-        <span class="en">🌍 International (4 articles | 4 sources | English Only)</span>
+        <span class="lang-cn">🌍 国际动态（4则 | 4个信源）</span>
+        <span class="lang-en">🌍 International (4 articles | 4 sources)</span>
       </div>
       
+      <!-- 国际1 -->
       <div class="news-item">
         <div class="meta">
-          <span class="priority-tag p1">P1 Market Trend</span>
+          <span class="priority-tag p1">P1 市场趋势</span>
           <span class="source">Business of Fashion</span>
-          <span class="date-tag">Mar 19</span>
-          <span class="verify-tag" title="Link Verified">✓</span>
+          <span class="date-tag">3月19日</span>
+          <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="https://www.businessoffashion.com/briefings/luxury/what-happened-at-coperni-owner-tomorrow-ltd/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.businessoffashion.com/briefings/luxury/what-happened-at-coperni-owner-tomorrow-ltd/" target="_blank" rel="noopener noreferrer" class="lang-cn">
+            Coperni东家Tomorrow Ltd.被出售，奢侈品品牌分销整合持续
+          </a>
+          <a href="https://www.businessoffashion.com/briefings/luxury/what-happened-at-coperni-owner-tomorrow-ltd/" target="_blank" rel="noopener noreferrer" class="lang-en">
             Coperni Owner Tomorrow Ltd. Sold to The Level Group in Luxury Distribution Consolidation
           </a>
         </h3>
-        <p class="summary"><strong>Key Points:</strong> London-based brand incubator Tomorrow Ltd. (owner of Coperni and Martine Rose) is being acquired by Italian entrepreneur Andrea Ciccoli's Progetto 11, as the cash-strapped distributor seeks new ownership to survive.</p>
-        <p class="insight"><strong>Insight:</strong> The sale is not merely a single company's fate — it reflects a structural trend in luxury distribution. Independent brand incubators are increasingly unable to survive as standalone entities amid capital pressures and market consolidation. This mirrors the same forces driving M&A across the sector.</p>
+        <p class="summary lang-cn"><strong>要点：</strong>伦敦品牌孵化器Tomorrow Ltd.（旗下拥有Coperni、Martine Rose）被意大利企业家Andrea Ciccoli收购，现金短缺的分销商寻求新东家以维持运营。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> London-based brand incubator Tomorrow Ltd. (owner of Coperni and Martine Rose) is being acquired by Italian entrepreneur Andrea Ciccoli's Progetto 11, as the cash-strapped distributor seeks new ownership to survive.</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>这不仅是单一公司的出售，更是奢侈品分销端整合趋势的缩影——独立品牌孵化器在资本压力下愈发难以独立生存。Tomorrow Ltd.曾被视为欧洲最重要的品牌孵化平台之一，此次出售预示着行业分销格局正在加速洗牌。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> The sale is not merely a single company's fate — it reflects a structural trend in luxury distribution. Independent brand incubators are increasingly unable to survive as standalone entities amid capital pressures and market consolidation.</p>
       </div>
 
+      <!-- 国际2 -->
       <div class="news-item">
         <div class="meta">
-          <span class="priority-tag p1">P1 Market Trend</span>
+          <span class="priority-tag p1">P1 市场趋势</span>
           <span class="source">Business of Fashion</span>
-          <span class="date-tag">Mar 19</span>
-          <span class="verify-tag" title="Link Verified">✓</span>
+          <span class="date-tag">3月19日</span>
+          <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="https://www.businessoffashion.com/news/retail/tariff-refund-lawsuits-surge-amid-uncertainty-about-us-plans/" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.businessoffashion.com/news/retail/tariff-refund-lawsuits-surge-amid-uncertainty-about-us-plans/" target="_blank" rel="noopener noreferrer" class="lang-cn">
+            Prada、Adidas因关税政策不确定性加入退款诉讼，美国市场定价权受扰动
+          </a>
+          <a href="https://www.businessoffashion.com/news/retail/tariff-refund-lawsuits-surge-amid-uncertainty-about-us-plans/" target="_blank" rel="noopener noreferrer" class="lang-en">
             Prada and Adidas Join Tariff Refund Lawsuits as US Policy Uncertainty Deepens
           </a>
         </h3>
-        <p class="summary"><strong>Key Points:</strong> Prada and Adidas have joined a growing group of companies filing tariff refund lawsuits against the US government, following the Supreme Court's ruling that struck down Trump's economic policy as unconstitutional, leaving importers uncertain about the claims process.</p>
-        <p class="insight"><strong>Insight:</strong> Tariff policy instability is forcing luxury brands into a difficult choice: absorb costs and compress margins, or pass costs to consumers and risk losing price-sensitive customers. Either path damages competitiveness in the critical US market, the world's second-largest luxury consumer base.</p>
+        <p class="summary lang-cn"><strong>要点：</strong>Prada、Adidas等进口商纷纷加入针对美国政府的关税退款诉讼，此前美国最高法院裁定特朗普经济政策违宪，令进口商对索赔流程感到极度不确定性。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Prada and Adidas have joined a growing group of companies filing tariff refund lawsuits against the US government, following the Supreme Court's ruling that struck down Trump's economic policy as unconstitutional, leaving importers deeply uncertain about the claims process.</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>关税政策不稳定性正迫使奢侈品牌陷入两难：要么自行吸收关税成本压缩利润，要么将成本转嫁给消费者、面临失去价格敏感客户的风险。无论哪条路都将损害品牌在美国市场的竞争力——美国是全球第二大奢侈品消费市场。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Tariff policy instability is forcing luxury brands into a difficult choice: absorb costs and compress margins, or pass costs to consumers and risk losing price-sensitive customers. Either path damages competitiveness in the critical US market, the world's second-largest luxury consumer base.</p>
       </div>
       
+      <!-- 国际3 -->
       <div class="news-item">
         <div class="meta">
-          <span class="priority-tag p1">P1 Market Trend</span>
+          <span class="priority-tag p1">P1 市场趋势</span>
           <span class="source">Vogue Business</span>
-          <span class="date-tag">Mar 19</span>
-          <span class="verify-tag" title="Link Verified">✓</span>
+          <span class="date-tag">3月19日</span>
+          <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="https://www.vogue.com/article/how-tapestry-makes-the-business-case-for-sustainability" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.vogue.com/article/how-tapestry-makes-the-business-case-for-sustainability" target="_blank" rel="noopener noreferrer" class="lang-cn">
+            Tapestry如何将可持续发展承诺转化为财务回报？
+          </a>
+          <a href="https://www.vogue.com/article/how-tapestry-makes-the-business-case-for-sustainability" target="_blank" rel="noopener noreferrer" class="lang-en">
             How Tapestry Makes the Business Case for Sustainability
           </a>
         </h3>
-        <p class="summary"><strong>Key Points:</strong> Tapestry (owner of Coach, Kate Spade) is transforming its sustainability commitments into measurable financial returns, with ESG initiatives contributing to brand premium pricing and attracting Gen Z consumers who prioritize ethical consumption.</p>
-        <p class="insight"><strong>Insight:</strong> Sustainability has evolved from a marketing cost center to a competitive differentiator. Brands that have already embedded sustainability into their value chain are building durable moats — those treating it as PR are exposed to both consumer backlash and regulatory risk. The divide will widen in 2026.</p>
+        <p class="summary lang-cn"><strong>要点：</strong>Tapestry（Coach、Kate Spade母公司）正将可持续发展承诺转化为可衡量的财务回报，ESG举措对品牌溢价能力和吸引注重伦理消费的Z世代消费者产生直接贡献。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Tapestry (owner of Coach, Kate Spade) is transforming its sustainability commitments into measurable financial returns, with ESG initiatives contributing to brand premium pricing and attracting Gen Z consumers who prioritize ethical consumption.</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>可持续发展已从营销成本中心演变为竞争差异化工具。已将该战略嵌入价值链的品牌正在建立持久的护城河——而那些仅将其视为公关工具的品牌则面临消费者抵制和监管风险的双重压力。2026年这一差距将持续扩大。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Sustainability has evolved from a marketing cost center to a competitive differentiator. Brands that have already embedded sustainability into their value chain are building durable moats — those treating it as PR are exposed to both consumer backlash and regulatory risk. The divide will widen in 2026.</p>
       </div>
       
+      <!-- 国际4 -->
       <div class="news-item">
         <div class="meta">
-          <span class="priority-tag p2">P2 Brand Strategy</span>
+          <span class="priority-tag p2">P2 品牌战略</span>
           <span class="source">Vogue Business</span>
-          <span class="date-tag">Mar 17</span>
-          <span class="verify-tag" title="Link Verified">✓</span>
+          <span class="date-tag">3月17日</span>
+          <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="https://www.vogue.com/article/puig-names-jose-manuel-albesa-as-ceo" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.vogue.com/article/puig-names-jose-manuel-albesa-as-ceo" target="_blank" rel="noopener noreferrer" class="lang-cn">
+            Puig集团任命Jose Manuel Albesa为CEO，美妆时尚投资组合战略转型
+          </a>
+          <a href="https://www.vogue.com/article/puig-names-jose-manuel-albesa-as-ceo" target="_blank" rel="noopener noreferrer" class="lang-en">
             Puig Appoints Jose Manuel Albesa as CEO, Signaling Strategic Pivot for Beauty Portfolio
           </a>
         </h3>
-        <p class="summary"><strong>Key Points:</strong> Spanish beauty and fashion conglomerate Puig has appointed Jose Manuel Albesa as CEO, overseeing a portfolio that includes Charlotte Tilbury, Carolina Herrera, Rabanne, Byredo, and Jean Paul Gaultier.</p>
-        <p class="insight"><strong>Insight:</strong> Puig is at a critical juncture — transitioning from a fragrance-focused company to a full-scale beauty and fashion player. The new CEO's strategic direction will determine whether Puig can close the gap with LVMH's beauty division and compete more aggressively in the global prestige beauty market.</p>
+        <p class="summary lang-cn"><strong>要点：</strong>西班牙美妆时尚集团Puig任命Jose Manuel Albesa为CEO，执掌包含Charlotte Tilbury、Carolina Herrera、Rabanne、Byredo在内的品牌组合。</p>
+        <p class="summary lang-en"><strong>Key Points:</strong> Spanish beauty and fashion conglomerate Puig has appointed Jose Manuel Albesa as CEO, overseeing a portfolio that includes Charlotte Tilbury, Carolina Herrera, Rabanne, Byredo, and Jean Paul Gaultier.</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>Puig正处于关键转型期——从香水公司向全面美妆时尚集团升级。新CEO的战略方向将决定Puig能否缩小与LVMH美妆板块的差距，在全球高端美妆市场展开更激进的竞争。</p>
+        <p class="insight lang-en"><strong>Insight:</strong> Puig is at a critical juncture — transitioning from a fragrance-focused company to a full-scale beauty and fashion player. The new CEO's strategic direction will determine whether Puig can close the gap with LVMH's beauty division and compete more aggressively in the global prestige beauty market.</p>
       </div>
     </div>
 
-    <!-- ==================== DOMESTIC SECTION ==================== -->
+    <!-- ==================== 国内动态 ==================== -->
     <div class="section">
       <div class="section-title news">
-        <span class="zh">🇨🇳 国内动态（5则 | 4个信源 | 全中文）</span>
-        <span class="en">🇨🇳 China (5 articles | 4 sources | Chinese Only)</span>
+        <span class="lang-cn">🇨🇳 国内动态（5则 | 4个信源）</span>
+        <span class="lang-en">🇨🇳 Domestic / China (5 articles | 4 sources)</span>
       </div>
       
+      <!-- 国内1 -->
       <div class="news-item">
         <div class="meta">
           <span class="priority-tag p1">P1 市场趋势</span>
@@ -251,14 +273,20 @@
           <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="http://news.ladymax.cn/202603/19-39472.html" target="_blank" rel="noopener noreferrer">
+          <a href="http://news.ladymax.cn/202603/19-39472.html" target="_blank" rel="noopener noreferrer" class="lang-cn">
             Zara与John Galliano签署两年合作协议，"高级时装民主化"走到哪了？
           </a>
+          <a href="http://news.ladymax.cn/202603/19-39472.html" target="_blank" rel="noopener noreferrer" class="lang-en">
+            Zara Partners with John Galliano: How Far Has Fashion Democratization Come?
+          </a>
         </h3>
-        <p class="summary"><strong>要点：</strong>Zara与设计师John Galliano签署为期两年的独家创意合作协议，Galliano将为Zara设计胶囊系列，这是快时尚品牌与顶级时装设计师最大规模的合作之一。</p>
-        <p class="insight"><strong>洞察：</strong>这一合作揭示了时尚权力结构的深层变化——设计师品牌需要大众渠道实现流量变现，而快时尚需要设计师光环提升品牌势能。对于Zara而言，这是其CEO Carlos Crespo"提升品牌势能"战略的关键一步；对于Galliano而言，是其重返商业主流的背书。高级时装民主化走到今天，快时尚与奢侈时尚的边界已经高度模糊。</p>
+        <p class="summary lang-cn"><strong>要点：</strong>Zara与设计师John Galliano签署为期两年的独家创意合作协议，Galliano将为Zara设计胶囊系列，这是快时尚品牌与顶级时装设计师最大规模的合作之一。</p>
+        <p class="summary lang-en"><strong>要点：</strong>Zara与设计师John Galliano签署为期两年的独家创意合作协议，Galliano将为Zara设计胶囊系列，这是快时尚品牌与顶级时装设计师最大规模的合作之一。</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>这一合作揭示了时尚权力结构的深层变化——设计师品牌需要大众渠道实现流量变现，而快时尚需要设计师光环提升品牌势能。对于Zara CEO Carlos Crespo而言，这是"提升品牌势能"战略的关键一步；对于Galliano而言，是其重返商业主流的背书。高级时装民主化走到今天，快时尚与奢侈时尚的边界已经高度模糊。</p>
+        <p class="insight lang-en"><strong>洞察：</strong>这一合作揭示了时尚权力结构的深层变化——设计师品牌需要大众渠道实现流量变现，而快时尚需要设计师光环提升品牌势能。对于Zara CEO Carlos Crespo而言，这是"提升品牌势能"战略的关键一步；对于Galliano而言，是其重返商业主流的背书。高级时装民主化走到今天，快时尚与奢侈时尚的边界已经高度模糊。</p>
       </div>
       
+      <!-- 国内2 -->
       <div class="news-item">
         <div class="meta">
           <span class="priority-tag p2">P2 品牌战略</span>
@@ -267,14 +295,20 @@
           <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="http://news.ladymax.cn/202603/18-39470.html" target="_blank" rel="noopener noreferrer">
+          <a href="http://news.ladymax.cn/202603/18-39470.html" target="_blank" rel="noopener noreferrer" class="lang-cn">
             前Chanel日本掌门加入Tasaki担任全球CEO，三人豪华团队能否改写珠宝格局？
           </a>
+          <a href="http://news.ladymax.cn/202603/18-39470.html" target="_blank" rel="noopener noreferrer" class="lang-en">
+            Former Chanel Japan CEO Joins Tasaki as Global CEO: Can a Star Team Reshape Jewelry?
+          </a>
         </h3>
-        <p class="summary"><strong>要点：</strong>Tasaki任命前Chanel Japan CEO Richard Collasse为全球CEO，前Ferragamo Japan CEO Kentaro Odagiri为日本区CEO，前Qeelin总经理Matthew Bai领导亚太（中日以外）业务——三人均拥有顶级奢侈品牌亚太区经验。</p>
-        <p class="insight"><strong>洞察：</strong>Tasaki正在从日本珍珠品牌转型为全球奢侈品珠宝品牌。三位拥有Chanel、Ferragamo背景的高管加盟，折射出品牌的核心策略：借助具备顶奢经验的管理团队，打入更高端的全球消费者群体。这是对抗Cartier、Bulgari等历峰/LVMH系珠宝品牌的战略布局。</p>
+        <p class="summary lang-cn"><strong>要点：</strong>Tasaki任命前Chanel Japan CEO Richard Collasse为全球CEO，前Ferragamo Japan CEO Kentaro Odagiri为日本区CEO，前Qeelin总经理Matthew Bai领导亚太（中日以外）业务——三人均拥有顶级奢侈品牌亚太区经验。</p>
+        <p class="summary lang-en"><strong>要点：</strong>Tasaki任命前Chanel Japan CEO Richard Collasse为全球CEO，前Ferragamo Japan CEO Kentaro Odagiri为日本区CEO，前Qeelin总经理Matthew Bai领导亚太（中日以外）业务——三人均拥有顶级奢侈品牌亚太区经验。</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>Tasaki正从日本珍珠品牌转型为全球奢侈品珠宝品牌。三位拥有Chanel、Ferragamo背景的高管加盟，折射出品牌的核心策略：借助具备顶奢经验的管理团队，打入更高端的全球消费者群体。这是对抗Cartier、Bulgari等历峰/LVMH系珠宝品牌的战略布局。</p>
+        <p class="insight lang-en"><strong>洞察：</strong>Tasaki正从日本珍珠品牌转型为全球奢侈品珠宝品牌。三位拥有Chanel、Ferragamo背景的高管加盟，折射出品牌的核心策略：借助具备顶奢经验的管理团队，打入更高端的全球消费者群体。这是对抗Cartier、Bulgari等历峰/LVMH系珠宝品牌的战略布局。</p>
       </div>
       
+      <!-- 国内3 -->
       <div class="news-item">
         <div class="meta">
           <span class="priority-tag p1">P1 市场趋势</span>
@@ -283,14 +317,20 @@
           <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="http://news.ladymax.cn/202603/18-39471.html" target="_blank" rel="noopener noreferrer">
+          <a href="http://news.ladymax.cn/202603/18-39471.html" target="_blank" rel="noopener noreferrer" class="lang-cn">
             开云集团成立独立珠宝业务部门，整合Boucheron、Pomellato等四大品牌剑指老铺黄金
           </a>
+          <a href="http://news.ladymax.cn/202603/18-39471.html" target="_blank" rel="noopener noreferrer" class="lang-en">
+            Kering Establishes Independent Jewelry Division, Targeting Laopu Gold's Customer Base
+          </a>
         </h3>
-        <p class="summary"><strong>要点：</strong>开云集团宣布成立独立珠宝业务部门，整合Boucheron、Pomellato等四大珠宝品牌，任命COO Jean-Marc Duplaix兼任CEO，并收购意大利珠宝制造商Raselli Franco。珠宝板块2025年Q4同比增长10%，全年营收9.35亿欧元，而Gucci时装皮具下滑16%。</p>
-        <p class="insight"><strong>洞察：</strong>开云此举直接剑指老铺黄金——研究显示老铺黄金消费者与LV、爱马仕、卡地亚重合率高达77.3%。Gucci连续三年下滑后，开云正将珠宝业务打造为新的增长引擎。这场高端珠宝大战，本质是对高净值中国消费者的精准争夺。</p>
+        <p class="summary lang-cn"><strong>要点：</strong>开云集团宣布成立独立珠宝业务部门，整合Boucheron、Pomellato等四大珠宝品牌，任命COO Jean-Marc Duplaix兼任CEO，并收购意大利珠宝制造商Raselli Franco。珠宝板块2025年Q4同比增长10%，全年营收9.35亿欧元，而Gucci时装皮具下滑16%。</p>
+        <p class="summary lang-en"><strong>要点：</strong>开云集团宣布成立独立珠宝业务部门，整合Boucheron、Pomellato等四大珠宝品牌，任命COO Jean-Marc Duplaix兼任CEO，并收购意大利珠宝制造商Raselli Franco。珠宝板块2025年Q4同比增长10%，全年营收9.35亿欧元，而Gucci时装皮具下滑16%。</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>开云此举直接剑指老铺黄金——研究显示老铺黄金消费者与LV、爱马仕、卡地亚重合率高达77.3%。Gucci连续三年下滑后，开云正将珠宝业务打造为新的增长引擎。这场高端珠宝大战，本质是对高净值中国消费者的精准争夺。</p>
+        <p class="insight lang-en"><strong>洞察：</strong>开云此举直接剑指老铺黄金——研究显示老铺黄金消费者与LV、爱马仕、卡地亚重合率高达77.3%。Gucci连续三年下滑后，开云正将珠宝业务打造为新的增长引擎。这场高端珠宝大战，本质是对高净值中国消费者的精准争夺。</p>
       </div>
       
+      <!-- 国内4 -->
       <div class="news-item">
         <div class="meta">
           <span class="priority-tag p2">P2 品牌战略</span>
@@ -299,14 +339,20 @@
           <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="http://news.fengsung.com/n-260317153802395.html" target="_blank" rel="noopener noreferrer">
+          <a href="http://news.fengsung.com/n-260317153802395.html" target="_blank" rel="noopener noreferrer" class="lang-cn">
             德国奢侈品牌AIGNER携手美最时，加速拓展中国大陆市场
           </a>
+          <a href="http://news.fengsung.com/n-260317153802395.html" target="_blank" rel="noopener noreferrer" class="lang-en">
+            German Luxury Brand AIGNER Partners with Menzies China to Expand Mainland Market
+          </a>
         </h3>
-        <p class="summary"><strong>要点：</strong>德国奢侈皮具品牌AIGNER与美最时中国达成战略合作，后者将主导AIGNER在中国大陆的零售运营、品牌管理和数字化传播，天猫奢品旗舰店于2026年3月20日开业。</p>
-        <p class="insight"><strong>洞察：</strong>欧洲二线奢侈品牌正加速布局中国——它们选择与拥有本土网络的服务商合作而非自建团队，反映出品牌本土化策略的务实转向。美最时1806年成立于德国、1866年进入中国，其对中国市场的深度理解是AIGNER选择它的核心原因。这一模式将成为更多中高端品牌进入中国的范本。</p>
+        <p class="summary lang-cn"><strong>要点：</strong>德国奢侈皮具品牌AIGNER与美最时中国达成战略合作，后者将主导AIGNER在中国大陆的零售运营、品牌管理和数字化传播，天猫奢品旗舰店于2026年3月20日开业。</p>
+        <p class="summary lang-en"><strong>要点：</strong>德国奢侈皮具品牌AIGNER与美最时中国达成战略合作，后者将主导AIGNER在中国大陆的零售运营、品牌管理和数字化传播，天猫奢品旗舰店于2026年3月20日开业。</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>欧洲二线奢侈品牌正加速布局中国——它们选择与拥有本土网络的服务商合作而非自建团队，反映出品牌本土化策略的务实转向。美最时1866年进入中国，其对中国市场的深度理解是AIGNER选择它的核心原因。这一模式将成为更多中高端品牌进入中国的范本。</p>
+        <p class="insight lang-en"><strong>洞察：</strong>欧洲二线奢侈品牌正加速布局中国——它们选择与拥有本土网络的服务商合作而非自建团队，反映出品牌本土化策略的务实转向。美最时1866年进入中国，其对中国市场的深度理解是AIGNER选择它的核心原因。这一模式将成为更多中高端品牌进入中国的范本。</p>
       </div>
       
+      <!-- 国内5 -->
       <div class="news-item">
         <div class="meta">
           <span class="priority-tag p3">P3 零售动态</span>
@@ -315,18 +361,25 @@
           <span class="verify-tag" title="链接已验证">✓</span>
         </div>
         <h3 class="title">
-          <a href="http://www.ssrbw.com/shizhuang/20260319/882.html" target="_blank" rel="noopener noreferrer">
+          <a href="http://www.ssrbw.com/shizhuang/20260319/882.html" target="_blank" rel="noopener noreferrer" class="lang-cn">
             Marimekko 2026春夏系列：以"印花图案艺术"重新定义北欧设计
           </a>
+          <a href="http://www.ssrbw.com/shizhuang/20260319/882.html" target="_blank" rel="noopener noreferrer" class="lang-en">
+            Marimekko SS 2026: Redefining Nordic Design Through Print Artistry
+          </a>
         </h3>
-        <p class="summary"><strong>要点：</strong>Marimekko 2026春夏系列以"印花图案艺术"为主题，延续标志性的大胆色彩与几何图案，将60年代经典Marimini连衣裙廓形以现代方式重新演绎，本季色彩从牡丹粉、樱花粉延伸到绣球蓝、螺旋藻绿。</p>
-        <p class="insight"><strong>洞察：</strong>Marimekko从北欧小众品牌成长为全球设计符号，其成功印证了"设计辨识度"比"奢侈定位"更具穿透力。在奢侈品市场增长放缓的背景下，具备强烈设计DNA的品牌反而更容易建立差异化护城河，吸引追求个性而非logo的新一代消费者。</p>
+        <p class="summary lang-cn"><strong>要点：</strong>Marimekko 2026春夏系列以"印花图案艺术"为主题，延续标志性的大胆色彩与几何图案，将60年代经典Marimini连衣裙廓形以现代方式重新演绎，本季色彩从牡丹粉、樱花粉延伸到绣球蓝、螺旋藻绿。</p>
+        <p class="summary lang-en"><strong>要点：</strong>Marimekko 2026春夏系列以"印花图案艺术"为主题，延续标志性的大胆色彩与几何图案，将60年代经典Marimini连衣裙廓形以现代方式重新演绎，本季色彩从牡丹粉、樱花粉延伸到绣球蓝、螺旋藻绿。</p>
+        <p class="insight lang-cn"><strong>洞察：</strong>Marimekko从北欧小众品牌成长为全球设计符号，其成功印证了"设计辨识度"比"奢侈定位"更具穿透力。在奢侈品市场增长放缓的背景下，具备强烈设计DNA的品牌反而更容易建立差异化护城河，吸引追求个性而非logo的新一代消费者。</p>
+        <p class="insight lang-en"><strong>洞察：</strong>Marimekko从北欧小众品牌成长为全球设计符号，其成功印证了"设计辨识度"比"奢侈定位"更具穿透力。在奢侈品市场增长放缓的背景下，具备强烈设计DNA的品牌反而更容易建立差异化护城河，吸引追求个性而非logo的新一代消费者。</p>
       </div>
     </div>
     
     <div class="footer">
-      Generated by OpenClaw Fashion & Luxury News Digest<br>
-      <span style="font-size:12px;opacity:0.7;">P1=Market Trend P2=Brand Strategy P3=Retail Dynamics | All links verified | International: English only | Domestic: Chinese only</span>
+      <span class="lang-cn">每天自动生成 | 由OpenClaw Fashion & Luxury News Digest生成</span>
+      <span class="lang-en">Generated daily by OpenClaw Fashion & Luxury News Digest</span>
+      <br>
+      <span style="font-size:12px;opacity:0.7;">P1=市场趋势 P2=品牌战略 P3=零售动态 | 全部链接已验证 | 4个不同信源</span>
     </div>
   </div>
 </body>
