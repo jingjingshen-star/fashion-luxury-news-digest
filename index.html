@@ -2,909 +2,507 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Fashion & Luxury News Digest</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion &amp; Luxury News · 时尚与奢侈品日报 · 2026年4月7日</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Sans+SC:wght@300;400;500;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Noto+Serif+SC:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--primary:#1E392A;--secondary:#B8A88A;--accent:#F0F2F1;--text:#2C2C2C;--light-text:#7A7A7A;--bg:#FAFBFB;--border:#E0DDD8;--tag-bg:rgba(184,168,138,0.15)}
-body{font-family:'Noto Serif SC','Playfair Display',serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:10pt;min-height:100vh;position:relative}
-.bg-pattern{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:0.06;overflow:hidden}
-.bg-icon{position:absolute;width:280px;height:280px;opacity:.18;object-fit:contain}
-.corner-decoration{position:fixed;width:28px;height:28px;border:1px solid var(--border);z-index:2;pointer-events:none}
-.corner-tl{top:20px;left:20px;border-right:none;border-bottom:none}
-.corner-tr{top:20px;right:20px;border-left:none;border-bottom:none}
-.corner-bl{bottom:20px;left:20px;border-right:none;border-top:none}
-.corner-br{bottom:20px;right:20px;border-left:none;border-top:none}
-.container{max-width:800px;margin:0 auto;padding:40px 30px;position:relative;z-index:1}
-.top-accent{height:2px;background:linear-gradient(90deg,transparent 0%,var(--secondary) 30%,var(--secondary) 70%,transparent 100%);margin-bottom:30px}
-.header{text-align:center;padding-bottom:25px;border-bottom:1px solid var(--border);margin-bottom:30px}
-.lang-toggle{display:flex;justify-content:center;gap:10px;margin-bottom:20px}
-.lang-btn{padding:6px 20px;border:1px solid var(--secondary);border-radius:20px;background:transparent;color:var(--secondary);cursor:pointer;font-family:'Cormorant Garamond',serif;font-size:10pt;letter-spacing:2px;transition:all .3s}
-.lang-btn:hover,.lang-btn.active-lang{background:var(--secondary);color:#fff}
-.date-line{font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--light-text);letter-spacing:4px;text-transform:uppercase;margin-bottom:15px}
-.main-title{font-family:'Playfair Display',serif;font-size:32pt;font-weight:500;color:var(--primary);letter-spacing:2px;margin-bottom:10px}
-.subtitle{font-family:'Cormorant Garamond',serif;font-size:11pt;color:var(--secondary);letter-spacing:5px;text-transform:uppercase;font-weight:400}
-.divider{display:flex;align-items:center;justify-content:center;margin:25px 0}
-.divider-line{width:80px;height:1px;background:var(--secondary)}
-.divider-dot{width:6px;height:6px;background:var(--secondary);border-radius:50%;margin:0 12px}
-.insight-section{background:linear-gradient(135deg,var(--accent) 0%,#FFF 100%);border-left:4px solid var(--secondary);padding:22px 28px;margin-bottom:35px;border-radius:0 8px 8px 0;box-shadow:0 2px 8px rgba(30,57,42,.04)}
-.insight-header{display:flex;align-items:center;margin-bottom:14px}
-.insight-title{font-size:13pt;font-weight:600;color:var(--primary);letter-spacing:1px}
-.insight-content{font-size:10.5pt;color:var(--text);line-height:2;text-align:justify}
-.section-header{display:flex;align-items:center;margin-bottom:22px;padding-bottom:12px;border-bottom:1px solid var(--border)}
-.section-title{font-size:14pt;font-weight:600;color:var(--primary);letter-spacing:1px}
-.section-meta{margin-left:auto;font-family:'Cormorant Garamond',serif;font-size:9.5pt;color:var(--light-text);font-style:italic}
-.news-item{display:flex;padding:18px 0;border-bottom:1px solid var(--border);position:relative;align-items:flex-start;transition:all .3s ease}
-.news-item:hover{background:rgba(184,168,138,.08);margin:0 -15px;padding-left:15px;padding-right:15px;border-radius:6px}
-.news-item:last-child{border-bottom:none}
-.news-bullet{width:32px;height:32px;min-width:32px;margin-right:16px;margin-top:2px;opacity:.7;transition:opacity .3s;object-fit:contain}
-.news-item:hover .news-bullet{opacity:1}
-.news-content{flex:1}
-.news-category{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:8.5pt;color:var(--secondary);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px;padding:3px 10px;background:var(--tag-bg);border-radius:3px;font-weight:600}
-.news-title{font-size:11pt;font-weight:500;color:var(--text);margin-bottom:6px;line-height:1.6;font-family:'Noto Serif SC',serif}
-.news-title a{color:var(--text);text-decoration:none;transition:color .3s}
-.news-title a:hover{color:var(--primary)}
-.news-meta{display:flex;align-items:center;font-family:'Cormorant Garamond',serif;font-size:9pt;color:var(--light-text);flex-wrap:wrap;gap:6px;margin-bottom:6px}
-.news-meta .source{color:var(--secondary);font-weight:500}
-.news-meta .verify-tag{color:#4caf50;font-weight:700}
-.news-summary{font-size:9.5pt;color:var(--light-text);line-height:1.7;margin-bottom:4px;font-family:'Noto Serif SC',serif}
-.news-insight{font-size:9.5pt;color:var(--text);line-height:1.8;background:rgba(184,168,138,.06);padding:8px 12px;border-radius:6px;border-left:2px solid var(--secondary);font-family:'Noto Serif SC',serif}
-.footer{margin-top:45px;padding-top:25px;border-top:1px solid var(--border);text-align:center}
-.footer-divider{display:flex;align-items:center;justify-content:center;margin-bottom:18px}
-.footer-line{width:100px;height:1px;background:linear-gradient(90deg,transparent,var(--secondary),transparent)}
-.footer-text{font-family:'Cormorant Garamond',serif;font-size:9pt;color:var(--light-text);letter-spacing:2px}
-.footer-note{font-size:8.5pt;color:#AAA;margin-top:10px}
-.page-number{position:fixed;bottom:20px;right:30px;font-family:'Cormorant Garamond',serif;font-size:10pt;color:var(--light-text);z-index:2}
-.lang-en{display:none}
-body.show-en .lang-cn{display:none}
-body.show-en .lang-en{display:block}
-@media(max-width:768px){.container{padding:30px 20px}.main-title{font-size:24pt}.news-bullet{width:24px;height:24px}}
+:root {
+  --forest: #1E392A;
+  --forest-light: #2A5040;
+  --gold: #B8A88A;
+  --gold-light: #CFC0A0;
+  --cream: #FAF7F2;
+  --white: #FFFFFF;
+  --ink: #1A1A1A;
+  --ink-light: #4A4A4A;
+  --border: #E8E0D5;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Noto Sans SC', 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+.bg-icons {
+  position: fixed; inset: 0; pointer-events: none; z-index: 0; opacity: 0.06;
+}
+.bg-icons .icon { position: absolute; font-size: 120px; color: var(--forest); }
+.bg-icons .icon:nth-child(1) { top: 5%; left: 3%; }
+.bg-icons .icon:nth-child(2) { top: 25%; right: 5%; font-size: 90px; }
+.bg-icons .icon:nth-child(3) { top: 55%; left: 8%; font-size: 80px; }
+.bg-icons .icon:nth-child(4) { bottom: 10%; right: 8%; font-size: 100px; }
+.bg-icons .icon:nth-child(5) { top: 40%; left: 45%; font-size: 70px; }
+.bg-icons .icon:nth-child(6) { top: 75%; left: 30%; font-size: 85px; }
+header {
+  position: relative; z-index: 1;
+  background: var(--forest); color: var(--white);
+  padding: 56px 40px 48px; text-align: center;
+}
+header .eyebrow {
+  font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--gold-light); margin-bottom: 16px;
+}
+header h1 {
+  font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 600;
+  letter-spacing: 1px; margin-bottom: 10px;
+}
+header .subtitle {
+  font-family: 'Playfair Display', serif; font-size: 18px; font-style: italic;
+  font-weight: 400; color: var(--gold); margin-bottom: 20px;
+}
+header .date-line {
+  font-family: 'DM Sans', sans-serif; font-size: 13px;
+  color: rgba(255,255,255,0.55); letter-spacing: 1px;
+}
+header .date-line span { margin: 0 12px; }
+.insight-banner {
+  position: relative; z-index: 1;
+  background: linear-gradient(135deg, var(--forest) 0%, var(--forest-light) 100%);
+  margin: 32px 40px 0; border-radius: 16px; padding: 36px 44px; color: var(--white);
+}
+.insight-banner .label {
+  font-family: 'DM Sans', sans-serif; font-size: 10px; letter-spacing: 4px;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 14px;
+}
+.insight-banner h2 {
+  font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 600;
+  line-height: 1.5; margin-bottom: 14px;
+}
+.insight-banner p { font-size: 14px; line-height: 1.8; color: rgba(255,255,255,0.82); max-width: 860px; }
+.cat-nav {
+  position: relative; z-index: 1;
+  display: flex; justify-content: center; gap: 0;
+  margin: 36px 40px 0; border-bottom: 2px solid var(--border);
+}
+.cat-btn {
+  font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-light);
+  background: none; border: none; padding: 12px 32px;
+  cursor: pointer; border-bottom: 3px solid transparent;
+  margin-bottom: -2px; transition: all 0.2s;
+}
+.cat-btn.active { color: var(--forest); border-bottom-color: var(--gold); }
+.section-wrap {
+  position: relative; z-index: 1;
+  max-width: 1100px; margin: 0 auto; padding: 40px 40px 60px;
+}
+.cat-section { display: none; }
+.cat-section.active { display: block; }
+.section-head { display: flex; align-items: center; gap: 16px; margin-bottom: 32px; }
+.section-head .num {
+  font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700;
+  color: var(--forest); opacity: 0.18; line-height: 1;
+}
+.section-head h3 { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--forest); }
+.section-head .bar { flex: 1; height: 1px; background: var(--border); }
+.news-card {
+  background: var(--white); border-radius: 16px; padding: 32px 36px;
+  margin-bottom: 24px; border: 1px solid var(--border);
+  transition: box-shadow 0.2s, transform 0.2s; position: relative; overflow: hidden;
+}
+.news-card:hover { box-shadow: 0 8px 32px rgba(30,57,42,0.1); transform: translateY(-2px); }
+.news-card .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+.news-card .source-tag {
+  font-family: 'DM Sans', sans-serif; font-size: 10px; font-weight: 500;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--gold);
+  background: rgba(184,168,138,0.12); padding: 4px 10px; border-radius: 20px;
+}
+.news-card .pub-date { font-family: 'DM Sans', sans-serif; font-size: 11px; color: #999; letter-spacing: 0.5px; }
+.news-card .title-en {
+  font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600;
+  color: var(--forest); line-height: 1.4; margin-bottom: 8px;
+}
+.news-card .title-cn { font-size: 15px; color: var(--ink-light); font-weight: 400; margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+.news-card .elements { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.news-card .elem { background: var(--cream); border-radius: 10px; padding: 16px 18px; }
+.news-card .elem-label {
+  font-family: 'DM Sans', sans-serif; font-size: 9px; font-weight: 600;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px;
+}
+.news-card .kp { font-size: 14px; font-weight: 700; color: var(--forest); line-height: 1.5; }
+.news-card .insight-text { font-size: 13px; color: var(--ink); line-height: 1.65; }
+footer {
+  position: relative; z-index: 1; background: var(--forest); color: rgba(255,255,255,0.45);
+  text-align: center; padding: 28px;
+  font-family: 'DM Sans', sans-serif; font-size: 12px; letter-spacing: 0.5px;
+}
+.scroll-top {
+  position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px;
+  background: var(--forest); color: var(--gold); border: none; border-radius: 50%;
+  font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center;
+  opacity: 0.75; transition: opacity 0.2s; z-index: 100;
+}
+.scroll-top:hover { opacity: 1; }
+@media (max-width: 768px) {
+  header { padding: 40px 24px 36px; }
+  header h1 { font-size: 30px; }
+  .insight-banner { margin: 24px 20px 0; padding: 28px 24px; }
+  .cat-nav { margin: 28px 20px 0; }
+  .cat-btn { padding: 10px 18px; font-size: 12px; }
+  .section-wrap { padding: 32px 20px 48px; }
+  .news-card { padding: 24px 20px; }
+  .news-card .elements { grid-template-columns: 1fr; gap: 14px; }
+}
 </style>
 </head>
 <body>
-<div class="bg-pattern">
-<img src="icon_bag.png" class="bg-icon" style="top:5%;left:2%">
-<img src="icon_hat.png" class="bg-icon" style="top:25%;right:3%">
-<img src="icon_lipstick.png" class="bg-icon" style="top:50%;left:60%">
-<img src="icon_perfume.png" class="bg-icon" style="top:70%;left:10%">
-<img src="icon_shoe.png" class="bg-icon" style="top:85%;right:15%">
-<img src="icon_sunglasses.png" class="bg-icon" style="bottom:5%;left:50%">
+
+<div class="bg-icons">
+  <span class="icon">&#9671;</span>
+  <span class="icon">&#10022;</span>
+  <span class="icon">&#9670;</span>
+  <span class="icon">&#10022;</span>
+  <span class="icon">&#9671;</span>
+  <span class="icon">&#9670;</span>
 </div>
-<div class="corner-decoration corner-tl"></div>
-<div class="corner-decoration corner-tr"></div>
-<div class="corner-decoration corner-bl"></div>
-<div class="corner-decoration corner-br"></div>
-<div class="container">
-<div class="top-accent"></div>
-<header class="header">
-<div class="lang-toggle">
-<button class="lang-btn active-lang" onclick="toggleLang(false)">中文</button>
-<button class="lang-btn" onclick="toggleLang(true)">En</button>
-</div>
-<div class="date-line lang-cn">2026年3月31日 · Tuesday</div>
-<div class="date-line lang-en">March 31, 2026 · Tuesday</div>
-<h1 class="main-title">Fashion & Luxury</h1>
-<div class="subtitle">News Digest</div>
-<div class="divider"><div class="divider-line"></div><div class="divider-dot"></div><div class="divider-line"></div></div>
-</header>
-<section class="insight-section">
-<div class="insight-header"><span class="insight-title lang-cn">今日洞察</span><span class="insight-title lang-en">Today Insight</span></div>
-<p class="insight-content lang-cn">奢侈品行业正在经历深刻结构性调整：LVMH、Kering、Richemont三大巨头同时收缩战线，重新审视品牌组合与门店网络；Nike在中国市场被安踏等本土品牌夺走份额，执行力差距暴露无遗；与此同时，Courreges任命新艺术总监、Prada集团逆势增长5%，说明品牌力与差异化战略仍是穿越周期的核心能力。</p>
-<p class="insight-content lang-en">The luxury industry is undergoing profound structural adjustment: LVMH, Kering and Richemont are simultaneously scaling back, re-examining brand portfolios and store networks; Nike is losing ground in China to local brands like Anta, revealing execution gaps; meanwhile Courreges appoints a new artistic director and Prada Group grows 5%, showing that brand power and differentiation remain core to navigating cycles.</p>
-</section>
-<section class="news-section">
-<div class="section-header">
-<span class="section-title lang-cn">国际动态</span><span class="section-title lang-en">International</span>
-<span class="section-meta lang-cn">5则 · 4个信源</span><span class="section-meta lang-en">5 articles · 4 sources</span>
-</div>
-<div class="news-list">
-<div class="news-item">
-<img src="icon_bag.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">市场趋势</span><span class="lang-en">Market Trend</span></span>
-<div class="news-title"><a href="https://www.businessoffashion.com/articles/artificial-intelligence/inside-pixel-moda-human-led-approach-to-ai-powered-fashion-ecommerce/" target="_blank" class="lang-cn">Pixel Moda以AI年产量1400万张内容：人类主导、AI驱动的时尚电商新范式</a><a href="https://www.businessoffashion.com/articles/artificial-intelligence/inside-pixel-moda-human-led-approach-to-ai-powered-fashion-ecommerce/" target="_blank" class="lang-en">Pixel Moda Produces 14M AI Fashion Images Per Year: The Human-Led, AI-Powered E-Commerce New Paradigm</a></div>
-<div class="news-meta"><span class="source">Business of Fashion</span><span class="date-tag">· 3月31日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>Pixel Moda为全球900多个品牌提供AI生成与AI辅助的内容制作，年产量达1400万张图片和视频；BoF与麦肯锡联合研究显示，生成式AI未来5年将为时尚行业带来超过30%的生产率提升。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> Pixel Moda produces AI-generated content for 900+ global brands, delivering 14 million pictures and videos per year; BoF and McKinsey research shows generative AI will unlock 30%+ productivity gains in fashion over the next 5 years.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>AI在时尚电商领域落地的关键不是"取代人类"，而是"放大人类创意"。Pixel Moda的"人类主导"模式证明了这一点——AI处理效率，人类把控品牌调性，这才是最可持续的AI应用路径。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> The key to AI in fashion e-commerce is not replacing humans but amplifying human creativity. Pixel Moda human-led model proves this — AI handles efficiency, humans control brand identity. This is the most sustainable AI application path.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_hat.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">品牌战略</span><span class="lang-en">Brand Strategy</span></span>
-<div class="news-title"><a href="https://www.businessoffashion.com/articles/luxury/courreges-new-artistic-director-designer-drew-henry/" target="_blank" class="lang-cn">Courreges任命Drew Henry为新艺术总监：来自Celine和Phoebe Philo团队的改造者</a><a href="https://www.businessoffashion.com/articles/luxury/courreges-new-artistic-director-designer-drew-henry/" target="_blank" class="lang-en">Courreges Appoints Drew Henry as New Artistic Director: The Transformer from Celine and Phoebe Philo Camp</a></div>
-<div class="news-meta"><span class="source">Business of Fashion</span><span class="date-tag">· 3月30日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>Drew Henry毕业于中央圣马丁，曾在Phoebe Philo时期的Celine、J.W. Anderson、Burberry担任重要角色，并深度参与Philo同名品牌的发布；接替Nicolas Di Felice，后者5年任期内成功复兴了Courreges标志性的"太空时代DNA"。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> Drew Henry, a Central Saint Martins graduate, held key roles at Celine under Phoebe Philo, J.W. Anderson and Burberry, and was instrumental in launching Philo own label; succeeds Nicolas Di Felice who revitalized Courreges signature Space Age DNA over 5 years.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>Courreges选择Henry反映了一个趋势：品牌倾向于选择"有成功经验"的改造者而非颠覆性新秀。这对当下动荡的奢侈品牌格局有重要启示——在市场不确定性增加时，可预测的变革路径比大胆押注更受青睐。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> Courreges choice of Henry reflects a trend: brands prefer transformative leaders with proven track records over disruptive newcomers. In times of market uncertainty, predictable transformation paths are favored over bold bets.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_lipstick.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">市场趋势</span><span class="lang-en">Market Trend</span></span>
-<div class="news-title"><a href="https://www.businessoffashion.com/briefings/technology/should-luxury-stop-worrying-and-learn-to-love-ai-imagery/" target="_blank" class="lang-cn">奢侈品该不该用AI做广告？Prada与Jordan Wolfson合作引发行业争议</a><a href="https://www.businessoffashion.com/briefings/technology/should-luxury-stop-worrying-and-learn-to-love-ai-imagery/" target="_blank" class="lang-en">Should Luxury Stop Worrying and Learn to Love AI Imagery? Prada and Jordan Wolfson Campaign Sparks Industry Debate</a></div>
-<div class="news-meta"><span class="source">Business of Fashion</span><span class="date-tag">· 3月27日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>Prada 2026春夏广告由艺术家Jordan Wolfson主导，AI仅用于后期制作；品牌代表强调AI仅是工具，非创作概念本身；艺术史视角认为这与沃霍尔等艺术家拥抱新技术并无不同。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> Prada SS2026 campaign was led by artist Jordan Wolfson with AI used only in post-production; brand representatives emphasize AI as a tool not the creative concept; art history perspective sees this as no different from artists like Warhol embracing new technology.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>奢侈品行业对AI的矛盾态度揭示了一个更深层的焦虑：品牌真实性（brand authenticity）。当"手工"、"稀缺"、"排他"是奢侈品核心价值时，AI的"规模化"本质与之一开始就是冲突的。这场争议短期内不会平息。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> The luxury industry contradictory attitude toward AI reveals a deeper anxiety: brand authenticity. When handcraft, scarcity and exclusivity are luxury core values, AI scalability inherently conflicts. This debate will not be resolved soon.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_shoe.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">市场趋势</span><span class="lang-en">Market Trend</span></span>
-<div class="news-title"><a href="https://www.businessoffashion.com/articles/luxury/luxury-portfolio-recalibration-lvmh-kering-richemont/" target="_blank" class="lang-cn">LVMH、Kering、Richemont三大奢侈品巨头同步重组：扩张主义退潮，精简浪潮来袭</a><a href="https://www.businessoffashion.com/articles/luxury/luxury-portfolio-recalibration-lvmh-kering-richemont/" target="_blank" class="lang-en">LVMH, Kering and Richemont Simultaneously Restructure: Expansion Era Ends, Simplification Wave Arrives</a></div>
-<div class="news-meta"><span class="source">Business of Fashion</span><span class="date-tag">· 3月30日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>LVMH、Kering和Richemont三大集团在需求低迷的压力下，同时重新审视品牌组合、组织架构和门店网络；LVMH董事长Bernard Arnault、Kering CEO Luca de Meo等高管亲自推动重组。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> LVMH, Kering and Richemont, under pressure from demand slump, are simultaneously re-examining brand portfolios, organizational structures and store networks; executives including LVMH chairman Bernard Arnault and Kering CEO Luca de Meo are personally driving restructuring.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>三大巨头同时收缩战线，是奢侈品行业自2022年高点以来泡沫出清的标志性事件。当扩张红利消失，精简将成为新常态——这对中国本土高端品牌是机会还是威胁，取决于谁能在品牌力上率先突破。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> The three giants simultaneously scaling back is a landmark event in luxury foam cleanup since the 2022 peak. When expansion dividends disappear, simplification becomes the new normal — opportunity or threat for Chinese domestic premium brands depends on who breaks through in brand power first.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_sunglasses.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">零售动态</span><span class="lang-en">Retail Dynamics</span></span>
-<div class="news-title"><a href="https://wwd.com/business-news/financial/prada-group-2025-revenue-growth-miu-miu-outperform-1238649057/" target="_blank" class="lang-cn">Prada集团2025年营收增长5%，Versace收购完成：逆势中的奢侈品优等生</a><a href="https://wwd.com/business-news/financial/prada-group-2025-revenue-growth-miu-miu-outperform-1238649057/" target="_blank" class="lang-en">Prada Group Revenue Grows 5% in 2025, Versace Acquisition Complete: The Top Student in Adversity</a></div>
-<div class="news-meta"><span class="source">WWD</span><span class="date-tag">· 3月31日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>Prada集团2025年全年营收增长5%，Miu Miu继续跑赢大盘；Versace收购已完成交割，成为集团旗下品牌组合的重要组成部分；在奢侈品行业整体低迷的背景下，Prada是少数实现正增长的品牌之一。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> Prada Group full-year 2025 revenue grew 5%, with Miu Miu continuing to outperform; Versace acquisition completed and integrated into group portfolio; Prada is one of the few luxury brands achieving positive growth amid overall industry downturn.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>Prada的逆势增长印证了"品牌力=抗周期"的核心逻辑。Miu Miu的成功在于精准的"文化定位+克制扩张"战略——不追求规模最大化，而是追求品牌溢价最大化。在行业整体收缩时，这种战略定力反而成为最大的竞争优势。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> Prada counter-trend growth confirms the core logic that brand power equals cycle resistance. Miu Miu success stems from precise cultural positioning plus disciplined expansion — not maximizing scale but maximizing brand premium. In overall industry contraction, this strategic focus becomes the biggest competitive advantage.</p>
-</div>
-</div>
-</div>
-</section>
 
-<section class="news-section">
-<div class="section-header">
-<span class="section-title lang-cn">国内动态</span><span class="section-title lang-en">China</span>
-<span class="section-meta lang-cn">5则 · 4个信源</span><span class="section-meta lang-en">5 articles · 4 sources</span>
-</div>
-<div class="news-list">
-<div class="news-item">
-<img src="icon_bag.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">品牌战略</span><span class="lang-en">Brand Strategy</span></span>
-<div class="news-title"><a href="http://news.ladymax.cn/202603/05-39448.html" target="_blank" class="lang-cn">新Dio渐入佳境：Burgeon系列带动品牌复兴</a><a href="http://news.ladymax.cn/202603/05-39448.html" target="_blank" class="lang-en">New Dior on the Rise: Burgeon Series Driving Brand Revival</a></div>
-<div class="news-meta"><span class="source">Ladymax</span><span class="date-tag">· 3月5日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>Dio新任创意总监推出的Burgeon系列获得市场热烈反响，推动品牌势能在2026年持续上升；系列设计融合经典与现代美学，重新定义了品牌当代语境下的叙事语言。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> Dio new creative director Burgeon collection received enthusiastic market response, driving brand momentum in 2026; series design fuses classic and modern aesthetics, redefining brand contemporary narrative language.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>Dio的复兴路径为其他处于转型期的奢侈品牌提供了可参考的范本：不是颠覆传统，而是以当代语言重新激活品牌遗产。在消费者越来越重视文化深度的当下，这一策略正在被证明是有效的。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> Dio revival path provides a referable template for other luxury brands in transition: not disrupting heritage but reactivating it with contemporary language. As consumers increasingly value cultural depth, this strategy is proving effective.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_hat.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">市场趋势</span><span class="lang-en">Market Trend</span></span>
-<div class="news-title"><a href="http://news.ladymax.cn/202603/05-39449.html" target="_blank" class="lang-cn">中国Prada夫妇身价暴涨至70亿美元：entino家族财富创历史新高</a><a href="http://news.ladymax.cn/202603/05-39449.html" target="_blank" class="lang-en">Chinese Prada Couple Net Worth Surges to $7 Billion: Valentino Family Wealth Hits Record High</a></div>
-<div class="news-meta"><span class="source">Ladymax</span><span class="date-tag">· 3月5日</span><span class="verify-tag">✓</span></div>
-<p<p class="news-summary lang-cn"><strong>要点：</strong>Prada联合创始人Patrizio Bertelli与Miuccia Prada家族身价在2025年大幅反弹，合计超过70亿美元；Miu Miu品牌的爆发式增长是主要推动力，集团整体市值创历史新高。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> Prada co-founder Patrizio Bertelli and Miuccia Prada family net worth rebounded sharply in 2025, exceeding $7 billion combined; Miu Miu explosive growth was the main driver, with group total market cap hitting a record high.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>Prada家族的财富反弹是中国高端消费复苏的重要信号。Miu Miu通过精准的"文化精英"定位，在年轻消费者中建立了强大的品牌忠诚度——这与LVMH们的大众奢侈品路线形成了鲜明对比。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> Prada family wealth rebound is an important signal of Chinese premium consumption recovery. Miu Miu built strong brand loyalty among young consumers through precise cultural-elite positioning — a sharp contrast to LVMH mass luxury route.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_perfume.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">品牌战略</span><span class="lang-en">Brand Strategy</span></span>
-<div class="news-title"><a href="http://news.fengsung.com/n-260317153802395.html" target="_blank" class="lang-cn">德国奢侈品牌AIGNER携手美最时加速拓展中国大陆市场</a><a href="http://news.fengsung.com/n-260317153802395.html" target="_blank" class="lang-en">German Luxury Brand AIGNER Partners With Metro Brands to Accelerate China Mainland Expansion</a></div>
-<div class="news-meta"><span class="source">风尚中国</span><span class="date-tag">· 3月17日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>德国奢侈品牌AIGNER与美最时（Metro Brands）达成战略合作，加速拓展中国大陆渠道；AIGNER创立于1966年，以皮具和配饰著称，此前在中国的布局相对有限。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> German luxury brand AIGNER partnered with Metro Brands to accelerate China mainland channel expansion; AIGNER founded in 1966, known for leather goods and accessories, previously had limited China presence.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>国际二线奢侈品牌正在中国寻找增量市场。AIGNER的进入表明，中国三四线城市的奢侈品消费潜力仍在被低估。与其在一线城市与头部品牌正面竞争，这些品牌选择了差异化渗透的路径。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> International second-tier luxury brands are finding incremental markets in China. AIGNER entry shows that luxury consumption potential in China tier-3 and tier-4 cities remains underestimated. Rather than competing head-on with top brands in tier-1 cities, these brands chose differentiated penetration routes.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_shoe.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">零售动态</span><span class="lang-en">Retail Dynamics</span></span>
-<div class="news-title"><a href="http://news.ladymax.cn/202603/02-39438.html" target="_blank" class="lang-cn">Guess宣布关闭中国市场所有门店：国际大众时尚品牌全线撤退</a><a href="http://news.ladymax.cn/202603/02-39438.html" target="_blank" class="lang-en">Guess Closes All China Stores: International Mass Fashion Brands Execute Full Retreat</a></div>
-<div class="news-meta"><span class="source">Ladymax</span><span class="date-tag">· 3月2日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>美国大众时尚品牌Guess宣布关闭中国市场所有门店，标志着又一个大举进攻后又全面撤退的国际时尚品牌；此前Forever 21、New Look、Old Navy等品牌已相继退出中国。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> American mass fashion brand Guess announced closing all China stores, marking another international fashion brand executing full retreat after initial expansion; previously Forever 21, New Look, Old Navy have exited China.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>Guess的撤退再次证明：中国大众时尚市场的窗口期已经关闭。本土品牌在性价比、供应链速度和电商运营上的优势，使得国际大众品牌几乎无法维持竞争力。这对奢侈品市场也有警示意义——即便是高端定位，也必须本土化运营才能生存。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> Guess retreat once again proves the window for China mass fashion market has closed. Domestic brands advantages in price-performance, supply chain speed and e-commerce operations make it nearly impossible for international mass brands to maintain competitiveness. Even for luxury, localization is now essential for survival.</p>
-</div>
-</div>
-<div class="news-item">
-<img src="icon_sunglasses.png" class="news-bullet">
-<div class="news-content">
-<span class="news-category"><span class="lang-cn">市场趋势</span><span class="lang-en">Market Trend</span></span>
-<div class="news-title"><a href="http://news.ladymax.cn/202603/03-39441.html" target="_blank" class="lang-cn">SKP华南首店签约：武汉、成都之后，高端百货加速布局新一线城市</a><a href="http://news.ladymax.cn/202603/03-39441.html" target="_blank" class="lang-en">SKP Signs First South China Store: High-End Department Stores Accelerate New Tier-1 City Expansion After Wuhan and Chengdu</a></div>
-<div class="news-meta"><span class="source">Ladymax</span><span class="date-tag">· 3月3日</span><span class="verify-tag">✓</span></div>
-<p class="news-summary lang-cn"><strong>要点：</strong>SKP宣布在华南地区开设首店，选址于经济活跃的新一线城市；此前SKP已在武汉、成都等城市成功开店，高端百货模式向全国扩展的趋势明显。</p>
-<p class="news-summary lang-en"><strong>Key Points:</strong> SKP announced its first store in South China, located in an economically active new tier-1 city; after successful stores in Wuhan and Chengdu, the high-end department store model expansion nationwide is accelerating.</p>
-<p class="news-insight lang-cn"><strong>洞察：</strong>SKP的扩张路径折射出中国消费梯度的演变：当一线城市奢侈品消费趋于饱和，新一线城市和强二线城市正在成为新的增长引擎。高端百货的本地化运营模式（而非简单移植一线城市经验），是成功的关键。</p>
-<p class="news-insight lang-en"><strong>Insight:</strong> SKP expansion path reflects evolution of China consumption gradient: as tier-1 city luxury consumption saturates, new tier-1 and strong tier-2 cities are becoming new growth engines. High-end department store localized operation model is key to success.</p>
-</div>
-</div>
-</div>
-</section>
-<footer class="footer">
-<div class="footer-divider"><div class="footer-line"></div></div>
-<div class="footer-text lang-cn">每天早上 9 点自动生成</div>
-<div class="footer-text lang-en">Generated daily at 9:00 AM</div>
-<div class="footer-note lang-cn">由 OpenClaw Fashion & Luxury News Digest 生成 · 市场趋势 / 品牌战略 / 零售动态 · 全部链接已验证</div>
-<div class="footer-note lang-en">Powered by OpenClaw Fashion & Luxury News Digest · Market Trend · Brand Strategy · Retail Dynamics · All links verified</div>
-</footer>
-</div>
-<div class="page-number lang-cn">— 1 —</div>
-<div class="page-number lang-en">— 1 —</div>
-<script>
-function toggleLang(en){var buttons=document.querySelectorAll('.lang-btn');if(en){document.body.classList.add('show-en');buttons[0].classList.remove('active-lang');buttons[1].classList.add('active-lang');}else{document.body.classList.remove('show-en');buttons[0].classList.add('active-lang');buttons[1].classList.remove('active-lang');}}
-</script>
-
-<style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-}
-
-.inland-security-footer {
-  position: fixed;
-  z-index: 10;
-  bottom: 0;
-  right: 0;
-  width: fit-content;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.tooltip-container {
-  position: relative;
-}
-
-.trigger-content {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  background-color: transparent;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.minimax-link {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-  font-weight: 300;
-  color: #adadad;
-  text-decoration: none;
-}
-
-.minimax-link:visited {
-  color: #adadad;
-}
-
-.minimax-link:hover {
-  color: #666666;
-}
-
-.tooltip-content {
-  position: absolute;
-  bottom: 100%;
-  right: 0;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  padding: 8px;
-  padding-bottom: 16px; /* 8px 内容间距 + 8px 用于鼠标移动的透明区域 */
-  font-size: 12px;
-  line-height: 17px;
-  background-color: #fafafa;
-  border-radius: 12px;
-  white-space: nowrap;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  color: #171717;
-}
-
-/* 创建透明的连接区域，让鼠标可以平滑移动到 tooltip */
-.tooltip-content::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  right: 0;
-  height: 16px;
-}
-
-.tooltip-container:hover .tooltip-content {
-  display: flex;
-}
-
-.info-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px;
-}
-
-.beian-link {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: #171717;
-}
-
-.beian-icon {
-  width: 14px;
-  height: 14px;
-  margin-right: 2px;
-}
-
-.underline-text {
-  color: #171717;
-  text-decoration: underline;
-}
-
-.underline-text:hover {
-  color: #000000;
-}
-
-/* 深色模式支持 */
-@media (prefers-color-scheme: dark) {
-  .trigger-content {
-    background-color: transparent;
-  }
-
-  .minimax-link,
-  .minimax-link:visited {
-    color: #666666;
-  }
-
-  .minimax-link:hover {
-    color: #adadad;
-  }
-
-  .tooltip-content {
-    background-color: #262626;
-    color: #ededed;
-  }
-
-  .beian-link,
-  .underline-text {
-    color: #ededed;
-  }
-
-  .underline-text:hover {
-    color: #ffffff;
-  }
-}
-
-</style>
-<div class="inland-security-footer">
-  <div class="tooltip-container">
-    <div class="trigger-content">
-      <a href="https://www.minimaxi.com/" target="_blank" rel="noreferrer" class="minimax-link">
-        <span>© 2026 MiniMax</span>
-      </a>
-    </div>
-    <div class="tooltip-content">
-      <section class="info-section">
-        <span>上海稀宇科技有限公司</span>
-      </section>
-
-      <section class="info-section">
-        <a class="beian-link" href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31010402010179" target="_blank" rel="noreferrer">
-          <img alt="hailuo-beian-icon" src="https://cdn.hailuoai.com/hailuo-video-web/public_assets/223037d3-79fd-4db0-a456-749f38a6a14b.png" class="beian-icon">
-          <span class="underline-text">沪公网安备31010402010179号</span>
-        </a>
-        <a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer" class="underline-text">
-          沪ICP备2023003282号-38
-        </a>
-      </section>
-
-      <section class="info-section">
-        <span>模型名称：MiniMax</span>
-        <span>备案号：Shanghai-MiniMax-202505230046</span>
-      </section>
-
-      <section class="info-section">
-        <a href="https://agent.minimaxi.com/doc/zh/terms-of-service.html" target="_blank" rel="noreferrer" class="underline-text">
-          用户协议
-        </a>
-        <a href="https://agent.minimaxi.com/doc/zh/privacy-policy.html" target="_blank" rel="noreferrer" class="underline-text">
-          隐私政策
-        </a>
-      </section>
-    </div>
+<header>
+  <div class="eyebrow">Fashion &amp; Luxury Daily Digest</div>
+  <h1>时尚与奢侈品日报</h1>
+  <div class="subtitle">The pulse of fashion, refined</div>
+  <div class="date-line">
+    <span>2026年4月7日</span><span>&#183;</span><span>Tuesday, April 7, 2026</span>
   </div>
+</header>
+
+<div class="insight-banner">
+  <div class="label">&#10022; 今日洞察 &middot; Daily Insight</div>
+  <h2>奢侈品行业正经历「地缘+消费结构」双重重构</h2>
+  <p>今日最重磅事件——中东冲突致LVMH、爱马仕等巨头市值蒸发逾千亿美元，成为2026年奢侈品行业最严峻的黑天鹅。与此同时，中国市场呈现「冰火两重天」：贝恩&amp;罗兰贝格预测2026年增长3-6%复苏，但年轻消费者集体转向平替消费，令欧洲奢侈品集团重金押注化为泡影。Prada集团逆势收购Versace、历峰凭硬奢跑赢大盘，在混沌中透露新格局的轮廓——高溢价的品牌叙事正在失效，务实与文化深度才是新护城河。</p>
 </div>
 
+<nav class="cat-nav">
+  <button class="cat-btn active" onclick="showCat('market')">市场趋势</button>
+  <button class="cat-btn" onclick="showCat('brand')">品牌战略</button>
+  <button class="cat-btn" onclick="showCat('retail')">零售动态</button>
+</nav>
+
+<main class="section-wrap">
+
+  <!-- 市场趋势 -->
+  <section class="cat-section active" id="sec-market">
+    <div class="section-head">
+      <div class="num">01</div>
+      <h3>市场趋势 &middot; Market Trends</h3>
+      <div class="bar"></div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Jing Daily</span>
+        <span class="pub-date">2026-04-01</span>
+      </div>
+      <div class="title-en">LVMH Has Worst-Ever Start to a Year &mdash; Luxury Outlook Dimmed</div>
+      <div class="title-cn">LVMH创史上最差开年纪录，奢侈品前景蒙阴</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">LVMH shares dropped 28% &mdash; steeper than 2008 and COVID &mdash; marking its worst-ever start to a year amid geopolitical turmoil reshaping consumer confidence globally.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">LVMH股价暴跌28%，跌幅超过2008年金融危机和新冠期间，创有史以来最差开年纪录，地缘冲突全面冲击消费信心。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">LVMH股价的急剧下跌暴露了奢侈品行业结构性脆弱性：对中东方消费者和非必需消费的过度依赖，在地缘冲击下被无情放大。即使是拥有顶级 heritage 的品牌，也无法免疫宏观经济逆风。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">21世纪经济报道</span>
+        <span class="pub-date">2026-04-07</span>
+      </div>
+      <div class="title-en">Middle East Conflict Knocks $100B Off Luxury Giants &mdash; Ferragamo Also Hit</div>
+      <div class="title-cn">中东冲突致奢侈品巨头市值蒸发千亿美元</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">LVMH, Herm&egrave;s and other luxury majors have seen combined market cap evaporate by ~$100 billion since the Middle East conflict erupted. Ferragamo shares fell over 16%. All major categories &mdash; leather goods, footwear, watches, fragrance &mdash; softened simultaneously.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">中东冲突爆发后，LVMH和爱马仕等主要奢侈品巨头市值累计蒸发约1000亿美元。法拉利跌超16%，手袋、鞋履、腕表、香水等主要品类需求全面走软。伯恩斯坦分析师指出，中东原是2026年为数不多的确定性增长引擎之一。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">中东冲击揭示了奢侈品"地缘多元化"叙事的脆弱性。值得注意的是，历峰集团凭借硬奢定位（珠宝/腕表）在整体跌势中实现相对抗跌——硬奢的避险属性正在新的地缘格局中获得重估。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Jing Daily / Forbes China</span>
+        <span class="pub-date">2026-02-13</span>
+      </div>
+      <div class="title-en">China Luxury Market to Recover 3&ndash;6% in 2026: Bain &amp; Roland Berger</div>
+      <div class="title-cn">贝恩&amp;罗兰贝格：中国奢侈品市场2026年恢复增长3-6%</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">Roland Berger forecasts China's luxury market to grow 3&ndash;6% in 2026, with potential 5&ndash;7% CAGR over five years. Bain notes the 2025 contraction of 3&ndash;5% &mdash; a dramatic deceleration from 2024's 17&ndash;19% decline &mdash; signalling gradual market bottoming.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">罗兰贝格预测2026年中国奢侈品市场增速恢复至3%-6%，未来五年有望维持5%-7%稳健增长。贝恩报告：2025年降幅（-3%至-5%）较2024年（-17%至-19%）大幅收窄，市场触底信号初现。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">复苏≠回归旧模式。即便规模回升，结构性逻辑已改变：2026年的中国消费者理性消费、品牌标识免疫、数字原生。品牌必须放弃旧VIC逻辑，转向"大众个性化"数字策略来捕获新中间购买力。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Business of Fashion</span>
+        <span class="pub-date">2026-01-19</span>
+      </div>
+      <div class="title-en">The State of Fashion 2026: Almost Every Brand Is Moving Upmarket</div>
+      <div class="title-cn">BoF报告：2026年品牌集体向高端化战略转型</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">BoF-McKinsey State of Fashion 2026 reveals industry-wide "upmarket shift": brands raising prices and exiting mid-market, which is being hollowed out. Tariffs and trade uncertainty are the top risk factor for 2026.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">BoF-McKinsey《2026时尚行业状态》报告揭示全行业"向上移动"趋势：品牌集体涨价、退出中档市场，该区间正在被掏空。关税和贸易不确定性是2026年最大风险因素。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">集体涌向奢侈品的浪潮在中档市场制造了一个危险的真空，也催生了新锐品牌填补它的历史性机遇。2026年的赢家不是最贵的品牌，而是最清楚"为谁而做"的品牌。</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 品牌战略 -->
+  <section class="cat-section" id="sec-brand">
+    <div class="section-head">
+      <div class="num">02</div>
+      <h3>品牌战略 &middot; Brand Strategy</h3>
+      <div class="bar"></div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Vogue Business</span>
+        <span class="pub-date">2026-03-05</span>
+      </div>
+      <div class="title-en">Prada Group Unveils Versace Game Plan After Strong 2025 Results</div>
+      <div class="title-cn">Prada集团公布Versace战略蓝图，2025业绩强劲</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">Prada Group unveiled its Versace turnaround strategic vision: CCO Pieter Mulier to reveal a fresh creative direction. Near-term revenue pressure expected from the restructuring. Prada's own 2025 results were robust &mdash; outperforming a soft luxury market overall.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">Prada集团发布Versace扭亏战略：首席创意官Pieter Mulier将揭晓全新创意方向，预期转型期对短期营收产生压力，但同步推进成本管控。Prada自身2025业绩在整体低迷奢侈品市场中超预期增长。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">Prada对Versace的审慎整合方式——创意焕新而非盲目扩张——是奢侈品并购的模范模板。Prada正在构建（Prada+Miu Miu+Versace）多品牌生态系统，实现美学交叉借鉴同时维护各自品牌灵魂——这是新版奢侈品集团模式。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">ELLE</span>
+        <span class="pub-date">2026-04-07</span>
+      </div>
+      <div class="title-en">Versace x Onitsuka Tiger &amp; Other April Must-Have Collabs</div>
+      <div class="title-cn">四月重磅联名：Versace&times;鬼冢虎、Malbon&times;尼克斯</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">April's most talked-about collaborations: Versace x Onitsuka Tiger sneaker capsule blending Baroque glamour with Japanese sports DNA; Malbon x New York Knicks bridging basketball culture and street fashion; Intimissimi ultra-light series redefining everyday comfort.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">4月最受关注联名：Versace&times;鬼冢虎球鞋胶囊，融合巴洛克美学与日系运动基因；Malbon&times;纽约尼克斯跨界，篮球文化与街头时尚双向破圈；Intimissimi超轻系列重新定义内衣舒适标准。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">Versace的双线操作——集团层面M&amp;A重组与品牌层面趣味联名同步推进——展示了同时管理"严肃商业"和"酷品牌"两种叙事的能力。2026年，品牌健康需要这种双速度传播战略。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">WWD国际时尚特讯</span>
+        <span class="pub-date">2026-03</span>
+      </div>
+      <div class="title-en">Emporio Armani Merges Shows, Joins Milan Women's Week from FW26</div>
+      <div class="title-cn">Emporio Armani从FW26合并男女装秀，纳入米兰女装周</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">Giorgio Armani Group is restructuring Emporio Armani's show format. From FW26, Emporio Armani menswear will present alongside womenswear during Milan Women's Fashion Week &mdash; reflecting the broader industry shift toward consolidated, co-ed runway formats.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">Giorgio Armani集团调整Emporio Armani时装秀形式：自FW26起，男装与女装系列合并在米兰女装周期间同台展示。此举呼应时装周日程改革的整体趋势，品牌寻求以更整合的叙事方式呈现创意。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">合并走秀不再是营销噱头——而是战略必需品。合并联演让Emporio Armani获得零售时机效率、媒体关注集中度和更现代的品牌节奏。Gucci和Bottega Veneta是否跟进，值得关注。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Vogue</span>
+        <span class="pub-date">2026-03-18</span>
+      </div>
+      <div class="title-en">The 11 Fashion Trends That Define the Fall/Winter 2026 Season</div>
+      <div class="title-cn">Vogue发布定义2026秋冬的11大时尚趋势</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">Vogue's definitive FW26 trend report: 11 key looks spanning reclaimed classics (button-down, tuxedo) to body-con dressing. The season balances pragmatism and romance &mdash; no single aesthetic dominates. Bold color combos, architectural shoulders, deconstructed formalwear share the runway.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">Vogue发布2026秋冬定义性趋势：11大风格涵盖经典回归（衬衫、燕尾服）与贴身裙装。本季呈现实用主义与浪漫主义完美平衡——大胆撞色、建筑感肩线、解构正装同时登场，没有单一美学主导秀场。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">FW26的折衷主义反映了时尚文化的真实状态：后算法、后宏观趋势时代。消费者正在从多个美学中组装个人衣橱，而非订阅单一风格。提供多场景百搭单品的品牌将在本季商业表现最佳。</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- 零售动态 -->
+  <section class="cat-section" id="sec-retail">
+    <div class="section-head">
+      <div class="num">03</div>
+      <h3>零售动态 &middot; Retail Dynamics</h3>
+      <div class="bar"></div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Highsnobiety</span>
+        <span class="pub-date">2026-03-19</span>
+      </div>
+      <div class="title-en">Fashion&apos;s Tactility Takeover &mdash; Texture Is the New Black</div>
+      <div class="title-cn">Highsnobiety：触感时尚崛起，纹理成为新经典</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">Highsnobiety identifies &quot;tactility&quot; as the defining design language of 2026: designers manipulating leather in multiple finishes &mdash; buttery-soft, oil-slicked, naturally creased &mdash; alongside continued gender-fluid aesthetics (&quot;His &amp; Hers &amp; Also Theirs&quot;).</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">Highsnobiety将"触感"定义为2026年最具代表性设计语言：多元皮革处理（柔软黄油感、油光质感到自然褶皱）。性别流动美学（"他的、她的、也是他们的"）持续渗透设计语汇。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">触感设计呼应了更深的消费者情绪：数字疲劳。在AI生成图像时代，实体服装需要通过不可替代的感官体验来证明其存在价值。材质创新——而非图形新奇——是奢侈品的新竞争前沿。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">Highsnobiety</span>
+        <span class="pub-date">2026-02</span>
+      </div>
+      <div class="title-en">Fashion Week Finally Moved On From Sneakers &mdash; Back to Leather</div>
+      <div class="title-cn">Highsnobiety：时尚周告别球鞋时代，皮革强势回归</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">The post-sneaker society has arrived as Highsnobiety predicted. The runway is now dominated by leather in all forms: buttery, oil-slicked, well-creased. Sneakers are losing their cultural grip as the default &quot;cool&quot; shoe, with luxury leather reclaiming status.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">Highsnobiety所预言的"后球鞋社会"已经到来。T台如今被各种形态皮革主导。球鞋正面临身份危机——不再是默认"酷"鞋，奢侈品皮革正重新夺回地位。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">球鞋到皮革的转变映射了更广泛的经济情绪：不确定性时代， heritage craftsmanship 传递着球鞋无法匹配的稳定感和永恒感。奢侈品零售商应抓住这个调整窗口——将优质皮革制品（靴子、乐福鞋、结构包）获得更多店铺空间和故事讲述。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">网易</span>
+        <span class="pub-date">2026-03-26</span>
+      </div>
+      <div class="title-en">China International Fashion Week Spring 2026: Eastern Aesthetics Meet Youth</div>
+      <div class="title-cn">2026中国国际时装周（春季）：东方美学与年轻世代共振</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">China International Fashion Week Spring 2026 showcased Eastern aesthetics in dialogue with youth expression: Xiangyunsha&apos;s gravitas, brocade&apos;s vibrancy, and leather&apos;s edge sharing the runway. Domestic designers evolving from symbolic &quot;Guochao&quot; to deep cultural narrative.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">2026年中国国际时装周春季秀场上，东方美学与年轻世代自由表达并肩而行：香云纱的沉郁、织锦的灵动、皮革的率性共谱新章。国内设计师正从符号化"国潮"向深度文化叙事转型。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">从符号化国潮到文化深度是中国时尚界最重要的发展。引领这一进化的品牌（李宁、江南布衣、 例外）正在不牺牲身份认同的前提下建立国际信誉。对全球奢侈品集团而言，这既是人才库，也是竞争威胁。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="news-card">
+      <div class="card-top">
+        <span class="source-tag">新浪财经</span>
+        <span class="pub-date">2026-02-16</span>
+      </div>
+      <div class="title-en">China&apos;s Young Consumers Go Value-First &mdash; Luxury Giants&apos; Bet Misfires</div>
+      <div class="title-cn">中国年轻人转向平替消费，奢侈品巨头重金押注失策</div>
+      <div class="elements">
+        <div class="elem">
+          <div class="elem-label">&#10022; Key Point &middot; 核心要点</div>
+          <div class="kp">The Chinese consumers who drove a decade of luxury growth &mdash; brand-logo obsessed, aspirational spenders &mdash; are fading. China&apos;s younger consumers are going &quot;平替&quot; (value replacement): seeking quality and design without the premium brand tax. European luxury groups that over-invested in China have seen market caps erode by hundreds of billions.</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; 要点</div>
+          <div class="kp">推动奢侈品十年增长的中国消费者——痴迷品牌标识、非必需消费的一代——正在消失。中国年轻消费者转向"平替"：追求品质和设计但不愿支付品牌溢价税。重金押注中国市场的欧洲奢侈品集团市值蒸发数千亿美元。</div>
+        </div>
+        <div class="elem">
+          <div class="elem-label">&#10022; Insight &middot; 洞察</div>
+          <div class="insight-text">"平替"文化的兴起是奢侈品行业最被低估的结构性变化。它意味着品牌溢价逻辑需要根本性重塑——不再销售Logo，而是销售真正不可替代的产品体验和价值主张。这对在中国市场过度扩张的奢侈品牌提出了严峻挑战。</div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+<footer>
+  Fashion &amp; Luxury News Daily &middot; Powered by AI Agent &middot; Updated April 7, 2026
+</footer>
+
+<button class="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#8679;</button>
 
 <script>
-/**
- * Iframe 元素高亮注入脚本
- * 需要在目标网站中引入此脚本来支持跨域 iframe 高亮功能
- *
- * 使用方法：
- * 1. 将此脚本添加到目标网站的 HTML 中
- * 2. 或通过浏览器扩展、用户脚本等方式注入
- */
-
-(function () {
-  "use strict";
-
-  // 检查是否在 iframe 中
-  if (window.self === window.top) {
-    return; // 不在 iframe 中，不执行
-  }
-
-  // 检查是否已经初始化过
-  if (window.__iframeHighlightInitialized) {
-    return;
-  }
-  window.__iframeHighlightInitialized = true;
-  console.log("Iframe 高亮脚本已加载");
-
-  // 创建高亮覆盖层
-  var overlay = document.createElement("div");
-  overlay.id = "iframe-highlight-overlay";
-  overlay.style.cssText = "\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100vw;\n    height: 100vh;\n    pointer-events: none;\n    z-index: 999999;\n    overflow: hidden;\n  ";
-
-  // 创建悬停高亮框（虚线边框）
-  var highlightBox = document.createElement("div");
-  highlightBox.id = "iframe-highlight-box";
-  highlightBox.style.cssText = "\n    position: absolute;\n    border: 2px dashed #007AFF;\n    background: rgba(0, 122, 255, 0.08);\n    pointer-events: none;\n    display: none;\n    transition: all 0.1s ease;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.8);\n    border-radius: 2px;\n  ";
-
-  // 创建选中节点的常驻高亮框（实线边框）
-  var selectedBox = document.createElement("div");
-  selectedBox.id = "iframe-selected-box";
-  selectedBox.style.cssText = "\n    position: absolute;\n    border: 2px solid #007AFF;\n    pointer-events: none;\n    display: none;\n    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.9), 0 0 8px rgba(255, 107, 53, 0.4);\n    border-radius: 2px;\n    z-index: 1000000;\n  ";
-
-  // 创建悬停标签显示
-  var tagLabel = document.createElement("div");
-  tagLabel.id = "iframe-tag-label";
-  tagLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 2px 6px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 2px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000001;\n    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);\n    font-weight: 500;\n  ";
-
-  // 创建选中节点标签
-  var selectedLabel = document.createElement("div");
-  selectedLabel.id = "iframe-selected-label";
-  selectedLabel.style.cssText = "\n    position: absolute;\n    background: #007AFF;\n    color: white;\n    padding: 3px 8px;\n    font-size: 11px;\n    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;\n    border-radius: 3px;\n    pointer-events: none;\n    display: none;\n    white-space: nowrap;\n    z-index: 1000002;\n    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);\n    font-weight: 600;\n  ";
-  overlay.appendChild(highlightBox);
-  overlay.appendChild(selectedBox);
-  overlay.appendChild(tagLabel);
-  overlay.appendChild(selectedLabel);
-  document.body.appendChild(overlay);
-
-  // 存储当前选中的元素
-  var selectedElement = null;
-  var highlightEnabled = false;
-
-  // 更新选中元素的高亮显示
-  function updateSelectedHighlight(element) {
-    console.log("updateSelectedHighlight called with:", element);
-    if (!element) {
-      selectedBox.style.display = "none";
-      selectedLabel.style.display = "none";
-      selectedElement = null;
-      console.log("Cleared selected highlight");
-      return;
-    }
-    selectedElement = element;
-    var rect = element.getBoundingClientRect();
-    console.log("Selected element rect:", rect);
-
-    // 更新选中高亮框位置
-    selectedBox.style.display = "block";
-    selectedBox.style.left = "".concat(rect.left - 2, "px");
-    selectedBox.style.top = "".concat(rect.top - 2, "px");
-    selectedBox.style.width = "".concat(rect.width + 4, "px");
-    selectedBox.style.height = "".concat(rect.height + 4, "px");
-
-    // 更新选中标签位置和内容
-    selectedLabel.style.display = "block";
-    selectedLabel.textContent = "\u2713 <".concat(element.tagName.toLowerCase(), ">");
-
-    // 计算标签位置，确保不超出视窗
-    var labelTop = rect.top - 28;
-    var labelLeft = rect.left;
-
-    // 如果标签会超出顶部，显示在元素下方
-    if (labelTop < 5) {
-      labelTop = rect.bottom + 5;
-    }
-
-    // 如果标签会超出右侧，向左调整
-    var labelWidth = selectedLabel.offsetWidth || 100; // 预估宽度
-    if (labelLeft + labelWidth > window.innerWidth - 10) {
-      labelLeft = window.innerWidth - labelWidth - 10;
-    }
-    selectedLabel.style.left = "".concat(Math.max(5, labelLeft), "px");
-    selectedLabel.style.top = "".concat(labelTop, "px");
-    console.log("Selected highlight positioned at:", {
-      left: selectedBox.style.left,
-      top: selectedBox.style.top,
-      width: selectedBox.style.width,
-      height: selectedBox.style.height
-    });
-  }
-  function getElementSelector(element) {
-    if (!(element instanceof Element)) throw new Error('Argument must be a DOM element');
-    var segments = [];
-    var current = element;
-    while (current !== document.documentElement) {
-      var selector = '';
-      // 优先检查唯一ID
-      if (current.id && document.querySelectorAll("#".concat(current.id)).length === 1) {
-        segments.unshift("#".concat(current.id));
-        break; // ID唯一，无需继续向上
-      }
-
-      // 生成类名选择器（取第一个有效类名）
-      var classes = Array.from(current.classList).filter(function (c) {
-        return !c.startsWith('js-');
-      });
-      var className = classes.length > 0 ? ".".concat(classes[0]) : '';
-
-      // 生成位置索引（nth-child）
-      var tag = current.tagName.toLowerCase();
-      if (!className) {
-        var siblings = Array.from(current.parentNode.children);
-        var index = siblings.findIndex(function (el) {
-          return el === current;
-        }) + 1;
-        selector = "".concat(tag, ":nth-child(").concat(index, ")");
-      } else {
-        selector = className;
-      }
-      segments.unshift(selector);
-      current = current.parentElement;
-    }
-
-    // 处理根元素
-    if (current === document.documentElement) {
-      segments.unshift('html');
-    }
-    return segments.join(' > ');
-  }
-
-  // 获取元素文本内容
-  function getElementText(element) {
-    var _element$textContent;
-    if (element.tagName === "INPUT") {
-      return element.value || element.placeholder || "";
-    }
-    if (element.tagName === "TEXTAREA") {
-      return element.value || element.placeholder || "";
-    }
-    var text = ((_element$textContent = element.textContent) === null || _element$textContent === void 0 ? void 0 : _element$textContent.trim()) || "";
-    return text.length > 50 ? text.substring(0, 50) + "..." : text;
-  }
-
-  // 获取元素属性信息
-  function getElementAttributes(element) {
-    var attrs = {};
-    for (var i = 0; i < element.attributes.length; i++) {
-      var attr = element.attributes[i];
-      attrs[attr.name] = attr.value;
-    }
-    return attrs;
-  }
-
-  // 鼠标悬停事件处理
-  function handleMouseOver(e) {
-    if (!highlightEnabled) return;
-    var target = e.target;
-    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
-      return;
-    }
-
-    // 避免高亮 html 和 body 元素
-    if (target === document.documentElement || target === document.body) {
-      return;
-    }
-
-    // 如果是已选中的元素，不显示悬停高亮
-    if (target === selectedElement) {
-      highlightBox.style.display = "none";
-      tagLabel.style.display = "none";
-      return;
-    }
-    var rect = target.getBoundingClientRect();
-    var selector = getElementSelector(target);
-    var text = getElementText(target);
-    var attributes = getElementAttributes(target);
-
-    // 更新悬停高亮框位置
-    highlightBox.style.display = "block";
-    highlightBox.style.left = "".concat(rect.left - 2, "px");
-    highlightBox.style.top = "".concat(rect.top - 2, "px");
-    highlightBox.style.width = "".concat(rect.width + 4, "px");
-    highlightBox.style.height = "".concat(rect.height + 4, "px");
-
-    // 更新标签位置和内容
-    tagLabel.style.display = "block";
-    tagLabel.textContent = "<".concat(target.tagName.toLowerCase(), ">");
-
-    // 计算标签位置，确保不超出视窗
-    var labelTop = rect.top - 22;
-    var labelLeft = rect.left;
-
-    // 如果标签会超出顶部，显示在元素下方
-    if (labelTop < 0) {
-      labelTop = rect.bottom + 5;
-    }
-
-    // 如果标签会超出右侧，向左调整
-    if (labelLeft + tagLabel.offsetWidth > window.innerWidth) {
-      labelLeft = window.innerWidth - tagLabel.offsetWidth - 5;
-    }
-    tagLabel.style.left = "".concat(Math.max(0, labelLeft), "px");
-    tagLabel.style.top = "".concat(labelTop, "px");
-
-    // 发送消息到父窗口
-    var elementInfo = {
-      tagName: target.tagName.toLowerCase(),
-      rect: {
-        left: rect.left,
-        top: rect.top,
-        right: rect.right,
-        bottom: rect.bottom,
-        width: rect.width,
-        height: rect.height,
-        x: rect.x,
-        y: rect.y
-      },
-      selector: selector,
-      text: text,
-      attributes: attributes,
-      url: window.location.href,
-      path: window.location.pathname,
-      timestamp: Date.now()
-    };
-    try {
-      window.parent.postMessage({
-        type: "iframe-element-hover",
-        data: elementInfo,
-        source: "iframe-highlight-injector"
-      }, "*");
-    } catch (error) {
-      console.warn("无法发送消息到父窗口:", error);
-    }
-  }
-
-  // 鼠标离开事件处理
-  function handleMouseOut(e) {
-    if (!highlightEnabled) return;
-    var relatedTarget = e.relatedTarget;
-
-    // 如果鼠标移动到高亮相关元素上，不隐藏高亮
-    if (relatedTarget && (relatedTarget === highlightBox || relatedTarget === tagLabel || relatedTarget === overlay || relatedTarget === selectedBox || relatedTarget === selectedLabel)) {
-      return;
-    }
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    try {
-      window.parent.postMessage({
-        type: "iframe-element-hover",
-        data: null,
-        source: "iframe-highlight-injector"
-      }, "*");
-    } catch (error) {
-      console.warn("无法发送消息到父窗口:", error);
-    }
-  }
-
-  // 点击事件处理
-  function handleClick(e) {
-    var target = e.target;
-    if (!target || target === overlay || target === highlightBox || target === tagLabel || target === selectedBox || target === selectedLabel) {
-      return;
-    }
-
-    // 避免处理 html 和 body 元素
-    if (target === document.documentElement || target === document.body) {
-      return;
-    }
-
-    // 检查是否是交互元素，这些元素需要保留默认行为
-    var isInteractiveElement = ['input', 'textarea', 'select', 'button', 'a'].includes(target.tagName.toLowerCase());
-
-    // 如果高亮功能启用，对于非交互元素阻止默认行为和事件传播
-    if (highlightEnabled) {
-      e.preventDefault();
-      e.stopPropagation();
-    }
-    var rect = target.getBoundingClientRect();
-    var selector = getElementSelector(target);
-    var text = getElementText(target);
-    var attributes = getElementAttributes(target);
-    console.log("Element clicked:", {
-      tagName: target.tagName,
-      selector: selector,
-      rect: rect
-    });
-
-    // 立即更新选中高亮
-    updateSelectedHighlight(target);
-
-    // 隐藏悬停高亮，因为现在是选中状态
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    var elementInfo = {
-      tagName: target.tagName.toLowerCase(),
-      rect: {
-        left: rect.left,
-        top: rect.top,
-        right: rect.right,
-        bottom: rect.bottom,
-        width: rect.width,
-        height: rect.height,
-        x: rect.x,
-        y: rect.y
-      },
-      selector: selector,
-      text: text,
-      attributes: attributes,
-      url: window.location.href,
-      path: window.location.pathname,
-      timestamp: Date.now()
-    };
-    try {
-      window.parent.postMessage({
-        type: "iframe-element-click",
-        data: elementInfo,
-        source: "iframe-highlight-injector"
-      }, "*");
-    } catch (error) {
-      console.warn("无法发送消息到父窗口:", error);
-    }
-  }
-
-  // 监听来自父窗口的消息
-  function handleParentMessage(event) {
-    console.log("Received message from parent:", event.data);
-    if (event.data.type === "iframe-highlight-toggle") {
-      var enabled = event.data.enabled;
-      console.log("Highlight toggle:", enabled);
-      if (enabled) {
-        enableHighlight();
-      } else {
-        disableHighlight();
-      }
-    } else if (event.data.type === "enable-iframe-highlight") {
-      console.log("Enable iframe highlight");
-      enableHighlight();
-    } else if (event.data.type === "disable-iframe-highlight") {
-      console.log("Disable iframe highlight");
-      disableHighlight();
-    } else if (event.data.type === "toggle-iframe-highlight") {
-      var _enabled = event.data.enabled !== undefined ? event.data.enabled : !highlightEnabled;
-      console.log("Toggle iframe highlight to:", _enabled);
-      if (_enabled) {
-        enableHighlight();
-      } else {
-        disableHighlight();
-      }
-    } else if (event.data.type === "update-selected-element") {
-      var selector = event.data.selector;
-      console.log("Update selected element with selector:", selector);
-      if (selector) {
-        try {
-          var element = document.querySelector(selector);
-          console.log("Found element by selector:", element);
-          updateSelectedHighlight(element);
-        } catch (error) {
-          console.warn("Failed to select element:", error);
-          updateSelectedHighlight(null);
-        }
-      } else {
-        updateSelectedHighlight(null);
-      }
-    } else if (event.data.type === "clear-selected-element") {
-      console.log("Clear selected element");
-      updateSelectedHighlight(null);
-    }
-  }
-
-  // 启用高亮功能
-  function enableHighlight() {
-    console.log("Enabling highlight");
-    document.addEventListener("mouseover", handleMouseOver, true);
-    document.addEventListener("mouseout", handleMouseOut, true);
-    document.addEventListener("click", handleClick, true);
-    highlightEnabled = true;
-    overlay.style.display = "block";
-  }
-
-  // 禁用高亮功能
-  function disableHighlight() {
-    console.log("Disabling highlight");
-    highlightEnabled = false;
-    // 保持事件监听器，但通过 highlightEnabled 变量控制行为
-    // 这样可以保留选中状态的显示
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    // 不隐藏 selectedBox 和 selectedLabel，保留选中状态
-  }
-
-  // 完全禁用高亮功能（移除所有监听器）
-  function fullyDisableHighlight() {
-    console.log("Fully disabling highlight");
-    highlightEnabled = false;
-    document.removeEventListener("mouseover", handleMouseOver, true);
-    document.removeEventListener("mouseout", handleMouseOut, true);
-    document.removeEventListener("click", handleClick, true);
-    overlay.style.display = "none";
-    highlightBox.style.display = "none";
-    tagLabel.style.display = "none";
-    selectedBox.style.display = "none";
-    selectedLabel.style.display = "none";
-  }
-
-  // 添加事件监听
-  enableHighlight();
-  window.addEventListener("message", handleParentMessage);
-
-  // 暴露全局函数供外部调用
-  window.__iframeHighlightControl = {
-    enable: enableHighlight,
-    disable: disableHighlight,
-    fullyDisable: fullyDisableHighlight,
-    isEnabled: function isEnabled() {
-      return highlightEnabled;
-    },
-    getSelectedElement: function getSelectedElement() {
-      return selectedElement;
-    },
-    updateSelected: updateSelectedHighlight,
-    // 通过消息发送开关控制
-    sendToggleMessage: function sendToggleMessage(enabled) {
-      window.parent.postMessage({
-        type: 'iframe-highlight-status',
-        enabled: enabled || highlightEnabled,
-        source: 'iframe-highlight-injector'
-      }, '*');
-    }
-  };
-
-  // 通知父窗口脚本已加载
-  try {
-    window.parent.postMessage({
-      type: "iframe-highlight-ready",
-      data: {
-        url: window.location.href,
-        userAgent: navigator.userAgent,
-        timestamp: Date.now()
-      },
-      source: "iframe-highlight-injector"
-    }, "*");
-  } catch (error) {
-    console.warn("无法发送就绪消息到父窗口:", error);
-  }
-
-  // 清理函数
-  window.__iframeHighlightCleanup = function () {
-    fullyDisableHighlight();
-    window.removeEventListener("message", handleParentMessage);
-    if (overlay.parentElement) {
-      overlay.parentElement.removeChild(overlay);
-    }
-    delete window.__iframeHighlightInitialized;
-    delete window.__iframeHighlightCleanup;
-  };
-})();
-
+function showCat(cat) {
+  document.querySelectorAll('.cat-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('sec-' + cat).classList.add('active');
+  document.querySelector('.cat-btn:nth-child(' + ({market:1,brand:2,retail:3}[cat] || 1) + ')').classList.add('active');
+}
 </script>
 </body>
 </html>
