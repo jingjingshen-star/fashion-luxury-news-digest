@@ -3,336 +3,251 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>时尚日报 · Fashion &amp; Luxury News Digest · 2026年4月8日</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<title>时尚日报 · 2026年4月9日</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --forest:#1E392A;--gold:#B8A88A;--cream:#FAF7F2;
-  --text:#2C2416;--muted:#7A6E5E;--border:#E8E0D4;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Playfair+Display:wght@400;700&display=swap');
+
+:root {
+  --forest: #1E392A;
+  --gold: #B8A88A;
+  --cream: #F7F3EE;
+  --warm-white: #FDFBF7;
+  --text: #2C2C2C;
+  --sub: #7A7A6E;
 }
-body{font-family:'Inter','Noto Serif SC',serif;background:var(--cream);color:var(--text);line-height:1.7;min-height:100vh;position:relative;overflow-x:hidden}
-body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellipse at 20% 20%,rgba(30,57,42,0.04) 0%,transparent 60%),radial-gradient(ellipse at 80% 80%,rgba(184,168,138,0.06) 0%,transparent 60%);pointer-events:none;z-index:0}
-.bg-icons{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.bg-icon{position:absolute;font-size:320px;opacity:0.04;color:var(--forest);user-select:none}
-.bg-icon:nth-child(1){top:-60px;left:-40px}
-.bg-icon:nth-child(2){bottom:-80px;right:-40px}
-.bg-icon:nth-child(3){top:40%;left:55%;transform:rotate(25deg);font-size:220px}
-.bg-icon:nth-child(4){bottom:30%;left:10%;font-size:180px;opacity:0.03}
-.bg-icon:nth-child(5){top:15%;right:15%;transform:rotate(-15deg);font-size:200px}
-.bg-icon:nth-child(6){bottom:10%;right:30%;transform:rotate(10deg);font-size:160px}
-.container{max-width:860px;margin:0 auto;padding:0 24px;position:relative;z-index:1}
 
-/* Header */
-header{padding:52px 0 40px;text-align:center;border-bottom:1px solid var(--border);margin-bottom:48px;position:relative}
-header::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:60px;height:2px;background:var(--gold)}
-.kicker{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:16px;display:block}
-header h1{font-family:'Playfair Display','Noto Serif SC',serif;font-size:clamp(28px,5vw,42px);font-weight:700;color:var(--forest);line-height:1.2;margin-bottom:12px}
-header h1 em{font-style:italic;color:var(--gold)}
-.subtitle{font-family:'Inter',sans-serif;font-size:13px;color:var(--muted);letter-spacing:1px}
-.date-strip{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:2px;color:var(--muted);margin-top:10px;text-transform:uppercase}
+body {
+  background: var(--warm-white);
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  color: var(--text);
+  min-height: 100vh;
+}
 
-/* Insight Banner */
-.insight-banner{background:var(--forest);color:#fff;border-radius:12px;padding:28px 32px;margin-bottom:48px;position:relative;overflow:hidden}
-.insight-banner::before{content:'✨';position:absolute;top:12px;right:20px;font-size:24px;opacity:0.4}
-.insight-banner .label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:10px;display:block}
-.insight-banner p{font-family:'Noto Serif SC','Playfair Display',serif;font-size:15px;line-height:1.9;color:rgba(255,255,255,0.93)}
+.hero {
+  background: var(--forest);
+  color: var(--gold);
+  padding: 64px 48px 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '♠ ♣ ♥ ♦ ✦ ✧';
+  position: absolute;
+  font-size: 180px;
+  color: rgba(184,168,138,0.07);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  letter-spacing: 30px;
+  pointer-events: none;
+}
+.hero-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(184,168,138,0.7);
+  margin-bottom: 16px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.hero-sub {
+  font-size: 15px;
+  color: rgba(184,168,138,0.75);
+  letter-spacing: 1px;
+}
 
-/* Section */
-.section{margin-bottom:52px}
-.section-label{font-family:'Inter',sans-serif;font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:6px;display:flex;align-items:center;gap:10px}
-.section-label::before{content:'';flex:0 0 24px;height:1px;background:var(--gold)}
-.section h2{font-family:'Playfair Display','Noto Serif SC',serif;font-size:22px;font-weight:700;color:var(--forest);margin-bottom:24px}
-.section h2 .lang-cn{font-size:16px;color:var(--muted);font-weight:400}
+.insight-bar {
+  background: linear-gradient(135deg, #1E392A 0%, #2A4F3A 100%);
+  margin: 0;
+  padding: 28px 48px;
+  color: rgba(184,168,138,0.92);
+  font-size: 14.5px;
+  line-height: 1.9;
+  letter-spacing: 0.3px;
+  border-bottom: 1px solid rgba(184,168,138,0.15);
+}
+.insight-bar strong {
+  color: var(--gold);
+  font-weight: 700;
+}
 
-/* News Card */
-.news-card{background:#fff;border:1px solid var(--border);border-radius:10px;padding:24px 28px;margin-bottom:16px;transition:box-shadow .25s ease,transform .25s ease;position:relative}
-.news-card:hover{box-shadow:0 6px 28px rgba(30,57,42,0.1);transform:translateY(-1px)}
-.news-card .meta{display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap}
-.badge{padding:3px 10px;border-radius:20px;font-family:'Inter',sans-serif;font-size:10px;font-weight:600;letter-spacing:.5px;text-transform:uppercase}
-.badge-intl{background:rgba(30,57,42,0.08);color:var(--forest)}
-.badge-cn{background:rgba(184,168,138,0.2);color:#8B6F47}
-.badge-trend{background:rgba(30,57,42,0.06);color:var(--muted)}
-.news-card h3{font-family:'Playfair Display','Noto Serif SC',serif;font-size:17px;font-weight:700;color:var(--forest);margin-bottom:8px;line-height:1.4}
-.news-card h3 .lang-en{font-size:13px;font-weight:400;color:var(--muted);font-style:italic;display:block;margin-top:2px}
-.news-card .kp{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);margin-bottom:10px;padding-left:12px;border-left:2px solid var(--gold);line-height:1.5}
-.news-card .insight{background:var(--cream);border-radius:6px;padding:12px 16px;font-family:'Noto Serif SC',serif;font-size:13px;color:var(--text);line-height:1.8}
-.news-card .insight strong{color:var(--forest)}
-.news-card .source-row{margin-top:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
-.news-card .source-tag{font-family:'Inter',sans-serif;font-size:10px;color:var(--muted);letter-spacing:.5px}
-.news-card .source-tag a{color:var(--gold);text-decoration:none;font-weight:500}
-.news-card .source-tag a:hover{text-decoration:underline}
+.container { max-width: 1100px; margin: 0 auto; padding: 48px 48px 80px; }
 
-/* Footer */
-footer{text-align:center;padding:40px 0;border-top:1px solid var(--border);margin-top:20px}
-footer p{font-family:'Inter',sans-serif;font-size:11px;color:var(--muted);letter-spacing:.5px}
-footer a{color:var(--gold);text-decoration:none}
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1.5px solid var(--gold);
+  padding-bottom: 6px;
+  margin-bottom: 28px;
+}
 
-/* Responsive */
-@media(max-width:600px){
-  .container{padding:0 16px}
-  header{padding:36px 0 28px}
-  .news-card{padding:18px 20px}
-  .insight-banner{padding:20px 22px}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 52px;
+}
+
+.card {
+  background: var(--cream);
+  border: 1px solid rgba(30,57,42,0.1);
+  border-radius: 2px;
+  padding: 28px;
+  position: relative;
+  transition: box-shadow 0.2s;
+}
+.card:hover { box-shadow: 0 6px 24px rgba(30,57,42,0.1); }
+.card-source {
+  font-family: 'Playfair Display', serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+.card h3 {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: var(--forest);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+.card h3 .cn { color: #3A2E1E; }
+.card h3 .en { display: block; font-family: 'Playfair Display', serif; font-size: 12px; font-weight: 400; color: var(--sub); margin-top: 4px; }
+.card-kp {
+  background: rgba(30,57,42,0.06);
+  border-left: 2px solid var(--gold);
+  padding: 8px 12px;
+  font-size: 12px;
+  color: var(--forest);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.card-insight {
+  font-size: 12.5px;
+  color: var(--sub);
+  line-height: 1.8;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero, .insight-bar, .container { padding-left: 24px; padding-right: 24px; }
+  .hero h1 { font-size: 32px; }
 }
 </style>
 </head>
 <body>
-<div class="bg-icons">
-  <div class="bg-icon">✦</div>
-  <div class="bg-icon">◇</div>
-  <div class="bg-icon">✦</div>
-  <div class="bg-icon">❖</div>
-  <div class="bg-icon">✧</div>
-  <div class="bg-icon">◆</div>
+
+<div class="hero">
+  <div class="hero-date">Thursday · April 9th, 2026</div>
+  <h1>Fashion &amp; Luxury<br>Daily Digest</h1>
+  <div class="hero-sub">全球时尚 · 每日简报 · 2026年4月9日</div>
+</div>
+
+<div class="insight-bar">
+  <strong>📌 今日洞察：</strong>2026年第一季度，奢侈品行业遭遇"开门黑"——LVMH股价单季暴跌28%，创历史最大跌幅；中东地缘冲突更令主要奢侈品巨头市值蒸发逾千亿美元。与此同时，中国本土奢侈品牌老铺黄金悄然崛起，营收已超越爱马仕中国。在行业规则被重写的关键节点，出海、质感经济与设计师更替成为本季三大叙事主线。
 </div>
 
 <div class="container">
 
-<header>
-  <span class="kicker">Fashion &amp; Luxury Daily Brief</span>
-  <h1>Fashion &amp; Luxury <em>News Digest</em></h1>
-  <div class="subtitle">全球时尚 · 奢侈品行业动态</div>
-  <div class="date-strip">2026年4月8日 · Wednesday, April 8, 2026</div>
-</header>
+<div class="section-label">Market Trend · 市场趋势</div>
+<div class="grid">
 
-<div class="insight-banner">
-  <span class="label">Today&apos;s Insight · 今日洞察</span>
-  <p>2026年奢侈品行业正经历深刻调整期。LVMH股价单季暴跌28%创历史最大跌幅，中东地缘冲突导致奢侈品板块市值蒸发千亿美元；但HSBC与McKinsey同期报告均指向行业将在下半年迎来反弹。可穿戴奢侈品接棒"炫耀消费"，实用主义与工艺美学正重塑高端消费逻辑——这是最坏的时代，也是品牌重新赢得信任的最好时机。</p>
+<div class="card">
+  <div class="card-source">LADYMAX · 行业数据</div>
+  <h3><span class="cn">中东冲突重创奢侈品市场：LVMH、爱马仕等巨头市值蒸发逾千亿美元</span><span class="en">Middle East Conflict Drags Down Luxury Sector; LVMH, Hermès Lose $100B+ in Market Cap</span></h3>
+  <div class="card-kp">自中东冲突爆发以来，LVMH与爱马仕等主要奢侈品集团股价持续承压，主要品类——手袋、鞋履、腕表、香水及葡萄酒——需求全面走软，市值累计蒸发约1000亿美元。</div>
+  <div class="card-insight">⚡ 地缘政治风险正以前所未有的速度传导至奢侈品消费端，2026年的"逆风"比预期来得更早更猛烈。</div>
 </div>
 
-<!-- 市场趋势 -->
-<div class="section">
-  <div class="section-label">Market Trends · 市场趋势</div>
-  <h2>可穿戴奢侈品领跑2026 <span class="lang-cn">/ Wearable Luxury Dominates</span></h2>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Trend</span>
-    </div>
-    <h3>Farfetch指数揭示2026时尚新格局：实用奢侈品成主流 <span class="lang-en">Wearable Luxury Reigns Supreme in Farfetch Index 2026</span></h3>
-    <div class="kp">KP：可穿戴奢侈品 · 高需求鞋履、服装与配饰 · 实用主义消费回归</div>
-    <div class="insight">
-      <strong>洞察：</strong>Farfetch最新发布的2026时尚指数显示，"可穿戴奢侈品"（Wearable Luxury）已成为核心趋势，消费者不再追逐过度戏剧化的时装设计，而是青睐日常可穿搭的高品质单品。鞋履品类领跑增长，核心价格区间（$800–$2,500）稳健扩容，标志着<strong>炫耀消费向精致实用主义的悄然转身</strong>。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://fashionunited.com/news/fashion/wearable-luxury-dominates-farfetch-index-on-2026-fashion-trends/2026040171526" target="_blank">FashionUnited</a></span>
-      <span class="source-tag">| 2026年4月1日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Report</span>
-    </div>
-    <h3>HSBC报告：奢侈品行业将于2026年迎来反弹 <span class="lang-en">HSBC: Luxury Set to Rebound in 2026</span></h3>
-    <div class="kp">KP：奢侈品复苏 · 个位数增长预期 · 头部品牌韧性强</div>
-    <div class="insight">
-      <strong>洞察：</strong>HSBC发布乐观报告，预计2026年奢侈品行业将实现中等个位数增长，平均增速达5-8%。报告指出，尽管上半年受宏观不确定性压制，以LVMH、开云集团为代表的头部品牌凭借品牌护城河与多元市场布局，将在下半年率先反弹。<strong>中国消费者回归将是关键变量。</strong>
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://wwd.com/business-news/retail/hsbc-report-luxury-seen-rebounding-in-2026-1238679323/" target="_blank">WWD</a></span>
-      <span class="source-tag">| 2026年3月16日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Color</span>
-    </div>
-    <h3>2026奢侈时尚色彩革命：高饱和色系的强势回归 <span class="lang-en">2026 Luxury Reset: Bold Color is Back</span></h3>
-    <div class="kp">KP：高饱和色 · 樱桃红 · 翠绿 · 宝蓝 · 明亮黄 · 色彩即态度</div>
-    <div class="insight">
-      <strong>洞察：</strong>LuxuryAbode分析指出，2026年奢侈时尚正经历一场"色彩复位"——樱桃红、电光蓝、翠绿、明黄不再只是点缀，而成为系列主角。这一转变呼应了McKinsey《时尚状态报告》的论断：<strong>品牌正通过创作力与工艺重建客户信任，色彩表达成为品牌个性的直接载体。</strong>
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://www.luxuryabode.com/blog/2026-fashion-trends-the-luxury-reset-redefining-power-presence-and-personal-style/artid3899" target="_blank">LuxuryAbode</a></span>
-      <span class="source-tag">| 2026年1月</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Analysis</span>
-    </div>
-    <h3>McKinsey《时尚状态2026》：规则重写 <span class="lang-en">McKinsey State of Fashion 2026 — When the Rules Change</span></h3>
-    <div class="kp">KP：品牌升级策略 · 创意主导 · 工艺复兴 · 消费者谨慎支出</div>
-    <div class="insight">
-      <strong>洞察：</strong>McKinsey与BoF联合发布的年度重磅报告指出，2026年行业核心议题是"适应新规则"——贸易格局、消费者行为与技术均处于快速变动期。品牌正削减对价格驱动增长的依赖，重押<strong>创意与工艺</strong>以重建高端客户信任；二手市场继续扩张，59%消费者表示愿意购买二手商品。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://www.businessoffashion.com/reports/the-state-of-fashion-industry/" target="_blank">Business of Fashion / McKinsey</a></span>
-      <span class="source-tag">| 2025年11月</span>
-    </div>
-  </div>
+<div class="card">
+  <div class="card-source">Hypebeast · 股价追踪</div>
+  <h3><span class="cn">LVMH 2026年Q1股价创历来最大跌幅，Courrèges任命新创意总监</span><span class="en">LVMH Posts Record Q1 Stock Decline in 2026; Courrèges Appoints Drew Henry</span></h3>
+  <div class="card-kp">2026年开年，LVMH股价在第一季度大跌28%，为该公司历史上最差单季表现。市场分析指出，宏观经济不确定性、亚洲消费降级与地缘风险是主要拖累因素。</div>
+  <div class="card-insight">⚡ 28%的跌幅释放了一个明确信号：奢侈品消费的"超级周期"已实质性结束，品牌正在进入结构性调整的新常态。</div>
 </div>
 
-<!-- 品牌战略 -->
-<div class="section">
-  <div class="section-label">Brand Strategy · 品牌战略</div>
-  <h2>设计师变局与品牌焕新 <span class="lang-cn">/ Creative Director Moves &amp; Brand Renewal</span></h2>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Design</span>
-    </div>
-    <h3>Pierpaolo Piccioli加盟巴黎世家：奢侈品圈最重磅转会 <span class="lang-en">Why Piccioli to Balenciaga Is the Coolest Move in Fashion</span></h3>
-    <div class="kp">KP：Piccioli · Balenciaga · 创意总监 · Valentino前高管 · 品牌重塑</div>
-    <div class="insight">
-      <strong>洞察：</strong>前Valentino创意总监Pierpaolo Piccioli宣布加盟Balenciaga，这是2026奢侈品时尚圈最震撼的人事变动。AFR评论称此举"冷艳而聪明"——Balenciaga借力业界最高知名度创意人实现品牌再定位，而Piccioli则获得一个更具实验性与商业规模的新舞台。<strong>创意人才流动加速行业格局重构。</strong>
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://www.afr.com/life-and-luxury/fashion-and-style/april-2026-fashion-20260326-p5zizr" target="_blank">AFR</a></span>
-      <span class="source-tag">| 2026年3月26日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Branding</span>
-    </div>
-    <h3>LVMH股价单季暴跌28%：史上最惨开局 <span class="lang-en">LVMH Q1 Shares See Record Decline — Worst Opening in History</span></h3>
-    <div class="kp">KP：LVMH · 股价下跌28% · 历史最大跌幅 · Q1财报承压</div>
-    <div class="insight">
-      <strong>洞察：</strong>2026年开年LVMH即遭遇历史性重挫，股价第一季大跌28%创历来最大跌幅记录。Hypebeast分析指出，宏观需求疲软与中国消费信心不足是主因，同时品牌正主动控制供货节奏以维护溢价能力。<strong>短期阵痛换取长期品牌健康，这是LVMH式的战略定力。</strong>
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://hypebeast.com/zh/2026/4/lvmh-q1-shares-see-a-record-decline-courreges-enlists-drew-henry-in-this-weeks-top-fashion-news" target="_blank">Hypebeast</a></span>
-      <span class="source-tag">| 2026年4月4日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Report</span>
-    </div>
-    <h3>BoF深度：几乎所有品牌都在向上升级 <span class="lang-en">Why Almost Every Brand Is Moving Upmarket</span></h3>
-    <div class="kp">KP：品牌升级 · 定价策略 · 价值感 · 中端市场萎缩</div>
-    <div class="insight">
-      <strong>洞察：</strong>BoF深度分析揭示，"品牌升级"（Brand Elevation）已是行业集体动作——从Coach到Michael Kors，各品牌纷纷通过提价、收紧SKU、提升门店体验来向上迁移。但报告警告：<strong>更高价格必须辅以更高品质与设计刷新，否则将面临核心客户流失风险。</strong>
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://www.businessoffashion.com/articles/retail/the-state-of-fashion-2026-report-brand-elevation-pricing-strategy-value-mid-market/" target="_blank">Business of Fashion</a></span>
-      <span class="source-tag">| 2026年1月19日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-intl">International</span>
-      <span class="badge badge-trend">Trend</span>
-    </div>
-    <h3>2026春季穿搭革命：实用叠穿与蝴蝶结Top <span class="lang-en">Spring 2026 Trends: Layering, Bow-Tie Tops &amp; Statement Skirts</span></h3>
-    <div class="kp">KP：围巾叠穿 · 蝴蝶结Top · 短裙 ·  pony hair coat · 饱和色衬衫</div>
-    <div class="insight">
-      <strong>洞察：</strong>Vogue发布2026春季核心趋势，十大必备单品中实用主义与装饰主义并行：<strong>叠穿层次感</strong>、<strong>蝴蝶结领结Top</strong>、<strong>及地短裙（Bermuda Short）</strong>与<strong>小马毛大衣</strong>并列为本季商业化程度最高的设计语言。Vogue.SG同时指出：低腰裙、复古条纹与工装夹克将主导春夏街头。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://www.vogue.com/article/spring-2026-fashion-trends" target="_blank">Vogue</a></span>
-      <span class="source-tag">| 2026年3月19日</span>
-    </div>
-  </div>
+<div class="card">
+  <div class="card-source">麦肯锡 x BoF · 深度报告</div>
+  <h3><span class="cn">2026时尚产业十大关键变局：规则重写之年</span><span class="en">McKinsey x BoF: 10 Key Disruptions Reshaping Fashion in 2026</span></h3>
+  <div class="card-kp">BoF与麦肯锡联合报告指出，2026年时尚产业不再只是周期性波动，而是结构性重组——贸易格局、AI技术与消费者价值观正同步重写行业规则，76%的行业领袖将关税列为最大风险。</div>
+  <div class="card-insight">⚡ 报告核心结论：2026是"规则重写的一年"，企业需要在供应链韧性与消费者情感连接两个维度同时构建护城河。</div>
 </div>
 
-<!-- 零售动态 -->
-<div class="section">
-  <div class="section-label">Retail Dynamics · 零售动态</div>
-  <h2>中国力量：本土品牌崛起与全球布局 <span class="lang-cn">/ China Rising: Domestic Brands &amp; Global Expansion</span></h2>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-cn">China</span>
-      <span class="badge badge-trend">Geopolitics</span>
-    </div>
-    <h3>中东冲突重创奢侈品：LVMH爱马仕市值蒸发千亿美元 <span class="lang-en">Middle East Conflict Hammers Luxury: LVMH &amp; Hermès Lose $100B</span></h3>
-    <div class="kp">KP：地缘冲突 · 奢侈品股价波动 · 市值蒸发 · 手袋 · 腕表 · 香槟</div>
-    <div class="insight">
-      <strong>洞察：</strong>中东地缘冲突持续冲击全球奢侈品板块，LVMH与爱马仕为首的主要巨头股价频繁震荡，<strong>累计市值蒸发约1000亿美元</strong>。品类全线走软：手袋、鞋履、腕表、香水及葡萄酒均受波及。这是奢侈品行业在经历2023-2024中国复苏预期落空后，面临的又一次外部冲击。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="http://news.ladymax.cn/202604/07-39503.html" target="_blank">LADYMAX</a></span>
-      <span class="source-tag">| 2026年4月7日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-cn">China</span>
-      <span class="badge badge-trend">Competition</span>
-    </div>
-    <h3>老铺黄金：中国奢侈品的强势挑战者 <span class="lang-en">Laopu Gold: China&apos;s Formidable Luxury Challenger</span></h3>
-    <div class="kp">KP：老铺黄金 · 中国本土奢侈品牌 · 超越爱马仕 · LVMH竞争格局</div>
-    <div class="insight">
-      <strong>洞察：</strong>据弗若斯特沙利文数据，按2025年中国内地奢侈品集团收入排名，<strong>老铺黄金已跃升第二</strong>，超越爱马仕，并直逼LVMH。这一里程碑式事件标志着中国本土奢侈品牌已从"替代品"进化为全球巨头的直接竞争者，其以文化传承与东方美学为核心的差异化定位，正在重写高端消费的品牌格局。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://cj.sina.cn/articles/view/5953189932/162d6782c06703zbui" target="_blank">新浪财经</a></span>
-      <span class="source-tag">| 2026年3月24日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-cn">China</span>
-      <span class="badge badge-trend">Strategy</span>
-    </div>
-    <h3>2026中国时尚八大趋势：从"出圈"到"出海" <span class="lang-en">China Fashion 2026: From Going Viral to Going Global</span></h3>
-    <div class="kp">KP：IP生态协同 · 国潮高端化 · 出海 · 数智化 · 跨界联动</div>
-    <div class="insight">
-      <strong>洞察：</strong>业界观察家张晓冬发布2026中国时尚八大趋势研判：<strong>IP生态协同</strong>正取代单一产品成为主流；国产品牌高端化进程加速；"出海"从口号变为战略重心。同时，AI与数字技术正深度重塑供应链——数智化升级是2026年中国时尚企业最确定性的投资方向。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://finance.sina.com.cn/money/bond/2026-04-02/doc-inhtazsc9494512.shtml" target="_blank">新浪财经</a></span>
-      <span class="source-tag">| 2026年4月2日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-cn">China</span>
-      <span class="badge badge-trend">Retail</span>
-    </div>
-    <h3>"上海定制"成为城市新名片：国产高定崛起 <span class="lang-en">Shanghai Custom: China&apos;s Haute Couture Ambition</span></h3>
-    <div class="kp">KP：上海定制 · 高定品牌 · 上海时装周 · 全球辨识度 · 国产高定</div>
-    <div class="insight">
-      <strong>洞察：</strong>上海市商务委2026年发布专项方案，明确提出用2-3年将<strong>"上海定制"</strong>打造为具有全球辨识度的城市新名片。Maison Margiela同步宣布将携手上海时装周，揭幕2026秋冬系列全球首秀，品牌足迹将覆盖上海、北京、成都、深圳四城。<strong>中国正从高定消费国向高定策源地转型。</strong>
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://news.qq.com/rain/a/20260402A03S6V00" target="_blank">腾讯新闻</a></span>
-      <span class="source-tag">| 2026年4月2日</span>
-    </div>
-  </div>
-
-  <div class="news-card">
-    <div class="meta">
-      <span class="badge badge-cn">China</span>
-      <span class="badge badge-trend">Beauty</span>
-    </div>
-    <h3>雅诗兰黛Q2强劲反弹：净利润率大幅扩张 <span class="lang-en">Estée Lauder Surges: Q2 Net Sales +6%, Operating Profit Turns Positive</span></h3>
-    <div class="kp">KP：雅诗兰黛 · 销售额增长6% · 营业利润扭亏 · 有机增长4% · 中国美妆</div>
-    <div class="insight">
-      <strong>洞察：</strong>雅诗兰黛2026财年Q2财报超预期，净销售额达42亿美元（+6%），有机增长4%，<strong>营业利润从去年同期亏损5.8亿美元转为盈利4.01亿美元</strong>，利润率大幅扩张。这不仅是品牌自身战略调整见效的信号，也为中国高端美妆消费回暖提供了一手佐证。
-    </div>
-    <div class="source-row">
-      <span class="source-tag">来源：<a href="https://www.ladymax.cn/" target="_blank">LADYMAX</a></span>
-      <span class="source-tag">| 2026年4月</span>
-    </div>
-  </div>
 </div>
 
-<footer>
-  <p>Generated by <strong>时尚日报助手</strong> · Powered by OpenClaw · 2026年4月8日</p>
-  <p style="margin-top:6px"><a href="https://jingjingshen-star.github.io/fashion-luxury-news-digest/">🌐 Live Version · 在线版</a></p>
-</footer>
+<div class="section-label">Brand Strategy · 品牌战略</div>
+<div class="grid">
+
+<div class="card">
+  <div class="card-source">Vogue · 人事动态</div>
+  <h3><span class="cn">2026春季创意总监首秀：Matthieu Blazy执掌Chanel，Jonathan Anderson续写Loewe</span><span class="en">Spring 2026's Biggest Designer Debuts: Blazy at Chanel, Anderson at Loewe</span></h3>
+  <div class="card-kp">2026春季时装季，多位重量级创意总监迎来首秀或新阶段：Matthieu Blazy正式接掌Chanel，Jonathan Anderson则在Loewe开启全新叙事，引发业界高度关注与期待。</div>
+  <div class="card-insight">⚡ 设计师更替的本质是品牌DNA的重新编译——Blazy能否为Chanel注入当代工艺美学，Anderson如何续写Loewe的艺术叙事，决定两大品牌下一个十年的调性。</div>
+</div>
+
+<div class="card">
+  <div class="card-source">Highsnobiety · 趋势观察</div>
+  <h3><span class="cn">时尚"触感革命"来袭：2026材质经济崛起</span><span class="en">Fashion's Tactility Takeover: The Rise of Texture-Driven Luxury in 2026</span></h3>
+  <div class="card-kp">Highsnobiety趋势报告显示，2026年时尚行业正在经历一场"触感革命"——消费者不再满足于视觉刺激，转而追求面料的触感、层次与穿着体验，极简材质与再生面料成为新奢侈的新注脚。</div>
+  <div class="card-insight">⚡ 当视觉符号逐渐失效，"可触摸的奢华"成为新的溢价逻辑——面料创新正在取代logo，成为奢侈的新货币。</div>
+</div>
+
+<div class="card">
+  <div class="card-source">FashionNetwork · 广告战役</div>
+  <h3><span class="cn">2026春季奢侈品广告战役：故事化叙事成核心竞争力</span><span class="en">Spring 2026 Luxury Campaigns: Storytelling is the Key Differentiator</span></h3>
+  <div class="card-kp">从Versace的多摄影师叙事手法，到DKNY重塑纽约下城艺术文化、Amiri的加州电影叙事，再到Max Mara的文学致敬——2026春季奢侈品广告战役全面转向故事驱动，品牌调性与情感共鸣成为核心差异点。</div>
+  <div class="card-insight">⚡ 当产品同质化加剧，讲故事的能力直接等同于品牌的情感定价权——叙事正在成为奢侈品牌最重要的无形资产。</div>
+</div>
 
 </div>
+
+<div class="section-label">Retail Dynamics · 零售动态</div>
+<div class="grid">
+
+<div class="card">
+  <div class="card-source">LADYMAX · 中国市场</div>
+  <h3><span class="cn">老铺黄金营收跃居中国奢侈品第二，超越爱马仕</span><span class="en">Laopu Gold Surpasses Hermès China Revenue, Rises to #2 in Chinese Luxury Market</span></h3>
+  <div class="card-kp">据弗若斯特沙利文数据，按2025年奢侈品集团在中国内地整体收入排名，老铺黄金已跃居第二，超越爱马仕，并逼近LVMH。中国本土奢侈品牌正以文化认同和工艺叙事赢得高端消费者青睐。</div>
+  <div class="card-insight">⚡ 老铺黄金的崛起不是偶然——它验证了一个核心命题：在高端市场，文化溢价可以比品牌溢价更持久。</div>
+</div>
+
+<div class="card">
+  <div class="card-source">Sina Finance · 行业报告</div>
+  <h3><span class="cn">2026中国时尚从"出圈"迈向"出海"：八大趋势重磅发布</span><span class="en">China Fashion 2026: From Domestic Buzz to Global Expansion — Eight Key Trends</span></h3>
+  <div class="card-kp">时尚产业专家张晓冬发布2026年中国时尚趋势报告，作出三大市场判断：规模扩容、消费动机转变、品牌竞争升级，并提出IP生态协同等八大趋势方向，核心结论是中国时尚正从"出圈"迈向"出海"。</div>
+  <div class="card-insight">⚡ 从代工制造到品牌输出，中国时尚的出海叙事才刚刚开始——能否在全球建立文化认知度，是下一阶段的最大考验。</div>
+</div>
+
+<div class="card">
+  <div class="card-source">ELLE · 新品速递</div>
+  <h3><span class="cn">2026年4月时尚新品速览：La Ligne十周年、Versace x Onitsuka Tiger联名</span><span class="en">The Best Fashion Launches of April 2026: La Ligne, Versace x Onitsuka Tiger, Malbon Golf</span></h3>
+  <div class="card-kp">ELLE发布2026年4月时尚新品指南：La Ligne庆祝品牌成立10周年发布Perfect 10胶囊系列，Versace与Onitsuka Tiger推出全新运动鞋胶囊，Malbon Golf则将高级时装美学带入高尔夫领域，精品联名持续激活市场热度。</div>
+  <div class="card-insight">⚡ 联名逻辑正在迭代：从流量叠加到价值互补，品牌的"门当户对"成为消费者买单的新前提。</div>
+</div>
+
+</div>
+
+</div>
+
+<div style="text-align:center; padding: 32px; color: rgba(122,122,110,0.6); font-size: 11px; letter-spacing: 2px; font-family: 'Playfair Display', serif;">
+FASHION &amp; LUXURY DAILY DIGEST · 2026年4月9日 · Powered by AI
+</div>
+
 </body>
 </html>
