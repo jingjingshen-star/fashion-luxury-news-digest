@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>时尚与奢侈品日报 · 2026年4月15日</title>
+<title>时尚与奢侈品日报 · 2026-04-15</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -15,11 +15,46 @@
   }
   body.show-en { font-family: 'Georgia', serif; }
 
-  /* Hero */
+  /* ── Language Toggle (fixed top-right) ── */
+  .lang-switch {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    gap: 6px;
+    z-index: 100;
+  }
+  .lang-btn {
+    border: 1.5px solid #B8A88A;
+    background: transparent;
+    color: #B8A88A;
+    padding: 5px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: all 0.2s;
+  }
+  .lang-btn:hover { background: rgba(184,168,138,0.1); }
+  body.show-en .lang-btn:first-child { background: transparent; color: #B8A88A; }
+  body.show-en .lang-btn:last-child { background: #B8A88A; color: #fff; }
+  body:not(.show-en) .lang-btn:first-child { background: #B8A88A; color: #fff; }
+  body:not(.show-en) .lang-btn:last-child { background: transparent; color: #B8A88A; }
+
+  /* ── Bilingual toggle logic ── */
+  body.show-en .lang-cn { display: none !important; }
+  body.show-en .lang-en { display: block !important; }
+  body:not(.show-en) .lang-en { display: none !important; }
+  body:not(.show-en) .lang-cn { display: block !important; }
+
+  /* ── Container ── */
+  .container { max-width: 860px; margin: 0 auto; }
+
+  /* ── Hero Header ── */
   .hero {
     background: linear-gradient(135deg, #1E392A 0%, #2d5a42 100%);
     color: #fff;
-    padding: 56px 20px 48px;
+    padding: 60px 20px 52px;
     margin: 0 -16px 40px;
     text-align: center;
     position: relative;
@@ -28,8 +63,7 @@
   .hero::before {
     content: '✦ ✦ ✦ ✦ ✦ ✦';
     position: absolute;
-    top: 14px;
-    left: 50%;
+    top: 14px; left: 50%;
     transform: translateX(-50%);
     font-size: 9px;
     letter-spacing: 8px;
@@ -46,42 +80,15 @@
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 6px;
+    margin-bottom: 8px;
   }
-  .hero-title-lang-en { display: none; }
-  body.show-en .hero-title-lang-cn { display: none; }
-  body.show-en .hero-title-lang-en { display: block; font-size: 22px; }
   .hero-sub {
     font-size: 13px;
-    color: rgba(255,255,255,0.55);
-    margin-top: 8px;
+    color: rgba(255,255,255,0.5);
     letter-spacing: 1px;
   }
 
-  /* Lang Toggle */
-  .lang-bar {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 32px;
-    margin-top: 28px;
-  }
-  .lang-btn {
-    border: 1.5px solid #B8A88A;
-    background: transparent;
-    color: #B8A88A;
-    padding: 6px 22px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 13px;
-    letter-spacing: 1px;
-    transition: all 0.2s;
-  }
-  .lang-btn:hover { background: rgba(184,168,138,0.1); }
-  body.show-en .lang-btn:first-child { background: transparent; color: #B8A88A; }
-  body.show-en .lang-btn:last-child { background: #B8A88A; color: #fff; }
-
-  /* Section */
+  /* ── Section Label ── */
   .section-label {
     font-size: 10px;
     letter-spacing: 3px;
@@ -92,80 +99,13 @@
     margin: 36px 0 20px;
   }
 
-  /* News Card */
-  .news-card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 24px 26px;
-    margin-bottom: 18px;
-    border: 1px solid rgba(30,57,42,0.08);
-    box-shadow: 0 2px 12px rgba(30,57,42,0.05);
-    position: relative;
-  }
-  .news-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #1E392A, #B8A88A);
-    border-radius: 12px 12px 0 0;
-    opacity: 0;
-    transition: opacity 0.2s;
-  }
-  .news-card:hover::before { opacity: 1; }
-
-  .news-source {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #B8A88A;
-    margin-bottom: 10px;
-  }
-  .news-title {
-    font-size: 17px;
-    font-weight: 700;
-    color: #1E392A;
-    margin-bottom: 10px;
-    line-height: 1.5;
-  }
-  .news-title a { color: inherit; text-decoration: none; }
-  .news-title a:hover { color: #B8A88A; }
-  .news-title-lang-en { display: none; }
-  body.show-en .news-title-lang-cn { display: none; }
-  body.show-en .news-title-lang-en { display: block; font-size: 16px; font-family: 'Georgia', serif; }
-
-  .news-summary {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-    padding-left: 14px;
-    border-left: 2.5px solid #B8A88A;
-    line-height: 1.7;
-  }
-  .news-summary-lang-en { display: none; }
-  body.show-en .news-summary-lang-cn { display: none; }
-  body.show-en .news-summary-lang-en { display: block; font-size: 13.5px; font-family: 'Georgia', serif; }
-
-  .news-insight {
-    font-size: 13px;
-    color: #444;
-    background: rgba(30,57,42,0.04);
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin-top: 8px;
-    line-height: 1.7;
-  }
-  .news-insight-lang-en { display: none; }
-  body.show-en .news-insight-lang-cn { display: none; }
-  body.show-en .news-insight-lang-en { display: block; font-size: 12.5px; font-family: 'Georgia', serif; }
-
-  /* Insight of the Day */
+  /* ── Daily Insight ── */
   .insight-day {
     background: linear-gradient(135deg, #1E392A, #2d5a42);
     color: #fff;
     border-radius: 14px;
     padding: 30px 28px;
-    margin: 36px 0;
+    margin: 28px 0;
     position: relative;
     overflow: hidden;
   }
@@ -191,20 +131,70 @@
     color: #fff;
     line-height: 1.4;
   }
-  .insight-day-title-lang-en { display: none; }
-  body.show-en .insight-day-title-lang-cn { display: none; }
-  body.show-en .insight-day-title-lang-en { display: block; font-size: 18px; font-family: 'Georgia', serif; }
-
   .insight-day-body {
     font-size: 14px;
     color: rgba(255,255,255,0.82);
     line-height: 1.9;
   }
-  .insight-day-body-lang-en { display: none; }
-  body.show-en .insight-day-body-lang-cn { display: none; }
-  body.show-en .insight-day-body-lang-en { display: block; font-size: 13.5px; font-family: 'Georgia', serif; }
+  .insight-day-body br { display: block; content: ''; margin-top: 10px; }
 
-  /* Footer */
+  /* ── News Card ── */
+  .news-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 24px 26px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(30,57,42,0.08);
+    box-shadow: 0 2px 12px rgba(30,57,42,0.05);
+    position: relative;
+  }
+  .news-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1E392A, #B8A88A);
+    border-radius: 12px 12px 0 0;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .news-card:hover::before { opacity: 1; }
+  .news-source {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #B8A88A;
+    margin-bottom: 10px;
+  }
+  .news-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1E392A;
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .news-title a { color: inherit; text-decoration: none; }
+  .news-title a:hover { color: #B8A88A; }
+  .news-summary {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 10px;
+    padding-left: 14px;
+    border-left: 2.5px solid #B8A88A;
+    line-height: 1.7;
+  }
+  .news-insight {
+    font-size: 13px;
+    color: #444;
+    background: rgba(30,57,42,0.04);
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-top: 8px;
+    line-height: 1.7;
+  }
+  .news-insight::before { content: '💡 '; }
+
+  /* ── Footer ── */
   .footer {
     text-align: center;
     margin-top: 48px;
@@ -216,227 +206,181 @@
   .footer a { color: #B8A88A; text-decoration: none; }
   .footer a:hover { text-decoration: underline; }
 
-  /* Hidden EN elements by default */
-  .lang-en { display: none; }
-  body.show-en .lang-cn { display: none !important; }
-  body.show-en .lang-en { display: block !important; }
-  body.show-en .lang-en[style*="display:none"] { display: block !important; }
-  body.show-en [class$="-lang-en"] { display: block !important; }
+  /* ── Responsive ── */
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .hero-title { font-size: 22px; }
+    .news-card { padding: 18px 18px; }
+    .lang-switch { top: 10px; right: 10px; }
+  }
 </style>
 </head>
 <body>
 
-<!-- Hero -->
-<div class="hero">
-  <div class="hero-date">Wednesday · April 15, 2026</div>
-  <div class="hero-title hero-title-lang-cn">时尚与奢侈品日报</div>
-  <div class="hero-title hero-title-lang-en">Fashion &amp; Luxury News Digest</div>
-  <div class="hero-sub">Global Insight · Curated Daily</div>
-</div>
-
-<!-- Lang Toggle -->
-<div class="lang-bar">
+<!-- Language Toggle (fixed top-right) -->
+<div class="lang-switch">
   <button class="lang-btn" onclick="toggleLang(false)">中文</button>
   <button class="lang-btn" onclick="toggleLang(true)">En</button>
 </div>
 
-<!-- International Section -->
-<div class="section-label lang-cn">全球动态 · 国际</div>
-<div class="section-label lang-en" style="display:none">Global · International</div>
+<div class="container">
 
-<!-- Intl 1 -->
+  <!-- ── Hero Header ── -->
+  <div class="hero">
+    <div class="hero-date">Wednesday · April 15, 2026</div>
+    <h1 class="hero-title">
+      <span class="lang-cn">时尚与奢侈品日报</span>
+      <span class="lang-en" style="display:none">Fashion &amp; Luxury News Digest</span>
+    </h1>
+    <p class="hero-sub">
+      <span class="lang-cn">全球视野 · 本土洞察 · 每日9:00更新</span>
+      <span class="lang-en" style="display:none">Global Insight · Curated Daily · Updated 9:00</span>
+    </p>
+  </div>
+
+  <!-- ── Daily Insight ── -->
+  <div class="insight-day">
+    <div class="insight-day-label">
+      <span class="lang-cn">💡 今日洞察</span>
+      <span class="lang-en" style="display:none">💡 Insight of the Day</span>
+    </div>
+    <div class="insight-day-title">
+      <span class="lang-cn">奢侈品行业正处于"规则重写"的关键节点</span>
+      <span class="lang-en" style="display:none">The Luxury Industry Is at a Critical Inflection Point of Rule Rewriting</span>
+    </div>
+    <div class="insight-day-body">
+      <span class="lang-cn">本周奢侈品超级周的密集财报将揭示行业分化的真实烈度。爱马仕逆势扩产与Gucci转型乏力的巨大落差，折射出深层矛盾：奢侈品正同时面临"高端守擂"与"中端争夺"的双重压力。<br><br>这不是简单的涨价或降价问题，而是一次关于"奢侈品到底应该服务谁"的根本性重新定义。当游戏规则被重写，活下来的不是最大的品牌，而是最能讲出新故事的玩家。</span>
+      <span class="lang-en" style="display:none">This week's luxury superweek will reveal the true intensity of sector polarization. The contrast between Hermès's counter-cyclical expansion and Gucci's sluggish turnaround reflects deeper structural tension.<br><br>This is not simply a matter of raising or lowering prices — it is a fundamental redefinition of who luxury should serve. When the rules are rewritten, survivors won't be the biggest brands, but those best able to tell new stories.</span>
+    </div>
+  </div>
+
+  <!-- ── International News ── -->
+  <div class="section-label">
+    <span class="lang-cn">全球动态 · 国际</span>
+    <span class="lang-en" style="display:none">Global · International</span>
+  </div>
+  <div class="news-card">
+  <div class="news-source">Business of Fashion · 2026-04-12</div>
+  <div class="news-title"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">Luxury Superweek: LVMH, Kering and Hermès Report Q1 Results This Week</a></div>
+  <div class="news-title lang-cn" style="display:none"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">LVMH、Kering、爱马仕Q1财报本周密集出炉，奢侈品</a></div>
+  <div class="news-summary">This week, LVMH, Kering and Hermès are set to report Q1 results, with Kering hosting a capital markets day in Florence to unveil its strategic overhaul. Pucci will also show in Sicily.</div>
+  <div class="news-summary lang-cn" style="display:none">本周，LVMH、开云集团和爱马仕将陆续发布第一季度业绩报告，开云集团还将在佛罗伦萨举办资本市场日，公布全新战略规划。Pucci亦将在西西里岛举办时装秀。</div>
+  <div class="news-insight">As the luxury sector grapples with headwinds, Q1 results are a critical test. Kering's capital markets day is particularly pivotal — investors want a concrete Gucci revival roadmap, not just rhetoric. Failure to deliver could deepen the valuation pressure on the conglomerate.</div>
+  <div class="news-insight lang-cn" style="display:none">在奢侈品行业整体承压的背景下，Q1财报将是一块关键试金石。Kering的资本市场日尤为关键——市场正等待其拿出切实可行的Gucci复苏方案，而不仅仅是口号。若战略缺乏说服力，开云的估值压力将进一步加剧。</div>
+</div>
 <div class="news-card">
-  <div class="news-source">Business of Fashion · April 12, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">LVMH、Kering、爱马仕Q1财报本周密集出炉，奢侈品"超级周"来袭</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">Luxury Superweek: LVMH, Kering and Hermès Report Q1 Results This Week</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>本周，LVMH、开云集团和爱马仕将陆续发布第一季度业绩报告，开云集团还将在佛罗伦萨举办资本市场日，公布全新战略规划。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> This week, LVMH, Kering and Hermès are set to report Q1 results, with Kering hosting a capital markets day in Florence to unveil its strategic overhaul.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>在奢侈品行业整体承压的背景下，Q1财报将是一块关键试金石。Kering的资本市场日尤为关键——市场正等待其拿出切实可行的Gucci复苏方案，而不仅仅是口号。若战略缺乏说服力，开云的估值压力将进一步加剧。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> As the luxury sector grapples with headwinds, Q1 results are a critical test. Kering's capital markets day is particularly pivotal — investors want a concrete Gucci revival roadmap, not just rhetoric. Failure to deliver could deepen the valuation pressure on the conglomerate.</div>
+  <div class="news-source">Business of Fashion · 2026-04-11</div>
+  <div class="news-title"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">Hermès Opens 25th Leather Goods Plant in France Despite Geopolitical Turmoil</a></div>
+  <div class="news-title lang-cn" style="display:none"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">爱马仕无视地缘阴霾，第25家皮具工坊落子法国</a></div>
+  <div class="news-summary">Hermès officially opened its 25th leather goods workshop in France last Friday, signaling confidence in the long-term demand for high-end artisanal leather goods despite broader market headwinds.</div>
+  <div class="news-summary lang-cn" style="display:none">爱马仕上周五在法国正式开设第25家皮具工坊，延续其逆势扩产能策略，彰显对高端手工皮具市场长期需求的信心。</div>
+  <div class="news-insight">Hermès's aggressive capacity expansion stands in stark contrast to broader industry caution. It reflects deep confidence in brand resilience — Birkin clients willing to wait months will persist even in a contracting market. However, whether this playbook can succeed in jewellery and beauty remains an open question.</div>
+  <div class="news-insight lang-cn" style="display:none">爱马仕的激进扩产与行业担忧形成鲜明对比。这背后是爱马仕对自身品牌韧性的底气——即便整体市场收缩，愿意等待数月的铂金包客户依然存在。但这一策略能否在竞争加剧的珠宝与美妆赛道复制，尚存疑问。</div>
 </div>
-
-<!-- Intl 2 -->
 <div class="news-card">
-  <div class="news-source">Business of Fashion · April 11, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">爱马仕无视地缘阴霾，第25家皮具工坊落子法国</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">Hermès Opens 25th Leather Goods Plant in France Despite Geopolitical Turmoil</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>爱马仕上周五在法国正式开设第25家皮具工坊，延续其逆势扩产能策略，彰显对高端手工皮具市场长期需求的信心。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Hermès officially opened its 25th leather goods workshop in France last Friday, signaling confidence in the long-term demand for high-end artisanal leather goods despite broader market headwinds.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>爱马仕的激进扩产与行业担忧形成鲜明对比。这背后是爱马仕对自身品牌韧性的底气——即便整体市场收缩，愿意等待数月的铂金包客户依然存在。但这一策略能否在竞争加剧的珠宝与美妆赛道复制，尚存疑问。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Hermès's aggressive capacity expansion stands in stark contrast to broader industry caution. It reflects deep confidence in brand resilience — Birkin clients willing to wait months will persist even in a contracting market. However, whether this playbook can succeed in jewellery and beauty remains an open question.</div>
+  <div class="news-source">WWD · 2026-04-14</div>
+  <div class="news-title"><a href="https://wwd.com/fashion-news/" target="_blank">Gucci's 'Gradual' Turnaround Weighs on Kering in Q1</a></div>
+  <div class="news-title lang-cn" style="display:none"><a href="https://wwd.com/fashion-news/" target="_blank">Gucci</a></div>
+  <div class="news-summary">Kering's first-quarter performance was notably weighed down by Gucci's gradual turnaround strategy, with sales continuing to decline and the group facing mounting challenges.</div>
+  <div class="news-summary lang-cn" style="display:none">Kering集团第一季度业绩受到Gucci</div>
+  <div class="news-insight">Gucci's slow-burn strategy is eroding market patience. In today's hyper-fragmented consumer attention economy, a 'gradual' approach effectively cedes ground to more decisive rivals. More worrying: when Gucci — Kering's primary cash cow — stumbles, the group's strategic flexibility narrows dramatically.</div>
+  <div class="news-insight lang-cn" style="display:none">Gucci的缓慢转型正在侵蚀市场耐心。在消费者注意力极度碎片化的当下，"渐进式"策略等同于主动让出市场份额给更果断的竞争对手。更令人担忧的是，开云集团的现金牛Gucci一旦失速，整个集团的战略腾挪空间将大幅收窄。</div>
 </div>
-
-<!-- Intl 3 -->
 <div class="news-card">
-  <div class="news-source">WWD · April 14, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://wwd.com/fashion-news/" target="_blank">Gucci"渐进式"转型持续拖累Kering Q1表现</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://wwd.com/fashion-news/" target="_blank">Gucci's 'Gradual' Turnaround Weighs on Kering in Q1</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>Kering集团第一季度业绩受到Gucci"渐进式"转型策略的明显拖累，销售额延续下滑趋势，开云集团整体面临严峻挑战。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Kering's first-quarter performance was notably weighed down by Gucci's gradual turnaround strategy, with sales continuing to decline and the group facing mounting challenges.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>Gucci的缓慢转型正在侵蚀市场耐心。在消费者注意力极度碎片化的当下，"渐进式"策略等同于主动让出市场份额给更果断的竞争对手。更令人担忧的是，开云集团的现金牛Gucci一旦失速，整个集团的战略腾挪空间将大幅收窄。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Gucci's slow-burn strategy is eroding market patience. In today's hyper-fragmented consumer attention economy, a 'gradual' approach effectively cedes ground to more decisive rivals. More worrying: when Gucci — Kering's primary cash cow — stumbles, the group's strategic flexibility narrows dramatically.</div>
+  <div class="news-source">WWD · 2026-04-13</div>
+  <div class="news-title"><a href="https://wwd.com/fashion-news/" target="_blank">Chanel Names Pedro Pascal as House Ambassador Under Matthieu Blazy</a></div>
+  <div class="news-title lang-cn" style="display:none"><a href="https://wwd.com/fashion-news/" target="_blank">Chanel官宣Pedro Pascal为品牌大使，奢侈品明星策略再升级</a></div>
+  <div class="news-summary">Chanel has appointed A-list actor Pedro Pascal as a house ambassador following his appearances at recent runway shows, marking a deepening of the brand's celebrity strategy under creative director Matthieu Blazy.</div>
+  <div class="news-summary lang-cn" style="display:none">Chanel任命热门演员Pedro Pascal为品牌大使，此前他曾亮相品牌多场时装秀，此举标志着Chanel在Matthieu Blazy创意领导下明星营销策略的进一步深化。</div>
+  <div class="news-insight">Tapping Pedro Pascal — a global A-list star — signals an attempt to inject fresh cultural narrative into the house. It reflects a broader luxury playbook during downturns: when product innovation is hard to deliver, leveraging celebrity流量 to maintain brand heat is a relatively safe investment.</div>
+  <div class="news-insight lang-cn" style="display:none">邀请Pedro Pascal这样的好莱坞顶流，是在用文化影响力为品牌注入新的叙事维度。此举也反映出奢侈品行业在整体低迷期的普遍逻辑——在产品创新难以突破时，借力明星流量维持品牌热度是一种相对安全的投资。</div>
 </div>
-
-<!-- Intl 4 -->
 <div class="news-card">
-  <div class="news-source">WWD · April 13, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://wwd.com/fashion-news/" target="_blank">Chanel官宣Pedro Pascal为品牌大使，明星策略再升级</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://wwd.com/fashion-news/" target="_blank">Chanel Names Pedro Pascal as House Ambassador Under Matthieu Blazy</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>Chanel任命热门演员Pedro Pascal为品牌大使，此前他曾亮相品牌多场时装秀，此举标志着Chanel在Matthieu Blazy创意领导下明星营销策略的进一步深化。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Chanel has appointed A-list actor Pedro Pascal as a house ambassador following his appearances at recent runway shows, marking a deepening of the brand's celebrity strategy under creative director Matthieu Blazy.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>邀请Pedro Pascal这样的好莱坞顶流，是在用文化影响力为品牌注入新的叙事维度。此举反映出奢侈品行业在整体低迷期的普遍逻辑——在产品创新难以突破时，借力明星流量维持品牌热度是一种相对安全的投资。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Tapping Pedro Pascal — a global A-list star — signals an attempt to inject fresh cultural narrative into the house. It reflects a broader luxury playbook during downturns: when product innovation is hard to deliver, leveraging celebrity influence to maintain brand heat is a relatively safe investment.</div>
+  <div class="news-source">WWD · 2026-04-13</div>
+  <div class="news-title"><a href="https://wwd.com/fashion-news/" target="_blank">Rio Fashion Week Debuts as Brazil's New Global Fashion Hub</a></div>
+  <div class="news-title lang-cn" style="display:none"><a href="https://wwd.com/fashion-news/" target="_blank">里约时装周崛起：巴西成为全球时尚新势力</a></div>
+  <div class="news-summary">Rio Fashion Week is underway, aiming to establish Brazil as a new global fashion hub and drive tourism and global visibility for Brazilian fashion on the world stage.</div>
+  <div class="news-summary lang-cn" style="display:none">里约时装周正在举行，旨在将巴西打造为全球时尚新中心，吸引全球买手与媒体关注，推动巴西时尚产业旅游与全球化进程。</div>
+  <div class="news-insight">Rio Fashion Week's emergence signals a subtle shift in fashion geography — emerging markets are claiming creative voice. For global luxury brands, Brazil represents not just a consumer market but a new creative source. Those who connect early with this South American creative wave will gain first-mover advantage in the next decade.</div>
+  <div class="news-insight lang-cn" style="display:none">里约时装周的崛起代表了全球时尚地理格局的微妙变化——新兴市场正在用本土美学争夺话语权。对于全球奢侈品牌而言，巴西不仅是一个新兴消费市场，更是一个创意灵感的新源头。谁能率先与这股南美创意浪潮建立连接，谁就占得了下一个十年的先机。</div>
 </div>
 
-<!-- Intl 5 -->
+  <!-- ── Domestic News ── -->
+  <div class="section-label">
+    <span class="lang-cn">本土观察 · 中国</span>
+    <span class="lang-en" style="display:none">Local Watch · China</span>
+  </div>
+  <div class="news-card">
+  <div class="news-source">中国新闻网 · 2026-04-03</div>
+  <div class="news-title"><a href="https://www.chinanews.com.cn/cj/2026/04-03/10598585.shtml" target="_blank">爱马仕北京第四店落子三里屯，逆势加码中国市场</a></div>
+  <div class="news-title lang-en" style="display:none"><a href="https://www.chinanews.com.cn/cj/2026/04-03/10598585.shtml" target="_blank">Hermès Opens Fourth Beijing Boutique in Sanlitun, Doubling Down on China Despite Headwinds</a></div>
+  <div class="news-summary">爱马仕宣布将于北京三里屯揭幕全新专卖店，这是自1997年以来在北京开设的第四家专卖店，新店将强调当代设计与装饰艺术的融合，打造沉浸式消费体验。</div>
+  <div class="news-summary lang-en" style="display:none">Hermès announced it will open a new flagship boutique in Beijing's Sanlitun — its fourth in the capital since 1997 — emphasizing the integration of contemporary design and decorative arts for an immersive consumer experience.</div>
+  <div class="news-insight">爱马仕在行业低迷期逆势开店，是一次深思熟虑的信号释放：它用行动表明对中国高端消费市场的长期看好，与竞争对手的收缩形成鲜明对比。对于正在观望的消费者而言，爱马仕的扩张本身就是最强品牌背书。</div>
+  <div class="news-insight lang-en" style="display:none">Hermès's counter-cyclical expansion sends a deliberate signal: it demonstrates long-term conviction in China's premium consumer market, standing in sharp contrast to competitors who are pulling back. For wavering consumers, Hermès's expansion itself becomes the strongest brand endorsement.</div>
+</div>
 <div class="news-card">
-  <div class="news-source">WWD · April 13, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://wwd.com/fashion-news/" target="_blank">里约时装周崛起：巴西成为全球时尚新势力</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://wwd.com/fashion-news/" target="_blank">Rio Fashion Week Debuts as Brazil's New Global Fashion Hub</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>里约时装周正在举行，旨在将巴西打造为全球时尚新中心，吸引全球买手与媒体关注，推动巴西时尚产业旅游与全球化进程。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Rio Fashion Week is underway, aiming to establish Brazil as a new global fashion hub and drive tourism and global visibility for Brazilian fashion on the world stage.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>里约时装周的崛起代表了全球时尚地理格局的微妙变化——新兴市场正在用本土美学争夺话语权。对于全球奢侈品牌而言，巴西不仅是一个新兴消费市场，更是一个创意灵感的新源头。谁能率先与这股南美创意浪潮建立连接，谁就占得了下一个十年的先机。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Rio Fashion Week's emergence signals a subtle shift in fashion geography — emerging markets are claiming creative voice. For global luxury brands, Brazil represents not just a consumer market but a new creative source. Those who connect early with this South American creative wave will gain first-mover advantage in the next decade.</div>
+  <div class="news-source">时尚商业Daily / 新浪财经 · 2026-04-12</div>
+  <div class="news-title"><a href="https://finance.sina.com.cn/wm/2026-04-12/doc-inhuhfpw0253898.shtml" target="_blank">Tiffany中国上线24期免息分期，奢侈品消费规则悄然改变</a></div>
+  <div class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/wm/2026-04-12/doc-inhuhfpw0253898.shtml" target="_blank">Tiffany Launches 24-Month Interest-Free Installments in China, Reshaping Luxury Spending Rules</a></div>
+  <div class="news-summary">Tiffany在中国低调上线</div>
+  <div class="news-summary lang-en" style="display:none">Tiffany quietly launched an interest-free installment plan of up to 24 months in China, introducing a mass-market financial tool into the top-tier jewellery sector for the first time, aimed at lowering the barrier to high-priced jewellery and stimulating latent demand.</div>
+  <div class="news-insight">Tiffany此举是一次精心计算的冒险：高净值客群对分期不敏感，但品牌真正瞄准的是被高价挡在门外的中产与年轻消费者。此举折射出一个更深层的行业趋势——奢侈品正试图用金融工具重新定义</div>
+  <div class="news-insight lang-en" style="display:none">Tiffany's move is a calculated risk: HNWI clients are insensitive to installments, but the brand is truly targeting middle-class and young consumers locked out by high prices. This reflects a deeper trend — luxury is using financial tools to redefine the 'entry barrier', trading short-term yield for long-term customer relationship-building.</div>
 </div>
-
-<!-- Insight of the Day -->
-<div class="insight-day">
-  <div class="insight-day-label lang-cn">今日洞察</div>
-  <div class="insight-day-label lang-en" style="display:none">Insight of the Day</div>
-  <div class="insight-day-title insight-day-title-lang-cn">奢侈品行业正处于"规则重写"的关键节点</div>
-  <div class="insight-day-title insight-day-title-lang-en" style="display:none">The Luxury Industry Is at a Critical Inflection Point of Rule Rewriting</div>
-  <div class="insight-day-body insight-day-body-lang-cn">
-    本周奢侈品超级周的密集财报将揭示行业分化的真实烈度。爱马仕逆势扩产与Gucci转型乏力之间的巨大落差，折射出一个深层矛盾：奢侈品行业正同时面临"高端守擂"与"中端争夺"的双重压力。Tiffany分期付款的开创性尝试，则代表了在产品创新乏力时，品牌转向金融工具寻求增长的路径。<br><br>
-    这不是简单的涨价或降价问题，而是一次关于"奢侈品到底应该服务谁"的根本性重新定义。当游戏规则被重写，活下来的不是最大的品牌，而是最能讲出新故事的玩家。
-  </div>
-  <div class="insight-day-body insight-day-body-lang-en" style="display:none">
-    This week's luxury superweek of earnings reports will reveal the true intensity of sector polarization. The stark contrast between Hermès's counter-cyclical expansion and Gucci's sluggish turnaround reflects a deeper structural tension: the luxury sector faces simultaneous pressure to defend the ultra-high end while competing fiercely for the middle market.<br><br>
-    Tiffany's pioneering installment plan represents a path of using financial tools to drive growth when product innovation stalls. This is not simply a matter of raising or lowering prices — it is a fundamental redefinition of who luxury should serve. When the rules are rewritten, the survivors won't be the biggest brands, but those best able to tell new stories.
-  </div>
-</div>
-
-<!-- Domestic Section -->
-<div class="section-label lang-cn">本土观察 · 中国</div>
-<div class="section-label lang-en" style="display:none">Local Watch · China</div>
-
-<!-- Dom 1 -->
 <div class="news-card">
-  <div class="news-source">中国新闻网 · April 3, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://www.chinanews.com.cn/cj/2026/04-03/10598585.shtml" target="_blank">爱马仕北京第四店落子三里屯，逆势加码中国市场</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://www.chinanews.com.cn/cj/2026/04-03/10598585.shtml" target="_blank">Hermès Opens Fourth Beijing Boutique in Sanlitun, Doubling Down on China Despite Headwinds</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>爱马仕宣布将于北京三里屯揭幕全新专卖店，这是自1997年以来在北京开设的第四家专卖店，新店将强调当代设计与装饰艺术的融合，打造沉浸式消费体验。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Hermès announced it will open a new flagship boutique in Beijing's Sanlitun — its fourth in the capital since 1997 — emphasizing contemporary design and decorative arts for an immersive consumer experience.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>爱马仕在行业低迷期逆势开店，是一次精心计算的信号释放：它用行动表明对中国高端消费市场的长期看好，与竞争对手的收缩形成鲜明对比。对于正在观望的消费者而言，爱马仕的扩张本身就是最强品牌背书。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Hermès's counter-cyclical expansion sends a deliberate signal: it demonstrates long-term conviction in China's premium consumer market, standing in sharp contrast to competitors who are pulling back. For wavering consumers, Hermès's expansion itself becomes the strongest brand endorsement.</div>
+  <div class="news-source">WWD国际时尚特讯 / 腾讯新闻 · 2026-04-14</div>
+  <div class="news-title"><a href="https://news.qq.com/rain/a/20260414A01W8O00" target="_blank">国际局势反复无常，时尚产业复苏</a></div>
+  <div class="news-title lang-en" style="display:none"><a href="https://news.qq.com/rain/a/20260414A01W8O00" target="_blank">Geopolitical Volatility Makes Fashion Industry Recovery 'Premature': WWD</a></div>
+  <div class="news-summary">WWD国际时尚特讯发文指出，中东局势升级导致全球供应链波动与消费信心受损，时尚产业链面临石油价格、原料成本和消费者信心的多重压力，结构性不确定性加剧行业洗牌。</div>
+  <div class="news-summary lang-en" style="display:none">WWD International Fashion Wire reports that escalating Middle East tensions have triggered supply chain volatility and eroding consumer confidence, with the fashion industry facing mounting pressure from oil prices, raw material costs and macro uncertainty, accelerating structural consolidation.</div>
+  <div class="news-insight">宏观地缘政治对时尚产业的影响远超表面——它不仅压制消费意愿，更在重塑全球供应链的底层逻辑。品牌必须在多套规则体系间艰难平衡。对中国时尚产业而言，这既是挑战也是机会：在欧美品牌战略收缩之时，本土品牌有更大的空间建立存在感。</div>
+  <div class="news-insight lang-en" style="display:none">Macro geopolitics impacts fashion far beyond surface sentiment — it reshapes the underlying logic of global supply chains. Brands must navigate multiple rule systems simultaneously. For China's fashion sector, this is both challenge and opportunity: as Western brands retreat strategically, domestic players have a wider window to establish presence.</div>
 </div>
-
-<!-- Dom 2 -->
 <div class="news-card">
-  <div class="news-source">时尚商业Daily · April 12, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://finance.sina.com.cn/wm/2026-04-12/doc-inhuhfpw0253898.shtml" target="_blank">Tiffany中国上线24期免息分期，奢侈品消费规则悄然改变</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://finance.sina.com.cn/wm/2026-04-12/doc-inhuhfpw0253898.shtml" target="_blank">Tiffany Launches 24-Month Interest-Free Installments in China, Reshaping Luxury Spending Rules</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>Tiffany在中国低调上线"至高24期免息"分期付款服务，首次将常见于大众消费的金融工具引入顶级珠宝品牌体系，旨在降低高单价珠宝的购买门槛，刺激潜在需求。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Tiffany quietly launched an interest-free installment plan of up to 24 months in China, introducing a mass-market financial tool into the top-tier jewellery sector for the first time, aimed at lowering the barrier to high-priced jewellery and stimulating latent demand.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>Tiffany此次押注高风险高回报：真正瞄准的是被高价挡在门外的中产与年轻消费者，而非已饱和的高净值客群。此举折射出行业深层的结构性焦虑——当增量客群变得稀缺，用金融工具"创造"需求成为新的生存策略，但这同时也在模糊奢侈品的稀缺性边界。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Tiffany is gambling on high-risk, high-reward — targeting middle-class and young consumers locked out by high prices, not the already saturated HNWI segment. This reflects deeper structural anxiety in the industry: when incremental customers become scarce, using financial tools to manufacture demand becomes a survival strategy, but it simultaneously blurs luxury's sacred boundary of scarcity.</div>
+  <div class="news-source">新浪财经 · 2026-04-11</div>
+  <div class="news-title"><a href="https://finance.sina.com.cn/roll/2026-04-11/doc-inhtzxrp4926463.shtml" target="_blank">2026秋冬上海时装周收官：上海炼成全球时尚</a></div>
+  <div class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/roll/2026-04-11/doc-inhtzxrp4926463.shtml" target="_blank">2026 Fall/Winter Shanghai Fashion Week Wraps: Shanghai Becomes a Global Fashion 'Gravity Center'</a></div>
+  <div class="news-summary">2026秋冬上海时装周以</div>
+  <div class="news-summary lang-en" style="display:none">The 2026 Fall/Winter Shanghai Fashion Week wrapped under the theme of 'Ascending through Design'. Maison Margiela chose Shanghai for its first global debut outside Europe, while domestic brands HPLY and EP YAYING converted runway exposure into sales. Shanghai Fashion Week ranked fourth among the world's eight sample fashion weeks.</div>
+  <div class="news-insight">上海时装周正在完成从</div>
+  <div class="news-insight lang-en" style="display:none">Shanghai Fashion Week is completing its transition from a domestic stage to a global coordinate. Maison Margiela's choice is a landmark event — it signals that China is no longer merely a sales market but an indispensable node in the global creative ecosystem. Domestic brands' commercialization success proves China has the foundational ecosystem for self-sustaining fashion growth.</div>
 </div>
-
-<!-- Dom 3 -->
 <div class="news-card">
-  <div class="news-source">WWD国际时尚特讯 · April 14, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://news.qq.com/rain/a/20260414A01W8O00" target="_blank">国际局势反复无常，时尚产业复苏"为时过早"</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://news.qq.com/rain/a/20260414A01W8O00" target="_blank">Geopolitical Volatility Makes Fashion Industry Recovery 'Premature': WWD</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>WWD国际时尚特讯指出，中东局势升级导致全球供应链波动与消费信心受损，时尚产业链面临石油价格、原料成本和消费者信心的多重压力，行业结构性不确定性加剧。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> WWD International Fashion Wire reports that escalating Middle East tensions have triggered supply chain volatility and eroding consumer confidence, with fashion facing mounting pressure from oil prices, raw material costs and macro uncertainty.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>宏观地缘政治对时尚产业的影响远超表面——它不仅压制消费意愿，更在重塑全球供应链的底层逻辑。对中国时尚产业而言，这既是挑战也是机会：在欧美品牌战略收缩之时，本土品牌有更大的空间建立存在感，并凭借主场优势加速构建自己的品牌叙事。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Macro geopolitics impacts fashion far beyond surface sentiment — it reshapes the underlying logic of global supply chains. For China's fashion sector, this is both challenge and opportunity: as Western brands retreat strategically, domestic players have a wider window to establish presence and leverage home-ground advantage to accelerate their own brand narratives.</div>
+  <div class="news-source">第一财经YiMagazine · 2026-04-10</div>
+  <div class="news-title"><a href="https://finance.sina.com.cn/wm/2026-04-10/doc-inhtymqa1380803.shtml" target="_blank">奢侈品市场增速放缓：问题究竟出在哪里？</a></div>
+  <div class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/wm/2026-04-10/doc-inhtymqa1380803.shtml" target="_blank">Luxury Market Growth Slows: What's Really Behind the Slump?</a></div>
+  <div class="news-summary">全球奢侈品市场增速放缓，核心矛盾在于</div>
+  <div class="news-summary lang-en" style="display:none">Global luxury market growth is slowing, with the core tension being declining purchasing power among entry-level consumers ('light spenders'), while HNWIs maintain stable spending. Younger consumers demand deeper emotional brand connections and question whether luxury has become too 'crowded'.</div>
+  <div class="news-insight">奢侈品市场正面临一场结构性矛盾：高端消费者稳固，但增长引擎——年轻与中产消费者——正在失速。品牌的应对策略正在两极分化：要么向上走，打造真正的稀缺性；要么向下沉，用规模和金融工具换取量。哪条路更可持续？历史告诉我们，品牌的每一次下沉都是对神话的一次稀释。</div>
+  <div class="news-insight lang-en" style="display:none">The luxury market faces a structural contradiction: top-end consumers are stable, but the growth engine — younger and middle-class consumers — is sputtering. Brand strategies are polarizing: either move upmarket to true scarcity, or go downmarket for volume via financial tools. Which path is more sustainable? History tells us every brand's downward move dilutes its mythology.</div>
 </div>
 
-<!-- Dom 4 -->
-<div class="news-card">
-  <div class="news-source">新浪财经 · April 11, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://finance.sina.com.cn/roll/2026-04-11/doc-inhtzxrp4926463.shtml" target="_blank">2026秋冬上海时装周收官：上海炼成全球时尚"引力场"</a>
+  <!-- ── History Link ── -->
+  <div style="text-align:center; margin-top:32px;">
+    <a href="history.html" style="color:#B8A88A; font-size:13px; letter-spacing:1px; text-decoration:none;">
+      <span class="lang-cn">📜 查看历史简报</span>
+      <span class="lang-en" style="display:none">📜 View Archive</span>
+    </a>
   </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://finance.sina.com.cn/roll/2026-04-11/doc-inhtzxrp4926463.shtml" target="_blank">2026 Fall/Winter Shanghai Fashion Week Wraps: Shanghai Becomes a Global Fashion 'Gravity Center'</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>2026秋冬上海时装周以"设级而上"为主题落幕，Maison Margiela首次在欧洲之外选择上海作为全球首秀地，本土品牌HPLY、EP YAYING实现从曝光到业绩的完整转化，上海时装周位列全球八大样本时装周第四。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> The 2026 Fall/Winter Shanghai Fashion Week wrapped under the theme of 'Ascending through Design'. Maison Margiela chose Shanghai for its first global debut outside Europe, while domestic brands HPLY and EP YAYING converted runway exposure into sales. Shanghai Fashion Week ranked fourth among the world's eight sample fashion weeks.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>上海时装周正在完成从"国内舞台"到"全球坐标"的跃迁。Maison Margiela的选择是一个标志性事件——它意味着中国不再只是品牌的销售市场，更是全球创意体系不可绕过的一环。本土品牌的商业化能力证明，中国时尚产业已经具备了自我造血的生态基础。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> Shanghai Fashion Week is completing its transition from a domestic stage to a global coordinate. Maison Margiela's choice is a landmark event — it signals that China is no longer merely a sales market but an indispensable node in the global creative ecosystem. Domestic brands' commercialization success proves China has the foundational ecosystem for self-sustaining fashion growth.</div>
+
 </div>
 
-<!-- Dom 5 -->
-<div class="news-card">
-  <div class="news-source">第一财经YiMagazine · April 10, 2026</div>
-  <div class="news-title news-title-lang-cn">
-    <a href="https://finance.sina.com.cn/wm/2026-04-10/doc-inhtymqa1380803.shtml" target="_blank">奢侈品市场增速放缓：问题究竟出在哪里？</a>
-  </div>
-  <div class="news-title news-title-lang-en" style="display:none">
-    <a href="https://finance.sina.com.cn/wm/2026-04-10/doc-inhtymqa1380803.shtml" target="_blank">Luxury Market Growth Slows: What's Really Behind the Slump?</a>
-  </div>
-  <div class="news-summary news-summary-lang-cn"><strong>要点：</strong>全球奢侈品市场增速放缓，核心矛盾在于"轻客"（入门级消费者）购买力下降，与此同时高净值客户保持稳定消费。年轻人对品牌情感连接的要求更高，并质疑奢侈品是否已过于"大众化"。</div>
-  <div class="news-summary news-summary-lang-en" style="display:none"><strong>Key Points:</strong> Global luxury market growth is slowing, with the core tension being declining purchasing power among entry-level consumers ('light spenders'), while HNWIs maintain stable spending. Younger consumers demand deeper emotional brand connections and question whether luxury has become too 'crowded'.</div>
-  <div class="news-insight news-insight-lang-cn"><strong>洞察：</strong>奢侈品市场正面临一场结构性矛盾：高端消费者稳固，但增长引擎——年轻与中产消费者——正在失速。品牌的应对策略正在两极分化：要么向上走，打造真正的稀缺性；要么向下沉，用规模和金融工具换取量。历史告诉我们，品牌的每一次下沉都是对神话的一次稀释。</div>
-  <div class="news-insight news-insight-lang-en" style="display:none"><strong>Insight:</strong> The luxury market faces a structural contradiction: top-end consumers are stable, but the growth engine — younger and middle-class consumers — is sputtering. Brand strategies are polarizing: either move upmarket to true scarcity, or go downmarket for volume via financial tools. History tells us every brand's downward move dilutes its mythology.</div>
-</div>
-
-<!-- History Link -->
-<div style="text-align:center; margin-top:32px;">
-  <a href="history.html" style="color:#B8A88A; font-size:13px; letter-spacing:1px; text-decoration:none;">📜 查看历史简报</a>
-</div>
-
-<!-- Footer -->
+<!-- ── Footer ── -->
 <div class="footer">
-  <p class="lang-cn">时尚与奢侈品日报 · 每日9:00自动更新</p>
-  <p class="lang-en" style="display:none">Fashion &amp; Luxury News Digest · Auto-updated daily at 9:00</p>
-  <p style="margin-top:6px;">Sources: Business of Fashion · WWD · 中国新闻网 · 时尚商业Daily · 第一财经YiMagazine</p>
+  <span class="lang-cn">时尚与奢侈品日报 · 每日9:00自动更新</span>
+  <span class="lang-en" style="display:none">Fashion &amp; Luxury News Digest · Auto-updated daily at 9:00</span>
+  <br>
+  <span>Sources: Business of Fashion · WWD · 中国新闻网 · 时尚商业Daily</span>
 </div>
 
 <script>
 function toggleLang(en) {
-  if (en) {
-    document.body.classList.add('show-en');
-  } else {
-    document.body.classList.remove('show-en');
-  }
+  if (en) { document.body.classList.add('show-en'); }
+  else { document.body.classList.remove('show-en'); }
 }
-// Init: show CN by default
+// Default: CN
 toggleLang(false);
 </script>
-
 </body>
 </html>
