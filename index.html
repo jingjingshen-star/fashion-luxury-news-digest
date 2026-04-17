@@ -3,383 +3,320 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>时尚与奢侈品日报 · 2026-04-15</title>
+<title>时尚与奢侈品日报 · 2026年4月17日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', sans-serif;
-    background: #f9f7f2;
-    color: #2a2a2a;
-    line-height: 1.8;
-    padding: 0 16px 60px;
+    font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+    background: #f8f6f1;
+    color: #2c2c2c;
+    line-height: 1.7;
   }
-  body.show-en { font-family: 'Georgia', serif; }
-
-  /* ── Language Toggle (fixed top-right) ── */
-  .lang-switch {
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    gap: 6px;
-    z-index: 100;
-  }
-  .lang-btn {
-    border: 1.5px solid #B8A88A;
-    background: transparent;
-    color: #B8A88A;
-    padding: 5px 16px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 12px;
-    letter-spacing: 1px;
-    transition: all 0.2s;
-  }
-  .lang-btn:hover { background: rgba(184,168,138,0.1); }
-  body.show-en .lang-btn:first-child { background: transparent; color: #B8A88A; }
-  body.show-en .lang-btn:last-child { background: #B8A88A; color: #fff; }
-  body:not(.show-en) .lang-btn:first-child { background: #B8A88A; color: #fff; }
-  body:not(.show-en) .lang-btn:last-child { background: transparent; color: #B8A88A; }
-
-  /* ── Bilingual toggle logic ── */
-  body.show-en .lang-cn  { display: none !important; }
-  body.show-en .lang-en  { display: block !important; }
-  body:not(.show-en) .lang-en  { display: none !important; }
-  body:not(.show-en) .lang-cn  { display: block !important; }
-
-  /* ── Container ── */
-  .container { max-width: 860px; margin: 0 auto; }
-
-  /* ── Hero Header ── */
-  .hero {
-    background: linear-gradient(135deg, #1E392A 0%, #2d5a42 100%);
-    color: #fff;
-    padding: 60px 20px 52px;
-    margin: 0 -16px 40px;
+  .header {
+    background: #1E392A;
+    padding: 40px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
   }
-  .hero::before {
-    content: '✦ ✦ ✦ ✦ ✦ ✦';
+  .header::before {
+    content: '';
     position: absolute;
-    top: 14px; left: 50%;
-    transform: translateX(-50%);
-    font-size: 9px;
-    letter-spacing: 8px;
-    color: rgba(255,255,255,0.18);
+    inset: 0;
+    background: url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_fashion.png') center center / 200px no-repeat;
+    opacity: 0.06;
   }
-  .hero-date {
-    font-size: 11px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.6);
-    margin-bottom: 16px;
-  }
-  .hero-title {
+  .header-inner { position: relative; z-index: 1; }
+  .header h1 {
+    color: #fff;
     font-size: 28px;
     font-weight: 700;
     letter-spacing: 2px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
-  .hero-sub {
+  .header p {
+    color: #B8A88A;
     font-size: 13px;
-    color: rgba(255,255,255,0.5);
     letter-spacing: 1px;
   }
-
-  /* ── Section Label ── */
-  .section-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+  .lang-switch {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px auto;
+    max-width: 600px;
+    padding: 0 20px;
+  }
+  .lang-btn {
+    padding: 7px 28px;
+    border: 1.5px solid #B8A88A;
+    background: transparent;
     color: #B8A88A;
-    border-left: 3px solid #B8A88A;
-    padding-left: 12px;
-    margin: 36px 0 20px;
+    border-radius: 22px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    transition: all 0.2s;
+    flex: 1;
+    text-align: center;
   }
-
-  /* ── Daily Insight ── */
-  .insight-day {
-    background: linear-gradient(135deg, #1E392A, #2d5a42);
-    color: #fff;
-    border-radius: 14px;
-    padding: 30px 28px;
-    margin: 28px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .insight-day::before {
-    content: '✦';
-    position: absolute;
-    top: -12px; right: 20px;
-    font-size: 120px;
-    color: rgba(255,255,255,0.04);
-    pointer-events: none;
-  }
-  .insight-day-label {
-    font-size: 10px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
+  .lang-btn:hover { background: rgba(184,168,138,0.15); }
+  body.show-en .lang-btn:nth-child(1) { background: transparent; color: #B8A88A; }
+  body.show-en .lang-btn:nth-child(2) { background: #B8A88A; color: #fff; }
+  .container { max-width: 680px; margin: 0 auto; padding: 24px 20px 60px; }
+  .category-label {
+    display: inline-block;
+    background: #1E392A;
+    color: #B8A88A;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 12px;
     margin-bottom: 14px;
+    text-transform: uppercase;
   }
-  .insight-day-title {
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #fff;
-    line-height: 1.4;
-  }
-  .insight-day-body {
-    font-size: 14px;
-    color: rgba(255,255,255,0.82);
-    line-height: 1.9;
-  }
-  .insight-day-body br { display: block; content: ''; margin-top: 10px; }
-
-  /* ── News Card ── */
   .news-card {
     background: #fff;
     border-radius: 12px;
-    padding: 24px 26px;
+    padding: 24px;
     margin-bottom: 18px;
-    border: 1px solid rgba(30,57,42,0.08);
-    box-shadow: 0 2px 12px rgba(30,57,42,0.05);
+    box-shadow: 0 2px 12px rgba(30,57,42,0.08);
     position: relative;
+    overflow: hidden;
   }
   .news-card::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #1E392A, #B8A88A);
-    border-radius: 12px 12px 0 0;
-    opacity: 0;
-    transition: opacity 0.2s;
+    top: 0; left: 0;
+    width: 4px; height: 100%;
+    background: linear-gradient(to bottom, #1E392A, #B8A88A);
+    border-radius: 12px 0 0 12px;
   }
-  .news-card:hover::before { opacity: 1; }
-  .news-source {
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: #B8A88A;
-    margin-bottom: 10px;
-  }
-  .news-title {
+  .news-title a {
     font-size: 17px;
     font-weight: 700;
     color: #1E392A;
+    text-decoration: none;
+    line-height: 1.4;
+    display: block;
     margin-bottom: 10px;
-    line-height: 1.5;
   }
-  .news-title a { color: inherit; text-decoration: none; }
   .news-title a:hover { color: #B8A88A; }
-  .news-summary {
-    font-size: 14px;
-    color: #555;
-    margin-bottom: 10px;
-    padding-left: 14px;
-    border-left: 2.5px solid #B8A88A;
-    line-height: 1.7;
-  }
-  .news-insight {
-    font-size: 13px;
-    color: #444;
-    background: rgba(30,57,42,0.04);
-    padding: 12px 16px;
-    border-radius: 8px;
-    margin-top: 8px;
-    line-height: 1.7;
-  }
-  .news-insight::before { content: '💡 '; }
-
-  /* ── Footer ── */
-  .footer {
-    text-align: center;
-    margin-top: 48px;
-    padding-top: 24px;
-    border-top: 1px solid rgba(30,57,42,0.1);
+  .news-meta {
     font-size: 11px;
     color: #aaa;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
   }
-  .footer a { color: #B8A88A; text-decoration: none; }
-  .footer a:hover { text-decoration: underline; }
+  .news-summary {
+    font-size: 14px;
+    color: #444;
+    margin-bottom: 10px;
+  }
+  .news-insight {
+    font-size: 13.5px;
+    color: #1E392A;
+    background: rgba(30,57,42,0.05);
+    border-left: 3px solid #B8A88A;
+    padding: 10px 14px;
+    border-radius: 0 6px 6px 0;
+    font-style: italic;
+  }
+  .news-source-badge {
+    display: inline-block;
+    font-size: 11px;
+    color: #B8A88A;
+    border: 1px solid #B8A88A;
+    border-radius: 10px;
+    padding: 2px 8px;
+    margin-bottom: 10px;
+  }
+  .insight-section {
+    background: #1E392A;
+    border-radius: 16px;
+    padding: 28px 24px;
+    margin: 30px 0 24px;
+    color: #fff;
+  }
+  .insight-section h2 {
+    color: #B8A88A;
+    font-size: 15px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .insight-item {
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid #B8A88A;
+  }
+  .insight-item p { font-size: 14px; color: rgba(255,255,255,0.85); line-height: 1.7; }
+  .history-link {
+    text-align: center;
+    margin-top: 28px;
+    margin-bottom: 20px;
+  }
+  .history-link a {
+    color: #B8A88A;
+    font-size: 13px;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(184,168,138,0.4);
+    padding-bottom: 2px;
+  }
+  .history-link a:hover { color: #1E392A; border-color: #1E392A; }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: #bbb;
+    font-size: 11px;
+    border-top: 1px solid #e8e4dc;
+    margin-top: 20px;
+  }
 
-  /* ── Responsive ── */
-  @media (max-width: 600px) {
-    .hero { padding: 48px 20px 40px; }
-    .hero-title { font-size: 22px; }
-    .news-card { padding: 18px 18px; }
-    .lang-switch { top: 10px; right: 10px; }
-  }
+  /* Bilingual toggle */
+  .lang-en { display: none; }
+  body.show-en .lang-cn { display: none; }
+  body.show-en .lang-en { display: block; }
 </style>
 </head>
 <body>
 
-<!-- Language Toggle (fixed top-right) -->
+<div class="header">
+  <div class="header-inner">
+    <h1>FASHION &amp; LUXURY NEWS DIGEST</h1>
+    <p>2026年4月17日 · Friday, April 17, 2026</p>
+  </div>
+</div>
+
 <div class="lang-switch">
   <button class="lang-btn" onclick="toggleLang(false)">中文</button>
-  <button class="lang-btn" onclick="toggleLang(true)">En</button>
+  <button class="lang-btn" onclick="toggleLang(true)">English</button>
 </div>
 
 <div class="container">
 
-  <!-- ── Hero Header ── -->
-  <div class="hero">
-    <div class="hero-date">Wednesday · April 15, 2026</div>
-    <h1 class="hero-title">
-      <span class="lang-cn">时尚与奢侈品日报</span>
-      <span class="lang-en" style="display:none">Fashion &amp; Luxury News Digest</span>
-    </h1>
-    <p class="hero-sub">
-      <span class="lang-cn">全球视野 · 本土洞察 · 每日9:00更新</span>
-      <span class="lang-en" style="display:none">Global Insight · Curated Daily · Updated 9:00</span>
-    </p>
-  </div>
-
-  <!-- ── Daily Insight ── -->
-  <div class="insight-day">
-    <div class="insight-day-label">
-      <span class="lang-cn">💡 今日洞察</span>
-      <span class="lang-en" style="display:none">💡 Insight of the Day</span>
-    </div>
-    <div class="insight-day-title">
-      <span class="lang-cn">奢侈品行业正处于"规则重写"的关键节点</span>
-      <span class="lang-en" style="display:none">The Luxury Industry Is at a Critical Inflection Point of Rule Rewriting</span>
-    </div>
-    <div class="insight-day-body">
-      <span class="lang-cn">本周奢侈品超级周的密集财报将揭示行业分化的真实烈度。爱马仕逆势扩产与Gucci转型乏力的落差，折射出深层矛盾：奢侈品正同时面临"高端守擂"与"中端争夺"的双重压力。<br><br>这不是简单的涨价或降价问题，而是一次关于"奢侈品到底应该服务谁"的根本性重新定义。当游戏规则被重写，活下来的不是最大的品牌，而是最能讲出新故事的玩家。</span>
-      <span class="lang-en" style="display:none">This week's luxury superweek will reveal the true intensity of sector polarization. The contrast between Hermès's counter-cyclical expansion and Gucci's sluggish turnaround reflects deeper structural tension.<br><br>This is not simply a matter of raising or lowering prices — it is a fundamental redefinition of who luxury should serve. When the rules are rewritten, survivors won't be the biggest brands, but those best able to tell new stories.</span>
-    </div>
-  </div>
-
-  <!-- ── International News ── -->
-  <div class="section-label">
-    <span class="lang-cn">全球动态 · 国际</span>
-    <span class="lang-en" style="display:none">Global · International</span>
-  </div>
+  <!-- Card 1 -->
   <div class="news-card">
-  <div class="news-source">Business of Fashion · 2026-04-12</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">Luxury Superweek: LVMH, Kering and Hermès Report Q1 Results This Week</a></div>
-  <div class="news-title lang-cn"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">LVMH、Kering、爱马仕Q1财报本周密集出炉，奢侈品</a></div>
-  <div class="news-summary lang-en" style="display:none">This week, LVMH, Kering and Hermès are set to report Q1 results, with Kering hosting a capital markets day in Florence to unveil its strategic overhaul. Pucci will also show in Sicily.</div>
-  <div class="news-summary">本周，LVMH、开云集团和爱马仕将陆续发布第一季度业绩报告，开云集团还将在佛罗伦萨举办资本市场日，公布全新战略规划。Pucci亦将在西西里岛举办时装秀。</div>
-  <div class="news-insight lang-en" style="display:none">As the luxury sector grapples with headwinds, Q1 results are a critical test. Kering's capital markets day is particularly pivotal — investors want a concrete Gucci revival roadmap, not just rhetoric. Failure to deliver could deepen the valuation pressure on the conglomerate.</div>
-  <div class="news-insight">在奢侈品行业整体承压的背景下，Q1财报将是一块关键试金石。Kering的资本市场日尤为关键——市场正等待其拿出切实可行的Gucci复苏方案，而不仅仅是口号。若战略缺乏说服力，开云的估值压力将进一步加剧。</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">Business of Fashion · 2026-04-11</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">Hermès Opens 25th Leather Goods Plant in France Despite Geopolitical Turmoil</a></div>
-  <div class="news-title lang-cn"><a href="https://www.businessoffashion.com/briefings/the-week-ahead/" target="_blank">爱马仕无视地缘阴霾，第25家皮具工坊落子法国</a></div>
-  <div class="news-summary lang-en" style="display:none">Hermès officially opened its 25th leather goods workshop in France last Friday, signaling confidence in the long-term demand for high-end artisanal leather goods despite broader market headwinds.</div>
-  <div class="news-summary">爱马仕上周五在法国正式开设第25家皮具工坊，延续其逆势扩产能策略，彰显对高端手工皮具市场长期需求的信心。</div>
-  <div class="news-insight lang-en" style="display:none">Hermès's aggressive capacity expansion stands in stark contrast to broader industry caution. It reflects deep confidence in brand resilience — Birkin clients willing to wait months will persist even in a contracting market. However, whether this playbook can succeed in jewellery and beauty remains an open question.</div>
-  <div class="news-insight">爱马仕的激进扩产与行业担忧形成鲜明对比。这背后是爱马仕对自身品牌韧性的底气——即便整体市场收缩，愿意等待数月的铂金包客户依然存在。但这一策略能否在竞争加剧的珠宝与美妆赛道复制，尚存疑问。</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">WWD · 2026-04-14</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://wwd.com/fashion-news/" target="_blank">Gucci's 'Gradual' Turnaround Weighs on Kering in Q1</a></div>
-  <div class="news-title lang-cn"><a href="https://wwd.com/fashion-news/" target="_blank">Gucci</a></div>
-  <div class="news-summary lang-en" style="display:none">Kering's first-quarter performance was notably weighed down by Gucci's gradual turnaround strategy, with sales continuing to decline and the group facing mounting challenges.</div>
-  <div class="news-summary">Kering集团第一季度业绩受到Gucci</div>
-  <div class="news-insight lang-en" style="display:none">Gucci's slow-burn strategy is eroding market patience. In today's hyper-fragmented consumer attention economy, a 'gradual' approach effectively cedes ground to more decisive rivals. More worrying: when Gucci — Kering's primary cash cow — stumbles, the group's strategic flexibility narrows dramatically.</div>
-  <div class="news-insight">Gucci的缓慢转型正在侵蚀市场耐心。在消费者注意力极度碎片化的当下，"渐进式"策略等同于主动让出市场份额给更果断的竞争对手。更令人担忧的是，开云集团的现金牛Gucci一旦失速，整个集团的战略腾挪空间将大幅收窄。</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">WWD · 2026-04-13</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://wwd.com/fashion-news/" target="_blank">Chanel Names Pedro Pascal as House Ambassador Under Matthieu Blazy</a></div>
-  <div class="news-title lang-cn"><a href="https://wwd.com/fashion-news/" target="_blank">Chanel官宣Pedro Pascal为品牌大使，奢侈品明星策略再升级</a></div>
-  <div class="news-summary lang-en" style="display:none">Chanel has appointed A-list actor Pedro Pascal as a house ambassador following his appearances at recent runway shows, marking a deepening of the brand's celebrity strategy under creative director Matthieu Blazy.</div>
-  <div class="news-summary">Chanel任命热门演员Pedro Pascal为品牌大使，此前他曾亮相品牌多场时装秀，此举标志着Chanel在Matthieu Blazy创意领导下明星营销策略的进一步深化。</div>
-  <div class="news-insight lang-en" style="display:none">Tapping Pedro Pascal — a global A-list star — signals an attempt to inject fresh cultural narrative into the house. It reflects a broader luxury playbook during downturns: when product innovation is hard to deliver, leveraging celebrity流量 to maintain brand heat is a relatively safe investment.</div>
-  <div class="news-insight">邀请Pedro Pascal这样的好莱坞顶流，是在用文化影响力为品牌注入新的叙事维度。此举也反映出奢侈品行业在整体低迷期的普遍逻辑——在产品创新难以突破时，借力明星流量维持品牌热度是一种相对安全的投资。</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">WWD · 2026-04-13</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://wwd.com/fashion-news/" target="_blank">Rio Fashion Week Debuts as Brazil's New Global Fashion Hub</a></div>
-  <div class="news-title lang-cn"><a href="https://wwd.com/fashion-news/" target="_blank">里约时装周崛起：巴西成为全球时尚新势力</a></div>
-  <div class="news-summary lang-en" style="display:none">Rio Fashion Week is underway, aiming to establish Brazil as a new global fashion hub and drive tourism and global visibility for Brazilian fashion on the world stage.</div>
-  <div class="news-summary">里约时装周正在举行，旨在将巴西打造为全球时尚新中心，吸引全球买手与媒体关注，推动巴西时尚产业旅游与全球化进程。</div>
-  <div class="news-insight lang-en" style="display:none">Rio Fashion Week's emergence signals a subtle shift in fashion geography — emerging markets are claiming creative voice. For global luxury brands, Brazil represents not just a consumer market but a new creative source. Those who connect early with this South American creative wave will gain first-mover advantage in the next decade.</div>
-  <div class="news-insight">里约时装周的崛起代表了全球时尚地理格局的微妙变化——新兴市场正在用本土美学争夺话语权。对于全球奢侈品牌而言，巴西不仅是一个新兴消费市场，更是一个创意灵感的新源头。谁能率先与这股南美创意浪潮建立连接，谁就占得了下一个十年的先机。</div>
-</div>
-
-  <!-- ── Domestic News ── -->
-  <div class="section-label">
-    <span class="lang-cn">本土观察 · 中国</span>
-    <span class="lang-en" style="display:none">Local Watch · China</span>
+    <span class="news-source-badge">贝恩 x BoF</span>
+    <h3 class="news-title lang-cn"><a href="https://www.businessoffashion.com/news/luxury/luxury-sector-to-revive-in-2026-but-price-hikes-leave-shoppers-betrayed-bain-says/" target="_blank">奢侈品市场2026年将温和复苏，但消费者已被"背叛"</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://www.businessoffashion.com/news/luxury/luxury-sector-to-revive-in-2026-but-price-hikes-leave-shoppers-betrayed-bain-says/" target="_blank">Luxury Sector to Revive 3-5% in 2026, but Customers 'Betrayed' by Price Hikes: Bain</a></h3>
+    <p class="news-meta lang-cn">贝恩公司 · Business of Fashion · 2026-04-17</p>
+    <p class="news-meta lang-en" style="display:none">Bain &amp; Company × BoF · April 17, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>贝恩公司预计，经历2025年停滞后，2026年全球奢侈品销量将增长3%-5%。但多年激进涨价已严重疏远客户群体——全球奢侈品核心客群从2022年的约4亿人缩减至2025年的约3.4亿人，消费者普遍感到"被背叛"。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Bain forecasts 3-5% volume growth in 2026 after 2025 stagnation, but warns that aggressive price hikes have alienated customers — the global luxury customer base shrank from ~400M (2022) to ~340M (2025), leaving consumers feeling 'betrayed'.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>价格驱动的增长模式已触及天花板，奢侈品牌必须从"涨价获益"转向"量价平衡"，重新赢得被疏远的3.4亿核心消费者。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Price-driven growth has hit a ceiling. Brands must shift from 'pricing gains' to 'volume-pricing balance' and win back the 340M alienated core consumers for long-term health.</p>
   </div>
+
+  <!-- Card 2 -->
   <div class="news-card">
-  <div class="news-source">中国新闻网 · 2026-04-03</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://www.chinanews.com.cn/cj/2026/04-03/10598585.shtml" target="_blank">Hermès Opens Fourth Beijing Boutique in Sanlitun, Doubling Down on China Despite Headwinds</a></div>
-  <div class="news-title lang-cn"><a href="https://www.chinanews.com.cn/cj/2026/04-03/10598585.shtml" target="_blank">爱马仕北京第四店落子三里屯，逆势加码中国市场</a></div>
-  <div class="news-summary lang-en" style="display:none">Hermès announced it will open a new flagship boutique in Beijing's Sanlitun — its fourth in the capital since 1997 — emphasizing the integration of contemporary design and decorative arts for an immersive consumer experience.</div>
-  <div class="news-summary">爱马仕宣布将于北京三里屯揭幕全新专卖店，这是自1997年以来在北京开设的第四家专卖店，新店将强调当代设计与装饰艺术的融合，打造沉浸式消费体验。</div>
-  <div class="news-insight lang-en" style="display:none">Hermès's counter-cyclical expansion sends a deliberate signal: it demonstrates long-term conviction in China's premium consumer market, standing in sharp contrast to competitors who are pulling back. For wavering consumers, Hermès's expansion itself becomes the strongest brand endorsement.</div>
-  <div class="news-insight">爱马仕在行业低迷期逆势开店，是一次深思熟虑的信号释放：它用行动表明对中国高端消费市场的长期看好，与竞争对手的收缩形成鲜明对比。对于正在观望的消费者而言，爱马仕的扩张本身就是最强品牌背书。</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">时尚商业Daily / 新浪财经 · 2026-04-12</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/wm/2026-04-12/doc-inhuhfpw0253898.shtml" target="_blank">Tiffany Launches 24-Month Interest-Free Installments in China, Reshaping Luxury Spending Rules</a></div>
-  <div class="news-title lang-cn"><a href="https://finance.sina.com.cn/wm/2026-04-12/doc-inhuhfpw0253898.shtml" target="_blank">Tiffany中国上线24期免息分期，奢侈品消费规则悄然改变</a></div>
-  <div class="news-summary lang-en" style="display:none">Tiffany quietly launched an interest-free installment plan of up to 24 months in China, introducing a mass-market financial tool into the top-tier jewellery sector for the first time, aimed at lowering the barrier to high-priced jewellery and stimulating latent demand.</div>
-  <div class="news-summary">Tiffany在中国低调上线</div>
-  <div class="news-insight lang-en" style="display:none">Tiffany's move is a calculated risk: HNWI clients are insensitive to installments, but the brand is truly targeting middle-class and young consumers locked out by high prices. This reflects a deeper trend — luxury is using financial tools to redefine the 'entry barrier', trading short-term yield for long-term customer relationship-building.</div>
-  <div class="news-insight">Tiffany此举是一次精心计算的冒险：高净值客群对分期不敏感，但品牌真正瞄准的是被高价挡在门外的中产与年轻消费者。此举折射出一个更深层的行业趋势——奢侈品正试图用金融工具重新定义</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">WWD国际时尚特讯 / 腾讯新闻 · 2026-04-14</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://news.qq.com/rain/a/20260414A01W8O00" target="_blank">Geopolitical Volatility Makes Fashion Industry Recovery 'Premature': WWD</a></div>
-  <div class="news-title lang-cn"><a href="https://news.qq.com/rain/a/20260414A01W8O00" target="_blank">国际局势反复无常，时尚产业复苏</a></div>
-  <div class="news-summary lang-en" style="display:none">WWD International Fashion Wire reports that escalating Middle East tensions have triggered supply chain volatility and eroding consumer confidence, with the fashion industry facing mounting pressure from oil prices, raw material costs and macro uncertainty, accelerating structural consolidation.</div>
-  <div class="news-summary">WWD国际时尚特讯发文指出，中东局势升级导致全球供应链波动与消费信心受损，时尚产业链面临石油价格、原料成本和消费者信心的多重压力，结构性不确定性加剧行业洗牌。</div>
-  <div class="news-insight lang-en" style="display:none">Macro geopolitics impacts fashion far beyond surface sentiment — it reshapes the underlying logic of global supply chains. Brands must navigate multiple rule systems simultaneously. For China's fashion sector, this is both challenge and opportunity: as Western brands retreat strategically, domestic players have a wider window to establish presence.</div>
-  <div class="news-insight">宏观地缘政治对时尚产业的影响远超表面——它不仅压制消费意愿，更在重塑全球供应链的底层逻辑。品牌必须在多套规则体系间艰难平衡。对中国时尚产业而言，这既是挑战也是机会：在欧美品牌战略收缩之时，本土品牌有更大的空间建立存在感。</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">新浪财经 · 2026-04-11</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/roll/2026-04-11/doc-inhtzxrp4926463.shtml" target="_blank">2026 Fall/Winter Shanghai Fashion Week Wraps: Shanghai Becomes a Global Fashion 'Gravity Center'</a></div>
-  <div class="news-title lang-cn"><a href="https://finance.sina.com.cn/roll/2026-04-11/doc-inhtzxrp4926463.shtml" target="_blank">2026秋冬上海时装周收官：上海炼成全球时尚</a></div>
-  <div class="news-summary lang-en" style="display:none">The 2026 Fall/Winter Shanghai Fashion Week wrapped under the theme of 'Ascending through Design'. Maison Margiela chose Shanghai for its first global debut outside Europe, while domestic brands HPLY and EP YAYING converted runway exposure into sales. Shanghai Fashion Week ranked fourth among the world's eight sample fashion weeks.</div>
-  <div class="news-summary">2026秋冬上海时装周以</div>
-  <div class="news-insight lang-en" style="display:none">Shanghai Fashion Week is completing its transition from a domestic stage to a global coordinate. Maison Margiela's choice is a landmark event — it signals that China is no longer merely a sales market but an indispensable node in the global creative ecosystem. Domestic brands' commercialization success proves China has the foundational ecosystem for self-sustaining fashion growth.</div>
-  <div class="news-insight">上海时装周正在完成从</div>
-</div>
-
-<div class="news-card">
-  <div class="news-source">第一财经YiMagazine · 2026-04-10</div>
-  <div class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/wm/2026-04-10/doc-inhtymqa1380803.shtml" target="_blank">Luxury Market Growth Slows: What's Really Behind the Slump?</a></div>
-  <div class="news-title lang-cn"><a href="https://finance.sina.com.cn/wm/2026-04-10/doc-inhtymqa1380803.shtml" target="_blank">奢侈品市场增速放缓：问题究竟出在哪里？</a></div>
-  <div class="news-summary lang-en" style="display:none">Global luxury market growth is slowing, with the core tension being declining purchasing power among entry-level consumers ('light spenders'), while HNWIs maintain stable spending. Younger consumers demand deeper emotional brand connections and question whether luxury has become too 'crowded'.</div>
-  <div class="news-summary">全球奢侈品市场增速放缓，核心矛盾在于</div>
-  <div class="news-insight lang-en" style="display:none">The luxury market faces a structural contradiction: top-end consumers are stable, but the growth engine — younger and middle-class consumers — is sputtering. Brand strategies are polarizing: either move upmarket to true scarcity, or go downmarket for volume via financial tools. Which path is more sustainable? History tells us every brand's downward move dilutes its mythology.</div>
-  <div class="news-insight">奢侈品市场正面临一场结构性矛盾：高端消费者稳固，但增长引擎——年轻与中产消费者——正在失速。品牌的应对策略正在两极分化：要么向上走，打造真正的稀缺性；要么向下沉，用规模和金融工具换取量。哪条路更可持续？历史告诉我们，品牌的每一次下沉都是对神话的一次稀释。</div>
-</div>
-
-  <!-- ── History Link ── -->
-  <div style="text-align:center; margin-top:32px;">
-    <a href="history.html" style="color:#B8A88A; font-size:13px; letter-spacing:1px; text-decoration:none;">
-      <span class="lang-cn">📜 查看历史简报</span>
-      <span class="lang-en" style="display:none">📜 View Archive</span>
-    </a>
+    <span class="news-source-badge">LVMH · 财新</span>
+    <h3 class="news-title lang-cn"><a href="https://finance.sina.com.cn/chanjing/gsnews/2026-04-14/doc-inhunicw1594726.shtml" target="_blank">LVMH一季度营收191亿欧元：中国市场意外支撑，但中东拖累致整体承压</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/chanjing/gsnews/2026-04-14/doc-inhunicw1594726.shtml" target="_blank">LVMH Q1 Revenue €19.1B: China Flat, Middle East Down 50% Weighs on Growth</a></h3>
+    <p class="news-meta lang-cn">LVMH · 财新/新浪财经 · 2026-04-14</p>
+    <p class="news-meta lang-en" style="display:none">LVMH · Caixin/Sina Finance · April 14, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>LVMH 2026年Q1营收191亿欧元，有机增长1%，但按报表口径同比下滑6%，低于市场预期。中国客群从Q4负增长恢复至"持平"，但旅游消费仍疲软；中东市场3月需求平均下滑约50%，单季拖累约1个百分点。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> LVMH Q1 2026 revenue €19.1B, +1% organic growth, down 6% YoY on reported basis, missing expectations. Chinese consumers recovered to 'flat' from negative growth; Middle East demand fell ~50% in March, dragging ~1pp of quarterly growth.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>LVMH在盈利压力下明确表态：不会以削减成本换取增长。区域分化（中韩复苏、日本欧洲疲软、中东塌陷）将成为2026年奢侈品行业新常态。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Facing earnings pressure, LVMH refuses to trade growth for cost cuts. Regional divergence — China/Korea recovery, Japan/Europe weakness, Middle East collapse — is the new luxury normal in 2026.</p>
   </div>
 
-</div>
+  <!-- Card 3 -->
+  <div class="news-card">
+    <span class="news-source-badge">摩根士丹利</span>
+    <h3 class="news-title lang-cn"><a href="https://finance.sina.com.cn/chanjing/gsnews/2026-04-14/doc-inhunicw1594726.shtml" target="_blank">摩根士丹利：中国消费者不再执着大Logo，奢侈品牌面临认同危机</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://finance.sina.com.cn/chanjing/gsnews/2026-04-14/doc-inhunicw1594726.shtml" target="_blank">Morgan Stanley: Chinese Consumers Ditching Big Logos; Luxury Brands Face Identity Crisis</a></h3>
+    <p class="news-meta lang-cn">摩根士丹利 · 新浪财经 · 2026-04-14</p>
+    <p class="news-meta lang-en" style="display:none">Morgan Stanley · Sina Finance · April 14, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>摩根士丹利报告指出：中国"精明消费者"崛起，越来越注重材质和剪裁而非Logo，高级珠宝是少数增长亮点；中国高端品牌（如Songmont、ICICLE等）正稳步抢占国内市场份额，欧洲奢侈品牌的"历史传承"和"原产地"护城河正在被侵蚀。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Morgan Stanley finds Chinese 'savvy consumers' prioritise material quality and tailoring over logos. High jewelry is a rare bright spot. Chinese premium brands (Songmont, ICICLE, 1436) are gaining domestic share, eroding European heritage and provenance moats.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>中国奢侈品牌已经开始对欧洲奢侈品牌构成真实的长期威胁，尽管"实质性颠覆"还需要数年。对于任何想在中国市场获胜的品牌，"去Logo化"已是不可逆的趋势。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Chinese luxury brands already pose a real long-term threat to European houses. For any brand seeking to win in China, 'de-logoing' is an irreversible structural shift.</p>
+  </div>
 
-<!-- ── Footer ── -->
-<div class="footer">
-  <span class="lang-cn">时尚与奢侈品日报 · 每日9:00自动更新</span>
-  <span class="lang-en" style="display:none">Fashion &amp; Luxury News Digest · Auto-updated daily at 9:00</span>
-  <br>
-  <span>Sources: Business of Fashion · WWD · 中国新闻网 · 时尚商业Daily</span>
+  <!-- Card 4 -->
+  <div class="news-card">
+    <span class="news-source-badge">Vogue Business</span>
+    <h3 class="news-title lang-cn"><a href="https://www.vogue.com/article/what-a-winning-retail-strategy-looks-like-in-2026" target="_blank">赢在2026：实体零售复兴——回归服务本质，AI退居幕后</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://www.vogue.com/article/what-a-winning-retail-strategy-looks-like-in-2026" target="_blank">Winning Retail Strategy 2026: Back to Basics, AI in the Background</a></h3>
+    <p class="news-meta lang-cn">Vogue Business · 2026-01-08</p>
+    <p class="news-meta lang-en" style="display:none">Vogue Business · January 8, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>2026年实体零售进入新阶段：消费者对"体验式零售"概念已麻木，零售专家强调回归服务本质——个性化购物、定制剪裁、本地化策展。AI价值在于后台运营（库存管理、需求预测），而非替代销售人员的人际互动。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Physical retail in 2026 enters a new phase: consumers have become numb to 'experiential retail'. Experts emphasise returning to service fundamentals — personal shopping, bespoke tailoring, hyper-local curation. AI's value lies in backend operations, not replacing human sales interactions.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>成功的零售策略很简单：让每一次到店都感觉独特而难忘。不是创造轰动一时的装置艺术，而是日复一日地把服务做扎实。2026年，那些回归基本功并执行到位的品牌将成为赢家。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Winning retail in 2026 is elegantly simple: make every store visit feel unique, daily. Not blockbuster installations, but consistent service excellence. Brands that return to fundamentals and execute well will win.</p>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="news-card">
+    <span class="news-source-badge">ELLE · Hypebeast</span>
+    <h3 class="news-title lang-cn"><a href="https://www.elle.com/fashion/a70910602/best-fashion-launches-april-2026/" target="_blank">2026年4月时尚新品速览：Gucci丝绸艺术、Fleur du Mal进运动</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://www.elle.com/fashion/a70910602/best-fashion-launches-april-2026/" target="_blank">April 2026 Fashion Launches: Gucci Art of Silk, Fleur du Mal Sport, LVMH Shares Plunge</a></h3>
+    <p class="news-meta lang-cn">ELLE / Hypebeast · 2026-04-17</p>
+    <p class="news-meta lang-en" style="display:none">ELLE / Hypebeast · April 17, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>四月值得关注的时尚动态包括：Gucci推出"The Art of Silk"限量丝巾系列；Fleur du Mal推出全新运动品类Fleur du Sport；La Ligne庆祝成立10周年；Versace与Onitsuka Tiger推出联名运动鞋。同期LVMH股价因Q1财报不及预期创纪录暴跌。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Notable April 2026 launches: Gucci's 'The Art of Silk' limited scarf collection, Fleur du Mal's new sportswear line Fleur du Sport, La Ligne's 10th anniversary, and the Versace x Onitsuka Tiger sneaker collab. Concurrently, LVMH shares plunged to a record decline on Q1 earnings miss.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>奢侈品牌的"副线扩展"（如Fleur du Mal进运动）是2026年对抗消费疲软的共同策略：用生活方式品类扩大受众，同时保持主线品牌的高端调性。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Lifestyle category expansions (Fleur du Mal into sportswear) are a common 2026 strategy to combat consumer fatigue: broadening audience through lifestyle categories while maintaining premium brand positioning.</p>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="news-card">
+    <span class="news-source-badge">LADYMAX</span>
+    <h3 class="news-title lang-cn"><a href="http://news.ladymax.cn/202604/16-39519.html" target="_blank">爱马仕一季度收入下滑1.4%：又一奢侈品巨头失速</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="http://news.ladymax.cn/202604/16-39519.html" target="_blank">Hermès Q1 Revenue Down 1.4%: Another Luxury Giant Loses Momentum</a></h3>
+    <p class="news-meta lang-cn">LADYMAX · 2026-04-16</p>
+    <p class="news-meta lang-en" style="display:none">LADYMAX · April 16, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>爱马仕2026年Q1收入40.7亿欧元，同比下滑1.4%（按固定汇率计算增长5.6%），低于市场约7.4%的增长预期。分析师认为，爱马仕可能很快面临属于自己的"Capucine时刻"——正如2010年代初的路易威登，正进入一个需要重新定位的关键节点。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Hermès Q1 2026 revenue €4.07B, down 1.4% YoY (+5.6% at constant rates), missing the ~7.4% market expectation. Analysts warn Hermès may face its own 'Capucine moment' — akin to Louis Vuitton in the early 2010s — as it reaches a critical re-positioning inflection.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>爱马仕曾是奢侈品行业最后一块"安全高地"，如果连爱马仕都开始失速，说明整个行业的结构性调整比预期更深。高净值人群消费理性化正在从边缘向核心蔓延。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Hermès was luxury's last 'safe haven'. If even Hermès is losing momentum, the structural adjustment of the entire industry is deeper than expected. High-net-worth consumer rationalisation is spreading from the margins to the core.</p>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="news-card">
+    <span class="news-source-badge">Advertising Week</span>
+    <h3 class="news-title lang-cn"><a href="https://advertisingweek.com/2026-is-the-year-of-a-strategy-reset-in-luxury-fashion/" target="_blank">2026年：奢侈品战略重构元年</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://advertisingweek.com/2026-is-the-year-of-a-strategy-reset-in-luxury-fashion/" target="_blank">2026 Is the Year of Strategy Reset for Luxury Fashion</a></h3>
+    <p class="news-meta lang-cn">Advertising Week · 2026-01-20</p>
+    <p class="news-meta lang-en" style="display:none">Advertising Week · January 20, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>2026年奢侈品行业需要从根本上重构战略逻辑：不再依赖新兴市场增量，转向深耕现有客户价值；不再追求门店扩张，转向单店效率提升；重新定义"奢侈体验"，从炫耀性消费走向真实价值创造。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Luxury needs fundamental strategic restructuring in 2026: shift from chasing new market growth to deepening existing client value; from store expansion to single-store efficiency; redefine 'luxury experience' from conspicuous consumption to authentic value creation.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>这一轮重构的关键词是"降本增效"和"价值回归"：不是削减品牌投入，而是更聪明地投入；不是放弃增长，而是追求更健康的增长。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Keywords for this reset: 'efficiency' and 'value restoration' — not cutting brand investment, but investing smarter; not abandoning growth, but pursuing healthier, more sustainable growth.</p>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="news-card">
+    <span class="news-source-badge">RFI · 贝恩咨询</span>
+    <h3 class="news-title lang-cn"><a href="https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20260128-%E4%B8%AD%E5%9B%BD%E5%A5%A2%E4%BE%88%E5%93%81%E6%B6%88%E8%B4%B5%E9%A2%84%E8%AE%A12026%E5%B9%B4%E5%B0%87%E4%B8%8B%E9%99%8D4" target="_blank">贝恩报告：2026年中国奢侈品市场预计下降4%，本土品牌崛起加速</a></h3>
+    <h3 class="news-title lang-en" style="display:none"><a href="https://www.rfi.fr/cn/%E4%B8%AD%E5%9B%BD/20260128-%E4%B8%AD%E5%9B%BD%E5%A5%A2%E4%BE%88%E5%93%81%E6%B6%88%E8%B4%B5%E9%A2%84%E8%AE%A12026%E5%B9%B4%E5%B0%87%E4%B8%8B%E9%99%8D4" target="_blank">Bain: China Luxury Market to Fall 4% in 2026; Domestic Brands Accelerate Rise</a></h3>
+    <p class="news-meta lang-cn">贝恩公司 · RFI · 2026-01-28</p>
+    <p class="news-meta lang-en" style="display:none">Bain &amp; Company · RFI · January 28, 2026</p>
+    <p class="news-summary lang-cn"><strong>要点：</strong>贝恩公司最新报告预计，2026年中国个人奢侈品市场将下降4%，延续近年来的收缩趋势。本土高端品牌在高端手袋（如Songmont）和当代时尚（如ICICLE、1436）领域持续取得进展，尽管形成实质性颠覆仍需时日。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Bain forecasts China's personal luxury market to fall 4% in 2026, continuing recent years' contraction. Domestic premium brands continue advancing in high-end bags (Songmont) and contemporary fashion (ICICLE, 1436), though substantial disruption remains years away.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>中国作为全球奢侈品增长引擎的时代已经结束，市场进入存量竞争阶段。本土品牌的崛起将从"补充选项"逐渐升级为"竞争对手"，这是2026年最值得关注的结构性变化。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> The era of China as the global luxury growth engine is over. The market has entered stock competition. Domestic brands rising from 'alternative' to 'competitor' is the most critical structural shift to watch in 2026.</p>
+  </div>
+
+  <!-- Today's Insights Section -->
+  <div class="insight-section">
+    <h2>💡 今日洞察 · Today's Key Insight</h2>
+    <div class="insight-item">
+      <p class="lang-cn">2026年奢侈品行业的主题是「深度调整」：LVMH、爱马仕两大巨头同时失速，贝恩预测全行业将温和复苏但代价是3.4亿被疏远的核心客群；摩根士丹利揭示中国消费者正不可逆地「去Logo化」，而本土品牌Songmont们正在蚕食高端市场份额。战略层面，回归服务本质、单店效率提升、比以往更聪明的品牌投入，是穿越周期的唯一路径。</p>
+      <p class="lang-en" style="display:none">The theme of luxury in 2026 is 'deep structural adjustment': LVMH and Hermès are simultaneously losing momentum; Bain forecasts modest recovery at the cost of 340M alienated core consumers; Morgan Stanley reveals Chinese shoppers are irreversibly 'de-logoing' while domestic brands like Songmont eat into premium market share. Strategically, returning to service fundamentals, single-store efficiency, and smarter brand investment are the only paths through the cycle.</p>
+    </div>
+  </div>
+
+  <!-- History Link -->
+  <div class="history-link">
+    <a href="history.html">📜 查看历史简报 · View Archive</a>
+  </div>
+
+  <div class="footer">
+    Fashion &amp; Luxury News Digest · 每日9:00自动更新 · Powered by OpenClaw<br>
+    Sources: BoF, Vogue Business, 贝恩, Morgan Stanley, LVMH, LADYMAX, ELLE, Hypebeast, RFI
+  </div>
 </div>
 
 <script>
@@ -387,8 +324,6 @@ function toggleLang(en) {
   if (en) { document.body.classList.add('show-en'); }
   else { document.body.classList.remove('show-en'); }
 }
-// Default: CN
-toggleLang(false);
 </script>
 </body>
 </html>
