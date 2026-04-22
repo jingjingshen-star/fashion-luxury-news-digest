@@ -202,8 +202,8 @@ body {
 
 /* ── Lang Toggle Logic ── */
 .lang-en { display: none; }
-body.show-en .lang-cn { display: none; }
-body.show-en .lang-en { display: block; }
+body.show-en .lang-cn { display: none;  !important }
+body.show-en .lang-en { display: block;  !important }
 body.show-en .toggle-en { background: #B8A88A; color: #fff; border-color: #B8A88A; }
 body.show-en .toggle-cn { background: transparent; color: #B8A88A; border-color: #B8A88A; }
 .toggle-cn { background: #B8A88A; color: #fff; border-color: #B8A88A; }
@@ -367,7 +367,16 @@ body.show-en .toggle-cn { background: transparent; color: #B8A88A; border-color:
 
 <script>
 function toggleLang(en) {
-  if (en) { document.body.classList.add('show-en'); }
+  if (en) {
+    document.body.classList.add('show-en');
+    document.querySelectorAll('.lang-cn').forEach(function(el){ el.style.display='none'; });
+    document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display=''; });
+  } else {
+    document.body.classList.remove('show-en');
+    document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display='none'; });
+    document.querySelectorAll('.lang-cn').forEach(function(el){ el.style.display=''; });
+  }
+}
   else { document.body.classList.remove('show-en'); }
 }
 </script>
