@@ -3,382 +3,480 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>时尚与奢侈品日报 · 2026年04月22日</title>
+<title>时尚与奢侈品日报 · 2026年4月24日 | Fashion & Luxury News Digest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body {
-  font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
-  background: #f9f9f9;
-  color: #222;
-  line-height: 1.7;
-  padding: 40px 20px;
-}
-.container {
-  max-width: 720px;
-  margin: 0 auto;
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 24px rgba(30,57,42,0.08);
-}
-/* ── Hero ── */
-.hero {
-  background: #1E392A;
-  padding: 48px 48px 40px;
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_fashion.png'),
-    url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_luxury.png'),
-    url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_trend.png'),
-    url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_brand.png'),
-    url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_retail.png'),
-    url('https://jingjingshen-star.github.io/fashion-luxury-news-digest/icon_fashion.png');
-  background-size: 200px;
-  background-repeat: no-repeat;
-  background-position: -20px -20px, 80px 60px, 200px -30px, 340px 50px, 460px -10px, 560px 80px;
-  opacity: 0.06;
-}
-.hero-top { position: relative; z-index: 1; }
-.hero-eyebrow {
-  display: inline-block;
-  background: #B8A88A;
-  color: #fff;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 2px;
-  padding: 4px 14px;
-  border-radius: 20px;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-}
-.hero h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.3;
-  margin-bottom: 8px;
-}
-.hero .lang-en { display: none; }
-.hero-sub {
-  font-size: 14px;
-  color: rgba(255,255,255,0.7);
-  position: relative;
-  z-index: 1;
-}
-/* ── Toggle ── */
-.toggle-row {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  padding: 24px 48px 0;
-  background: #fff;
-}
-.lang-btn {
-  padding: 7px 28px;
-  border: 1.5px solid #B8A88A;
-  border-radius: 24px;
-  background: transparent;
-  color: #B8A88A;
-  font-size: 13px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.lang-btn:hover { background: rgba(184,168,138,0.08); }
-.lang-btn.active { background: #B8A88A; color: #fff; }
-/* ── Body ── */
-.body-wrap { padding: 32px 48px 48px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Noto Serif SC', 'Georgia', serif;
+    background: #f8f6f1;
+    color: #1a1a1a;
+    line-height: 1.8;
+  }
+  body.show-en { font-family: 'Playfair Display', Georgia, serif; }
 
-/* ── Category Header ── */
-.cat-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin: 36px 0 20px;
-}
-.cat-dot {
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: #B8A88A;
-  flex-shrink: 0;
-}
-.cat-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #1E392A;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-}
-.lang-en { display: none; }
+  /* ─── Language Toggle ─── */
+  .lang-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 32px auto 0;
+    max-width: 760px;
+    padding: 0 20px;
+  }
+  .lang-btn {
+    border: 1px solid #B8A88A;
+    background: transparent;
+    color: #B8A88A;
+    padding: 6px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+  }
+  .lang-btn:hover { background: rgba(184,168,138,0.1); }
+  body.show-en .lang-btn:nth-child(1) { background: transparent; color: #B8A88A; border-color: #B8A88A; }
+  body.show-en .lang-btn:nth-child(2) { background: #B8A88A; color: #fff; }
+  body:not(.show-en) .lang-btn:nth-child(1) { background: #B8A88A; color: #fff; }
+  body:not(.show-en) .lang-btn:nth-child(2) { background: transparent; color: #B8A88A; }
 
-/* ── Cards ── */
-.news-card {
-  border-left: 3px solid #B8A88A;
-  padding: 18px 22px;
-  margin-bottom: 22px;
-  background: #fafaf7;
-  border-radius: 0 10px 10px 0;
-  transition: background 0.2s;
-}
-.news-card:hover { background: #f5f0e8; }
-.news-title a {
-  font-size: 16px;
-  font-weight: 700;
-  color: #1E392A;
-  text-decoration: none;
-  line-height: 1.4;
-  display: block;
-}
-.news-title a:hover { color: #B8A88A; }
-.news-meta {
-  font-size: 11px;
-  color: #999;
-  margin: 6px 0 10px;
-  letter-spacing: 0.5px;
-}
-.news-summary {
-  font-size: 14px;
-  color: #444;
-  margin-bottom: 8px;
-  line-height: 1.65;
-}
-.news-insight {
-  font-size: 13px;
-  color: #666;
-  border-top: 1px dashed #e0d8c8;
-  padding-top: 8px;
-  margin-top: 8px;
-  font-style: italic;
-}
+  /* ─── Header ─── */
+  header {
+    background: #1E392A;
+    color: #fff;
+    text-align: center;
+    padding: 56px 20px 48px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: 'FASHION';
+    position: absolute;
+    font-family: 'Playfair Display', serif;
+    font-size: 120px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.04);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+  .header-date {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 16px;
+  }
+  header h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+  .header-en {
+    font-family: 'Playfair Display', serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.05em;
+  }
+  header .tagline {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-top: 12px;
+  }
 
-/* ── Insight Box ── */
-.insight-box {
-  background: linear-gradient(135deg, #1E392A, #2a4f3a);
-  border-radius: 14px;
-  padding: 28px 32px;
-  margin: 40px 0 32px;
-  color: #fff;
-}
-.insight-box .ib-label {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #B8A88A;
-  margin-bottom: 10px;
-}
-.insight-box p {
-  font-size: 15px;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.9);
-}
-.insight-box .lang-en { display: none; }
-.insight-box .lang-cn { display: block; }
+  /* ─── Insight Banner ─── */
+  .insight-banner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 28px 24px;
+    background: linear-gradient(135deg, #1E392A 0%, #2a5238 100%);
+    border-radius: 0 0 12px 12px;
+    color: #fff;
+  }
+  .insight-banner .label {
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #B8A88A;
+    margin-bottom: 10px;
+  }
+  .insight-banner p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.92);
+  }
+  .insight-banner .lang-en { display: none; }
 
-/* ── Footer ── */
-.footer {
-  text-align: center;
-  padding: 24px 48px 36px;
-  border-top: 1px solid #f0ede8;
-}
-.footer a {
-  color: #B8A88A;
-  font-size: 13px;
-  text-decoration: none;
-  letter-spacing: 0.5px;
-}
-.footer a:hover { text-decoration: underline; }
-.footer p {
-  font-size: 11px;
-  color: #bbb;
-  margin-top: 12px;
-  letter-spacing: 0.5px;
-}
+  /* ─── News Grid ─── */
+  .container { max-width: 760px; margin: 0 auto; padding: 40px 20px 60px; }
+  .section-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: #B8A88A;
+    text-align: center;
+    margin-bottom: 32px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(184,168,138,0.3);
+  }
 
-/* ── Lang Toggle Logic ── */
-.lang-en { display: none; }
-body.show-en .lang-cn { display: none;  !important }
-body.show-en .lang-en { display: block;  !important }
-body.show-en .toggle-en { background: #B8A88A; color: #fff; border-color: #B8A88A; }
-body.show-en .toggle-cn { background: transparent; color: #B8A88A; border-color: #B8A88A; }
-.toggle-cn { background: #B8A88A; color: #fff; border-color: #B8A88A; }
+  /* Category: 市场趋势 */
+  .news-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(30,57,42,0.06);
+    border-left: 4px solid transparent;
+    transition: border-color 0.3s;
+    position: relative;
+  }
+  .news-card:hover { border-left-color: #B8A88A; }
+  .news-card .card-tag {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
+  .tag-trend { color: #8B6914; }
+  .tag-brand { color: #1E392A; }
+  .tag-retail { color: #5a6e63; }
+
+  /* News Title */
+  .news-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #1a1a1a;
+    margin-bottom: 12px;
+  }
+  .lang-en { display: none; }
+  body.show-en .lang-cn { display: none; }
+  body.show-en .lang-en { display: block; }
+
+  /* Source row */
+  .news-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .news-source {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: #B8A88A;
+    font-weight: 600;
+  }
+  .news-date {
+    font-size: 11px;
+    color: #999;
+  }
+  .lang-sep { color: #ccc; font-size: 11px; }
+  .lang-tag {
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    color: #999;
+  }
+  .lang-tag.cn { background: rgba(30,57,42,0.06); border-color: rgba(30,57,42,0.15); color: #1E392A; }
+  .lang-tag.en { background: rgba(184,168,138,0.1); border-color: rgba(184,168,138,0.3); color: #8B6914; }
+
+  /* Summary */
+  .news-summary {
+    font-size: 15px;
+    line-height: 1.9;
+    color: #3a3a3a;
+    margin-bottom: 14px;
+  }
+  .news-summary strong { color: #1E392A; }
+
+  /* Insight */
+  .news-insight {
+    background: rgba(30,57,42,0.04);
+    border-left: 3px solid #1E392A;
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #2a4a38;
+    margin-top: 12px;
+  }
+  .news-insight strong { color: #B8A88A; }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid rgba(184,168,138,0.2);
+    margin: 40px 0;
+    position: relative;
+  }
+  .divider::after {
+    content: '◆';
+    position: absolute;
+    top: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #f8f6f1;
+    color: rgba(184,168,138,0.5);
+    font-size: 10px;
+    padding: 0 10px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 32px 20px 48px;
+    border-top: 1px solid rgba(184,168,138,0.2);
+    margin-top: 40px;
+  }
+  footer p {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(30,57,42,0.4);
+    text-transform: uppercase;
+  }
+
+  /* ─── Responsive ─── */
+  @media (max-width: 600px) {
+    header h1 { font-size: 22px; }
+    .news-card { padding: 20px; }
+    .news-title { font-size: 17px; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
 
-  <!-- Hero -->
-  <div class="hero">
-    <div class="hero-top">
-      <div class="hero-eyebrow">Fashion &amp; Luxury · Daily</div>
-      <h1 class="lang-cn">时尚与奢侈品日报</h1>
-      <h1 class="lang-en" style="display:none">Fashion &amp; Luxury News Daily</h1>
-      <p class="hero-sub lang-cn">2026年04月22日 · 星期三 · 每日早间简报</p>
-      <p class="hero-sub lang-en" style="display:none">Wednesday, April 22, 2026 · Daily Morning Digest</p>
-    </div>
-  </div>
-
-  <!-- Toggle -->
-  <div class="toggle-row">
-    <button class="lang-btn toggle-cn" onclick="toggleLang(false)">中文</button>
-    <button class="lang-btn toggle-en" onclick="toggleLang(true)">En</button>
-  </div>
-
-  <div class="body-wrap">
-
-    <!-- Category: 市场趋势 -->
-    <div class="cat-header">
-      <div class="cat-dot"></div>
-      <div class="cat-title lang-cn">市场趋势</div>
-      <div class="cat-title lang-en" style="display:none">Market Trends</div>
-    </div>
-
-    <!-- Card 1 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://us.fashionnetwork.com/news/The-luxury-market-set-to-enter-phase-of-strategic-normalisation-in-2026,1823701.html">Global Luxury Market Enters Strategic Normalisation Phase: 2-4% Growth Forecast for 2026</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://us.fashionnetwork.com/news/The-luxury-market-set-to-enter-phase-of-strategic-normalisation-in-2026,1823701.html">全球奢侈品市场正式进入战略调整期：2026年增长预期2%-4%</a></p>
-      <p class="news-meta lang-en">FashionNetwork · April 15, 2026 · Global Luxury</p>
-      <p class="news-meta lang-cn" style="display:none">FashionNetwork · 2026年04月15日 · 全球奢侈品</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> The global luxury goods market is poised to enter a phase of strategic normalisation in 2026, with growth forecast at 2-4%. Japan and South-East Asia are expected to outperform. Jewellery leads category performance (6-14% growth) while RTW and footwear declined 5-7% in 2025. AI tech investment is projected to grow 16.2%. 63% of customers now prioritise craftsmanship and longevity over brand names.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>全球奢侈品市场在经历运营和创意重塑后，将进入战略调整期，2026财年增长预期为2%-4%。日本和东南亚预计表现超越平均水平。珠宝品类表现强劲（增长6%-14%），成衣和鞋履下滑5%-7%。AI技术投入预计增长16.2%。63%的消费者将工艺和耐用性至于品牌之上。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> The luxury sector is undergoing structural recalibration: high-end jewellery and experiential luxury are the most reliable growth lanes, while AI-driven supply chain is transitioning from experimental to essential infrastructure.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>奢侈品行业正在经历结构性调整，高端珠宝+体验式消费是确定性赛道，AI赋能供应链从实验走向必备。</p>
-    </div>
-
-    <!-- Card 2 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://www.news.cn/fashion/20260324/776e4a33bf264d7cb590cb4e9ae042a2/c.html">Spring-Summer 2026 Fashion: Looser Fits and Coastal Blues Define the Season</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://www.news.cn/fashion/20260324/776e4a33bf264d7cb590cb4e9ae042a2/c.html">2026春夏服饰新风向：宽松版型与盐系海蓝承包都市精致松弛</a></p>
-      <p class="news-meta lang-en">Xinhua News · March 24, 2026 · Fashion Trends</p>
-      <p class="news-meta lang-cn" style="display:none">新华网 · 2026年03月24日 · 服饰趋势</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> Spring-Summer 2026 fashion is defined by loose silhouettes and coastal blue tones. Relaxed, high-waisted styles with fluid drape are growing fastest, aligning with the natural effortless urban vibe. Footwear is the fastest-growing category at 40% YoY, with Birkenstock, rain boots, and ballet flats all gaining fashion status.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>2026春夏服饰核心趋势为宽松版型和盐系海蓝色调。宽松高腰、垂感好的款式增长最快，契合自然松弛的都市氛围。鞋靴品类以40%同比增速领跑，勃肯鞋、雨靴成为时尚单品，芭蕾鞋复兴。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> The 'effortless chic' economy is now fully permeating fashion design language, and the fashion transformation of practical footwear is the most notable category-level trend of the season.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>松弛感经济全面渗透服饰设计语言，实用性鞋靴的时尚化改造是本季最值得关注的品类趋势。</p>
-    </div>
-
-    <!-- Category: 品牌战略 -->
-    <div class="cat-header">
-      <div class="cat-dot"></div>
-      <div class="cat-title lang-cn">品牌战略</div>
-      <div class="cat-title lang-en" style="display:none">Brand Strategy</div>
-    </div>
-
-    <!-- Card 3 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://www.vogue.com/business/fashion">Justin Bieber's Skylrk Brand Hits $15M in Coachella Merch Sales</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://www.vogue.com/business/fashion">Justin Bieber个人品牌Skylrk创下Coachella周边销售纪录</a></p>
-      <p class="news-meta lang-en">Vogue Business · April 21, 2026 · Celebrity Fashion</p>
-      <p class="news-meta lang-cn" style="display:none">Vogue Business · 2026年04月21日 · 明星时尚</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> Justin Bieber's personal fashion brand Skylrk has achieved $15 million in merchandise sales during Coachella 2026, setting a new record for festival merchandise. The success signals the growing commercial power of celebrity-backed fashion lines at live music events, where fashion, music, and lifestyle converge.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>Justin Bieber的个人时尚品牌Skylrk在Coachella 2026期间实现1500万美元周边销售，创下音乐节周边销售新纪录。这一成功印证了明星背书时尚品牌在音乐活动中的巨大商业力量。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> Celebrity influence is extending from stage to lifestyle consumption — the $15M milestone underscores the massive commercial potential of music festivals as fashion traffic hubs where fashion, music, and lifestyle converge.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>明星效应正从舞台延伸至生活方式消费，$15M的成绩印证了音乐节作为时尚流量入口的巨大商业价值。</p>
-    </div>
-
-    <!-- Card 4 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://www.businessoffashion.com/articles/marketing-pr/what-it-takes-for-a-fashion-campaign-to-break-through-now/">What It Takes for a Fashion Campaign to Break Through in the Age of AI</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://www.businessoffashion.com/articles/marketing-pr/what-it-takes-for-a-fashion-campaign-to-break-through-now/">如何打造一个在AI时代脱颖而出的时尚Campaign</a></p>
-      <p class="news-meta lang-en">Business of Fashion · March 19, 2026 · Marketing</p>
-      <p class="news-meta lang-cn" style="display:none">Business of Fashion · 2026年03月19日 · 品牌营销</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> Fashion campaigns that break through today require a precise balance of emotional appeal, fresh talent, and product-centred storytelling. Burberry's use of British cultural figures like Olivia Colman and Liam Gallagher demonstrates how heritage brands can leverage local celebrities for cultural resonance.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>能够在当下脱颖而出的时尚campaign必须做到：情感诉求+新鲜面孔+产品主角三元素的精准平衡。Burberry凭借Olivia Colman、Liam Gallagher等英国文化符号赢得关注，证明了Heritage品牌借助本土名人实现文化共鸣的有效路径。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> Brands over-relying on collaborations and celebrity endorsements are losing differentiation. Slower, more human-centred advertising is emerging as the key to breaking through in 2026.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>过度依赖联名和名人效应的品牌正在失去差异感，慢广告、人文连接才是2026年突围关键。</p>
-    </div>
-
-    <!-- Card 5 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://finance.sina.com.cn/money/bond/2026-04-02/doc-inhtazsc9494512.shtml">Eight Key Trends Defining Chinese Fashion in 2026: From Local Hit to Global Reach</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://finance.sina.com.cn/money/bond/2026-04-02/doc-inhtazsc9494512.shtml">2026中国时尚八大趋势：从“出圈”迈向“出海”</a></p>
-      <p class="news-meta lang-en">Sina Finance · April 2, 2026 · China Fashion</p>
-      <p class="news-meta lang-cn" style="display:none">新浪财经 · 2026年04月02日 · 中国时尚</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> 2026 is poised to become the year of Chinese brand global expansion. Key trends include: large-scale overseas presence for Guochao brands, accelerated premium positioning for domestic labels, IP ecosystem collaboration as mainstream, and cultural aesthetic confidence emerging as a core driver of new-luxury consumption.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>2026年被视为中国品牌全球化元年，国潮出海规模化、国产品牌高端化加速、IP生态协同成为主流。单一产品走向跨界联动实现长效价值运营；文化审美自信成为驱动新奢侈消费的核心力量。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> Chinese fashion is making the structural leap from 'Made in China' to 'Brand from China' — IP ecosystem synergies and premiumisation represent the most significant structural opportunity of the year.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>中国时尚正从'Made in China'向'Brand from China'跃迁，IP生态协同和高端化是今年最值得关注的结构性机会。</p>
-    </div>
-
-    <!-- Category: 零售动态 -->
-    <div class="cat-header">
-      <div class="cat-dot"></div>
-      <div class="cat-title lang-cn">零售动态</div>
-      <div class="cat-title lang-en" style="display:none">Retail Dynamics</div>
-    </div>
-
-    <!-- Card 6 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="http://news.webtex.cn/info/2026-4-18@734402.htm">Guangdong Fashion Week Spring Opens: 70+ Fashion Events Across 8 Days</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="http://news.webtex.cn/info/2026-4-18@734402.htm">广东时装周春季盛启：超70场超级时尚盛会将轮番登场</a></p>
-      <p class="news-meta lang-en">纺织服装信息网 · April 18, 2026 · Fashion Week</p>
-      <p class="news-meta lang-cn" style="display:none">纺织服装信息网 · 2026年04月18日 · 时装周</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> The 37th Guangdong Fashion Week Spring opened in Guangzhou under the theme 'Tribute to Dreams', featuring over 70 fashion events across eight days in the Chimelong CBD. The event focuses on balancing creative design with commercial viability, positioning Guangdong as a fashion innovation hub that has evolved beyond its manufacturing roots.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>以"致敬梦想"为主题的第37届广东时装周春季在广州长隆万博商圈启幕，为期八天汇聚超70场超级时尚活动。本届时装周聚焦设计创意与商业落地并重，推动广东从服装制造重镇向时尚创新引擎转型。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> Guangdong Fashion Week has evolved from a pure trade platform to an industry innovation engine — a sign that domestic fashion weeks are rapidly maturing in industrial depth.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>广东时装周已从商贸平台进化为行业创新引擎，国内时装周的产业化程度持续提升。</p>
-    </div>
-
-    <!-- Card 7 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://www.sznews.com/news/content/2026-04/15/content_32003908.htm">Shenzhen Int'l Innerwear Expo Opens: AI Meets Fashion for Bodywear Innovation</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://www.sznews.com/news/content/2026-04/15/content_32003908.htm">深圳国际品牌内衣展开幕：AI+时尚打造贴身服饰产业新标杆</a></p>
-      <p class="news-meta lang-en">深圳新闻网 · April 15, 2026 · Tech Fashion</p>
-      <p class="news-meta lang-cn" style="display:none">深圳新闻网 · 2026年04月15日 · 科技时尚</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> The 21st Shenzhen International Innerwear Expo, themed 'AI + Fashion', gathered over 1,200 brands showcasing full-chain innovation in smart wearables, green materials, digital manufacturing, and AI design. Over 1,200 brands and multiple national pavilions participated. Technology is redefining the functional boundaries of bodywear.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>以"AI+时尚"为核心的第21届中国（深圳）国际品牌内衣展汇聚超1200家品牌，涵盖智能穿戴、绿色面料、数字化智造、AI设计等全链路创新。科技赋能正在重新定义贴身服饰的功能边界。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> Smart wearables combined with AI design are propelling fashion manufacturing to new heights — bodywear is emerging as one of the earliest and most scalable arenas for tech-enabled fashion.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>智能穿戴+AI设计正在将时尚制造推向新高度，贴身服饰成为科技赋能时尚最早规模化的赛道之一。</p>
-    </div>
-
-    <!-- Card 8 -->
-    <div class="news-card">
-      <p class="news-title lang-en"><a href="https://www.ellechina.com/fashion/news/a69976880/1768232351/">Goodbye Logo Obsession, Hello 'Mood Wardrobe': 3 Key Shifts in Chinese Women's Fashion 2026</a></p>
-      <p class="news-title lang-cn" style="display:none"><a href="https://www.ellechina.com/fashion/news/a69976880/1768232351/">告别LOGO崇拜，拥抱“情绪衣橱”：2026年中国女装消费三大趋势</a></p>
-      <p class="news-meta lang-en">ELLE China · January 12, 2026 · Consumer Trends</p>
-      <p class="news-meta lang-cn" style="display:none">ELLE中国 · 2026年01月12日 · 消费趋势</p>
-      <p class="news-summary lang-en"><strong>Key Points:</strong> The 2026 Chinese women's fashion market has entered a 'New Luxury' era where brand value is measured by emotional resonance rather than store count. Three key consumer drivers: precise physical and mental care, sustainable relationships, and cultural aesthetic confidence. Emotion-driven labels like FLONAKED are rising rapidly.</p>
-      <p class="news-summary lang-cn" style="display:none"><strong>要点：</strong>2026年中国女装市场进入"新奢侈"时代，衡量品牌价值的标尺从门店数量转向对消费者情绪的细腻洞察。精准身心关怀、可持续性关系、文化审美自信成为三大消费驱动力。情绪价值驱动的新锐品牌如FLONAKED正在崛起。</p>
-      <p class="news-insight lang-en"><strong>Insight:</strong> The decline of logo-driven consumption means brands must genuinely understand their customers — emotional value and subculture identity are the new premium logic.</p>
-      <p class="news-insight lang-cn" style="display:none"><strong>洞察：</strong>LOGO崇拜的退潮意味着品牌必须真正读懂消费者内心，情绪价值和圈层认同是新的溢价逻辑。</p>
-    </div>
-
-    <!-- Insight Box -->
-    <div class="insight-box">
-      <div class="ib-label lang-cn">📊 今日洞察</div>
-      <div class="ib-label lang-en" style="display:none">📊 Today's Insight</div>
-      <p class="lang-cn">2026年第二季度，时尚奢侈品行业呈现两条清晰的主线：<strong>结构性调整与文化驱动增长并行</strong>。全球层面，AI赋能供应链和体验式消费成确定性赛道；中国市场，"品牌出海+情绪消费"双轮驱动国潮高端化跃迁。从Coachella $15M明星周边纪录到广东时装周70+场活动，可以看到<strong>时尚正在从单一审美符号演变为流量经济基础设施</strong>。</p>
-      <p class="lang-en" style="display:none">In Q2 2026, the fashion and luxury industry is revealing two clear structural themes: <strong>strategic recalibration alongside culture-driven growth</strong>. Globally, AI-powered supply chain and experiential luxury are the most reliable growth lanes; in China, 'brand global expansion' and 'emotional consumption' are dual engines driving the premiumisation of Guochao. From the $15M Coachella merch record to 70+ Guangdong Fashion Week events, <strong>fashion is evolving from aesthetic symbol into流量经济 infrastructure</strong>.</p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <a href="https://jingjingshen-star.github.io/fashion-luxury-news-digest/history.html">📜 查看历史简报 · View Archive</a>
-      <p>Fashion &amp; Luxury News Digest · Powered by AI · jingjingshen-star</p>
-    </div>
-
-  </div>
+<!-- ─── Language Toggle ─── -->
+<div class="lang-toggle">
+  <button class="lang-btn" onclick="toggleLang(false)">中文</button>
+  <button class="lang-btn" onclick="toggleLang(true)">EN</button>
 </div>
 
+<!-- ─── Header ─── -->
+<header>
+  <div class="header-date">Friday · April 24th, 2026</div>
+  <h1 class="lang-cn">时尚与奢侈品日报</h1>
+  <h1 class="lang-en" style="display:none;font-family:'Playfair Display',serif;">Fashion &amp; Luxury News Digest</h1>
+  <div class="header-en lang-cn">Daily Briefing · 全球视野 · 中国洞见</div>
+  <div class="header-en lang-en" style="display:none">Daily Briefing · Global Vision · China Insights</div>
+  <div class="tagline lang-cn">Fashion · Luxury · 零售 · 市场 · 趋势</div>
+  <div class="tagline lang-en" style="display:none">Fashion · Luxury · Retail · Market · Trends</div>
+</header>
+
+<!-- ─── Today's Insight Banner ─── -->
+<div class="insight-banner">
+  <div class="label lang-cn">📌 今日洞察</div>
+  <div class="label lang-en" style="display:none">📌 Today's Insight</div>
+  <p class="lang-cn">2026年奢侈品行业正经历"结构性深调"——LVMH创史上最差Q1开局（股价-28%），爱马仕神话破灭，连Gucci也已连续三年销售额下滑。危机的本质是"定价与体验的断裂"：73%的消费者已减少购买，63%的买家以工艺和持久性而非Logo定义奢侈品。在两极分化的消费趋势下，珠宝（+6-14%）与体验式奢华（CAGR 8%）成为避风港，中间地带的品牌将面临最严峻的考验。</p>
+  <p class="lang-en" style="display:none">The luxury sector is in the grip of "structural deep correction" in 2026 — LVMH posted its worst-ever Q1 (shares -28%), Hermès saw its aura dim, and Gucci has now declined for three consecutive years. The core crisis is a "break between price and experience": 73% of consumers have cut purchases, and 63% now define luxury by craftsmanship and longevity over logos. In this bifurcated landscape, jewellery (+6-14%) and experiential luxury (8% CAGR) are the safe harbours, while brands in the middle face the harshest tests.</p>
+</div>
+
+<!-- ─── Main Content ─── -->
+<div class="container">
+
+  <div class="section-label lang-cn">全球时尚 · 市场动态</div>
+  <div class="section-label lang-en" style="display:none">Global Fashion · Market Dynamics</div>
+
+  <!-- ── News 1: LVMH Q1 ── -->
+  <div class="news-card">
+    <div class="card-tag tag-brand">品牌战略</div>
+    <p class="news-title lang-cn"><a href="https://www.bloomberg.com/news/articles/2026-04-01/lvmh-has-worst-ever-start-to-a-year-dimming-outlook-for-luxury" target="_blank">LVMH股价创史上最惨Q1：单季暴跌28%，营收191亿欧元低于预期</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://www.bloomberg.com/news/articles/2026-04-01/lvmh-has-worst-ever-start-to-a-year-dimming-outlook-for-luxury" target="_blank">LVMH Shares Fell Most Ever in Q1, Plunging 28%; Q1 Revenue of €19.1B Misses Forecasts</a></p>
+    <div class="news-meta">
+      <span class="news-source">Bloomberg / Hypebeast</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-04-02</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag cn">国际市场</span>
+      <span class="lang-tag en">Int'l Market</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>LVMH 2026年Q1销售额191亿欧元，同比名义下降6%，有机增长仅1%，低于市场预期的193亿欧元。股价单季暴跌28%，创集团有史以来最差Q1开局，超越2008年金融危机和2020年疫情期间表现。中东地缘政治冲突（伊朗问题）严重冲击了旅游零售渠道，CEO Bernard Arnault个人财富本季度蒸发554亿美元，为全球个人财富蒸发之最。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> LVMH reported Q1 2026 revenue of €19.1B, down 6% YoY on a reported basis with only +1% organic growth — missing the €19.3B consensus. Shares plummeted 28% in Q1, the worst quarterly start in the group's history, surpassing even the 2008 financial crisis and 2020 COVID crash. The Iran conflict severely disrupted travel retail. CEO Bernard Arnault lost $55.4 billion in personal wealth — the largest individual wealth wipeout globally this quarter.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>LVMH的惨淡开局标志着奢侈品行业正式进入深度调整期。地缘政治黑天鹅（中东冲突）与消费信心走弱叠加，使LVMH面临1989年以来最差开局。这意味着即使是最顶级的奢侈品集团，也无法在宏观经济动荡中独善其身，行业洗牌或将加速。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> LVMH's worst-ever Q1 signals the luxury sector has entered a deep structural adjustment phase. The combination of geopolitical black swans (Middle East conflict) and weakening consumer confidence means even the world's top luxury groups cannot escape macroeconomic turbulence unscathed. Industry consolidation is set to accelerate.</p>
+  </div>
+
+  <!-- ── News 2: Kearney ── -->
+  <div class="news-card">
+    <div class="card-tag tag-trend">市场趋势</div>
+    <p class="news-title lang-cn"><a href="https://us.fashionnetwork.com/news/The-luxury-market-set-to-enter-phase-of-strategic-normalisation-in-2026,1823701.html" target="_blank">Kearney报告：2026年全球奢侈品市场温和复苏，增速2%-4%，珠宝领跑</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://us.fashionnetwork.com/news/The-luxury-market-set-to-enter-phase-of-strategic-normalisation-in-2026,1823701.html" target="_blank">Kearney: Global Luxury Market to Normalise with 2-4% Growth in 2026; Jewellery Leads the Way</a></p>
+    <div class="news-meta">
+      <span class="news-source">FashionNetwork / Kearney 2026 Global Luxury Industry Outlook</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-04-15</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag en">Market Outlook</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>根据Kearney《2026全球奢侈品行业展望》，全球奢侈品市场2025年规模约5300亿美元，2026年预计增长2%-4%。珠宝品类表现最亮眼（+6%至+14%），高级定制服装和鞋履则因价格通胀下跌5%-7%。日本和东南亚凭借财富密集和资本市场繁荣成为增长引擎。中东地区受地缘政治影响仍保持增长但谨慎。体验式奢华（高端酒店与美食）预计2028年前保持8%的年复合增长率。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Kearney's 2026 Global Luxury Industry Outlook forecasts 2-4% sector growth with the market at ~$530B in 2025. Jewellery is the standout category (+6-14%), while ready-to-wear and footwear fell 5-7% from pricing inflation. Japan and South-East Asia outperform due to concentrated urban wealth and rising equity markets. Experiential luxury (prestige hospitality and gastronomy) is on an 8% CAGR to 2028. AI investment in luxury is growing 16.2% annually.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>珠宝成为2026年表现最抢眼的奢侈品品类（+6%至+14%），其"硬资产"属性在动荡时期满足了消费者的避险需求。同时，体验式奢华（CAGR 8%）正在分流实物消费，AI技术的年投资增速达16.2%，奢侈品竞争正从创意转向技术基础设施。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Jewellery emerged as the standout luxury category in 2026 (+6-14%) as its 'hard asset' qualities meet consumer demand for stability in turbulent times. Meanwhile, experiential luxury (8% CAGR) is diverting spending from tangible goods, and AI investment is growing at 16.2% annually — signalling that luxury competition is shifting from creative output to technological infrastructure.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── News 3: Hermès ── -->
+  <div class="news-card">
+    <div class="card-tag tag-brand">品牌战略</div>
+    <p class="news-title lang-cn"><a href="https://www.21jingji.com/article/20260421/herald/c229462f599cb07fb246e517ac019d84.html" target="_blank">爱马仕神话动摇：Q1收入下滑1.4%至40.7亿欧元，亚洲增速仅2.2%</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://www.21jingji.com/article/20260421/herald/c229462f599cb07fb246e517ac019d84.html" target="_blank">Hermès Revenue Falls 1.4% in Q1 to €4.07B; Asia Growth of Only 2.2% — Luxury Slump Reaches the Apex</a></p>
+    <div class="news-meta">
+      <span class="news-source">21财经 / 虎嗅</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-04-15</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag cn">中国市场</span>
+      <span class="lang-tag en">China Market</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>爱马仕2026年Q1收入同比下滑1.4%至40.7亿欧元，为该品牌多年来首次出现收入下滑。亚洲市场增长仅2.2%，低于市场预期。中东冲突对机场渠道造成冲击，拖累整体表现。股价本季度累计下跌13%，表明这场奢侈品衰退已从头部品牌蔓延至被视为"免疫"的金字塔尖品牌。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Hermès reported Q1 2026 revenue of €4.07B, down 1.4% YoY — marking the first revenue decline for the brand in years. Asia grew only 2.2%, below expectations. Middle East conflict disrupted airport channel sales. The stock fell 13% this quarter, confirming the luxury downturn has spread from mainstream brands to the very apex of the pyramid.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>爱马仕一向被视为奢侈品行业的"定海神针"，其Q1下滑1.4%具有标志性意义——衰退已蔓延至金字塔尖。高净值客户开始削减非必要支出，连爱马仕也无法独善其身。这预示着奢侈品行业的深度调整才刚刚开始。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Hermès has long been the luxury sector's 'anchor of stability', making its Q1 decline of 1.4% deeply symbolic — the downturn has now reached the apex of the pyramid. Even high-net-worth clients are cutting discretionary spending, confirming the luxury correction has only just begun.</p>
+  </div>
+
+  <!-- ── News 4: Gucci ── -->
+  <div class="news-card">
+    <div class="card-tag tag-retail">零售动态</div>
+    <p class="news-title lang-cn"><a href="https://www.tfcaijing.com/article/page/75774d4a64526275526b587966765359302f6f4f6d673d3d" target="_blank">Gucci连续三年销售额下跌：2025年下滑22%至59.92亿欧元，离顶奢越来越远</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://www.tfcaijing.com/article/page/75774d4a64526275526b587966765359302f6f4f6d673d3d" target="_blank">Gucci Sales Sink for Third Consecutive Year, Down 22% to €5.99B; Path to Ultra-Luxury Gets Harder</a></p>
+    <div class="news-meta">
+      <span class="news-source">TFCAIJING</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-02-11</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag cn">品牌战略</span>
+      <span class="lang-tag en">Brand Strategy</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>Gucci 2025年全年销售额59.92亿欧元，同比下滑22%，为开云集团内跌幅最大的品牌；YSL同期下降8%至26.43亿欧元。Gucci依靠涨价跻身顶奢的品牌策略已严重受挫：反复提价疏远了入门级消费者（"野心消费者"），却未能充分赢得高净值客户的认可。现在面临"两头失守"的困境——中端市场被蚕食，顶奢定位又难以确立。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Gucci's 2025 annual revenue fell 22% YoY to €5.99B — the steepest decline within Kering Group. YSL retreated 8% to €2.64B. Gucci's strategy of repositioning as ultra-luxury through repeated price hikes has backfired: alienating aspirational consumers without winning over HNW clients. The brand now faces the dual challenge of repairing mid-market erosion while rebuilding luxury credibility.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>Gucci的困境折射出一个行业悖论：依靠涨价提升品牌定位的策略已触及天花板。73%的奢侈品消费者表示已减少购买（Kearney数据），涨价的代价是忠实客户的流失。Gucci若要翻身，需要在创意叙事与价值重塑上找到真正的突破点。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Gucci's predicament reveals an industry paradox: the strategy of raising prices to elevate brand positioning has hit a ceiling. 73% of luxury clients have cut purchases (Kearney). For Gucci to recover, it must find genuine creative and narrative breakthroughs rather than relying on further price increases.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── News 5: Sneaker ── -->
+  <div class="news-card">
+    <div class="card-tag tag-trend">市场趋势</div>
+    <p class="news-title lang-cn"><a href="https://ww.fashionnetwork.com/news/Sneaker-market-set-to-continue-contracting-in-europe-and-the-us-in-2026-says-heuritech,1826039.html" target="_blank">2026球鞋市场持续收缩：欧洲女性品类领跌4%，美国市场同步承压</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://ww.fashionnetwork.com/news/Sneaker-market-set-to-continue-contracting-in-europe-and-the-us-in-2026-says-heuritech,1826039.html" target="_blank">Sneaker Market to Continue Contracting in Europe and US in 2026: EU Women's Segment to Lead with -4% Decline</a></p>
+    <div class="news-meta">
+      <span class="news-source">FashionNetwork / Heuritech</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-04-23</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag en">Market Trend</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>根据Heuritech最新市场报告，2026年全球运动鞋市场在欧美两地将持续收缩。欧盟女性品类预计全年跌幅最大，达到4%；Q4欧洲市场销售额预计下降5%，美国市场降幅相对温和（3%）。持续收缩反映出消费者在可选消费品类的支出趋于谨慎，也折射出"运动休闲作为时尚声明"的结构性转变正在逆转。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Heuritech's latest market report forecasts continued sneaker market contraction in Europe and the US in 2026. EU women's is projected to be the steepest decliner, shrinking 4% for the full year, with Q4 EU sales forecast down 5% versus a more moderate -3% in the US. The contraction reflects broader consumer spending caution in discretionary categories and a structural reversal of casual footwear as a fashion statement.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>运动鞋市场的持续收缩与奢侈品的分化趋势形成鲜明对比——珠宝和体验式消费在增长，而大众时尚品类在下行。这说明消费者的支出正在向两极集中：要么是高端硬奢品（珠宝），要么是体验型消费，中间地带正在被压缩。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> The sustained sneaker market contraction contrasts sharply with luxury's polarisation — jewellery and experiential categories are growing while mass fashion segments decline. This suggests consumer spending is consolidating at two poles: high-end hard luxury (jewellery) or experiential consumption, with the middle ground being squeezed.</p>
+  </div>
+
+  <!-- ── News 6: China Pricing ── -->
+  <div class="news-card">
+    <div class="card-tag tag-retail">零售动态</div>
+    <p class="news-title lang-cn"><a href="https://cj.sina.cn/articles/view/7879922977/1d5ae152106801awpc?froms=ggmp&vt=4" target="_blank">奢侈品行业传统的"中国溢价"定价策略为何失效？</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://cj.sina.cn/articles/view/7879922977/1d5ae152106801awpc?froms=ggmp&vt=4" target="_blank">Why Luxury's 'China Premium' Pricing Strategy Is Losing Steam</a></p>
+    <div class="news-meta">
+      <span class="news-source">新浪财经</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-02-10</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag cn">中国市场</span>
+      <span class="lang-tag en">China Market</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>多年来，奢侈品牌在中国通过严格的稀缺性策略和高昂的"中国溢价"来塑造独占形象。然而，这一策略正在反噬：中国与海外市场20%-30%的价差催生了灰色代购市场和水货渠道，熟悉游戏的消费者纷纷转向境外购买、跨境电商。越来越多的中国高净值客户开始将"有意义的体验"和"真正的工艺"置于Logo符号之上。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> Luxury brands justified higher China prices through strict scarcity and exclusivity narratives. This is backfiring: 20-30% price gaps vs overseas have fuelled grey market arbitrage, offshore shopping, Daigou and cross-border e-commerce. High-net-worth Chinese consumers are increasingly prioritising meaningful experiences and genuine craftsmanship over logo-driven status symbols.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>中国买家的消费心智正在发生根本性转变：从"炫耀性消费"转向"价值型消费"。73%的奢侈品客户已减少购买（Kearney），中国高净值人群对Logo的执念正在消退。重新审视中国区定价策略、缩短国内外价差，将成为2026年奢侈品集团的重要课题。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> Chinese luxury consumers are undergoing a fundamental mindset shift: from 'conspicuous consumption' to 'value-driven consumption'. 73% of luxury clients have cut purchases (Kearney), and Chinese HNW consumers are moving away from logo obsession. Re-examining China pricing strategy and narrowing the domestic-overseas price gap will be a critical agenda item for luxury groups in 2026.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── News 7: HSBC ── -->
+  <div class="news-card">
+    <div class="card-tag tag-brand">品牌战略</div>
+    <p class="news-title lang-cn"><a href="https://www.chinaleather.org/front/article/144491/4" target="_blank">HSBC维持LVMH买入评级：Dior复苏为估值上调主因，Prada因流动性承压</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://www.chinaleather.org/front/article/144491/4" target="_blank">HSBC Maintains Buy on LVMH; Dior Recovery Drives Target Price Upgrade, Prada Faces Liquidity Pressure</a></p>
+    <div class="news-meta">
+      <span class="news-source">21财经 / 中国皮革网</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-03-18</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag cn">投资观点</span>
+      <span class="lang-tag en">Investment View</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>汇丰在2026奢侈品行业评级中，维持对LVMH、Burberry、Prada的买入评级，其中LVMH目标价上调，主因Dior在新创意总监Jonathan Anderson领导下呈现复苏势头。但Prada评级下调，因流动性和宏观压力带来执行风险。HSBC指出，奢侈品行业正处于"战略常态化"阶段，能够展示"创意清晰度"和"价格-价值对齐"的品牌，将跑赢仍依赖历史溢价能力的竞争对手。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> HSBC maintained Buy ratings on LVMH, Burberry and Prada in its 2026 luxury review. LVMH's target was upgraded on Dior's creative recovery under new creative director Jonathan Anderson, while Prada was downgraded due to liquidity concerns. HSBC notes the sector is in 'strategic normalisation', with brands demonstrating creative clarity and price-to-value alignment outperforming those relying on legacy pricing power.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>HSBC对LVMH维持买入并上调目标价，反映出资本市场对Dior换帅后创意复苏故事的期待。但在行业整体承压的背景下，即使是龙头企业也需要用"创意清晰度"和"价值对齐"来证明自己——仅靠品牌历史已不足以支撑溢价。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> HSBC's sustained Buy rating and target upgrade for LVMH reflects investor faith in Dior's creative recovery under new leadership. But even leading groups must now demonstrate 'creative clarity' and 'value alignment' to justify premiums — brand heritage alone is no longer sufficient in this environment.</p>
+  </div>
+
+  <!-- ── News 8: China Retail ── -->
+  <div class="news-card">
+    <div class="card-tag tag-retail">零售动态</div>
+    <p class="news-title lang-cn"><a href="https://www.huxiu.com/article/4828541.html" target="_blank">2026年：消费没有新故事？线下零售与奢侈品的新逻辑</a></p>
+    <p class="news-title lang-en" style="display:none"><a href="https://www.huxiu.com/article/4828541.html" target="_blank">2026: No New Consumer Story? New Logic for Offline Retail and Luxury</a></p>
+    <div class="news-meta">
+      <span class="news-source">虎嗅</span>
+      <span class="lang-sep">·</span>
+      <span class="news-date">2026-01-23</span>
+      <span class="lang-sep">·</span>
+      <span class="lang-tag cn">中国市场</span>
+      <span class="lang-tag en">China Market</span>
+    </div>
+    <p class="news-summary lang-cn"><strong>要点：</strong>2026年中国消费市场呈现两极分化格局：高净值消费者仍是奢侈品支出的中坚力量，而"野心消费者"正大幅转向高内在价值品类或二手市场。报告指出，纯商品零售正在失去吸引力，线下社区商业和体验空间将成为新的流量入口。63%的客户现在以工艺和持久性而非Logo来定义奢侈品，线下零售的角色正在被重新定义。</p>
+    <p class="news-summary lang-en" style="display:none"><strong>Key Points:</strong> The 2026 Chinese consumer landscape is bifurcating: HNW consumers remain luxury's backbone while aspirational buyers rebalance toward high-value pieces or second-hand markets. Pure product retail is losing relevance, and offline community commerce and experiential spaces are becoming new traffic entry points. 63% of customers now define luxury by craftsmanship and longevity over brand name, redefining the role of offline retail.</p>
+    <p class="news-insight lang-cn"><strong>洞察：</strong>中国消费市场正经历结构性重塑：线上流量红利消退，线下社区商业与体验空间成为新的流量入口。奢侈品品牌若想在2026年保持竞争力，必须重新思考"线下"的价值——不是销售通路，而是品牌叙事与高净值客户关系维护的核心场景。</p>
+    <p class="news-insight lang-en" style="display:none"><strong>Insight:</strong> China's consumer market is undergoing structural restructuring: online traffic dividends are fading, and offline community commerce and experiential spaces are becoming new traffic entry points. Luxury brands must rethink the value of offline presence — not as a sales channel but as the core scenario for brand narrative and HNW client relationship management in 2026.</p>
+  </div>
+
+  <!-- ─── History Link ─── -->
+  <div style="text-align:center;margin-top:40px;">
+    <a href="history.html" style="color:#B8A88A;font-size:13px;font-family:'Playfair Display',serif;letter-spacing:0.1em;text-decoration:none;border-bottom:1px solid rgba(184,168,138,0.4);padding-bottom:2px;">📜 查看历史简报 · View Archive</a>
+  </div>
+
+</div><!-- end container -->
+
+<!-- ─── Footer ─── -->
+<footer>
+  <p class="lang-cn">时尚与奢侈品日报 · 每日9:00更新 · Powered by OpenClaw</p>
+  <p class="lang-en" style="display:none">Fashion &amp; Luxury News Digest · Updated Daily at 9:00 AM · Powered by OpenClaw</p>
+  <p style="margin-top:8px;font-size:10px;color:rgba(30,57,42,0.3);letter-spacing:0.1em;">© 2026 Fashion &amp; Luxury Digest · jingjingshen-star.github.io</p>
+</footer>
+
+<!-- ─── Language Toggle Script ─── -->
 <script>
 function toggleLang(en) {
-  if (en) {
-    document.body.classList.add('show-en');
-    document.querySelectorAll('.lang-cn').forEach(function(el){ el.style.display='none'; });
-    document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display=''; });
-  } else {
-    document.body.classList.remove('show-en');
-    document.querySelectorAll('.lang-en').forEach(function(el){ el.style.display='none'; });
-    document.querySelectorAll('.lang-cn').forEach(function(el){ el.style.display=''; });
-  }
-}
+  if (en) { document.body.classList.add('show-en'); }
   else { document.body.classList.remove('show-en'); }
 }
 </script>
+
 </body>
 </html>
